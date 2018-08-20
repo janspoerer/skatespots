@@ -182,6 +182,9 @@ GEM
     sassc (1.12.1)
       ffi (~> 1.9.6)
       sass (>= 3.3.0)
+    scss_lint (0.57.0)
+      rake (>= 0.9, < 13)
+      sass (~> 3.5.5)
     simple_form (4.0.1)
       actionpack (>= 5.0)
       activemodel (>= 5.0)
@@ -238,8 +241,10 @@ DEPENDENCIES
   puma
   rails (= 5.2.1)
   redis
+  rubocop
   rubocop-airbnb
   sass-rails
+  scss_lint
   simple_form
   spring
   spring-watcher-listen (~> 2.0.0)
