@@ -1,0 +1,10 @@
+<div class="container">
+  <h2>Hi, I'm <%= @user.first_name %></h2>
+  <p>Joined in <%= @user.created_at.strftime("%Y") %></p>
+  <br />
+  <h5><strong>Meet <%= @user.first_name %></strong></h5>
+  <p>Lives in <%= @user.city %></p>
+
+  <br />
+  <h5><strong><%= @user.first_name %>'s favorite skatespots</strong></h5>
+</div>
