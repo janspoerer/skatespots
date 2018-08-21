@@ -1,14 +1,4 @@
-<%= simple_form_for([ spot, review ] remote: true) do |form| %>
+<%= simple_form_for([ spot, review ], remote: true) do |form| %>
   <%= form.input :content %>
   <%= form.button :submit %>
 <% end %>
-
-<!-- ADD THIS TO SPOTS SHOW HTML
-<ul>
-  <% @spots.each do |spot| %>
-    <li data-spot-id="<%= spot.id %>">
-      <%= spot.name %>
-      <%= link_to "Delete", spot, method: :delete, remote: true %>
-    </li>
-  <% end %>
-</ul> -->
