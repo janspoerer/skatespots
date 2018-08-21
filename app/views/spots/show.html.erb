@@ -1,0 +1,41 @@
+<%= render 'image' %>
+
+<div class="container-listing">
+  <div class="row listing-content">
+    <!-- Details box -->
+    <div class="listing col-md-8">
+      <div class="listing-title">
+        <h3><strong><%= "TITLE" #@spot.title %></strong></h3>
+        <p><%= "ADDRESS" #@spot.address %></p>
+      </div>
+      <br>
+
+      <div class="listing-details">
+        <div class="row-content">
+          <div class="col-xs-3">
+            <p><strong>Highlights</strong></p>
+          </div>
+
+          <div class="col-xs-9">
+              <%= "DESCRIPTION" #@spot.description %>
+          </div>
+        </div>
+        <br><br>
+      </div>
+
+      <!-- Check whether we need class listing-reviews -->
+      <div class="listing-reviews">
+        <%= render 'reviews/form', spots: @spot, review: @review %>
+      </div>
+
+    </div>
+
+    <br><br><br>
+  </div>
+
+  <!-- TODO: Add spots's location/map -->
+
+  <div class="listing-map">
+    <%# render 'map' %>
+  </div>
+</div>
