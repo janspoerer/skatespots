@@ -17,10 +17,15 @@ class ReviewsController < ApplicationController
     end
   end
 
-# REMEMBER TO ADD TO THE POSTS CONTROLLER
+# REMEMBER TO ADD TO THE SPOTS CONTROLLER
 #   def show
 #     @spot = Spot.find(params[:id])
 #     @review = Review.new
+# #   end
+
+#   def destroy
+#     @spot = Spot.find(params[:id])
+#     @spot.destroy
 #   end
 
   private
