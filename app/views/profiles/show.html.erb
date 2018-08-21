@@ -1,4 +1,12 @@
-<div class="container">
+<div class="col-md-3">
+  <div class="sidenav user-sidebar">
+    <a class="sidebar-link" href="<%= @user.facebook %>"><i class="fab fa-facebook"></i></a>
+    <a class="sidebar-link" href="<%= @user.twitter %>"><i class="fab fa-twitter"></i></a>
+    <a class="sidebar-link" href="<%= @user.instagram %>"><i class="fab fa-instagram"></i></a>
+  </div>
+</div>
+
+<div class="col-md-9">
   <h2>Hi, I'm <%= @user.first_name %></h2>
   <p>Joined in <%= @user.created_at.strftime("%Y") %></p>
   <br />
@@ -7,4 +15,7 @@
 
   <br />
   <h5><strong><%= @user.first_name %>'s favorite skatespots</strong></h5>
+
+  <%= render 'cards' %>
+
 </div>

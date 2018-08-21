@@ -4,12 +4,16 @@
       <%# FORM FOR UPDATING PROFILE  %>
       <%= simple_form_for @user, url: profile_path(@user), html: { method: :patch } do |f| %>
         <%= f.error_notification %>
-        <%= f.input :first_name, class: "form-control"%>
+        <%= f.input :first_name%>
         <%= f.input :last_name %>
         <p class="small">Your public profile only shows your first name.</p>
         <%= f.input :email %>
         <p class="small">We won’t share your private email address with other Skaters.</p>
         <%= f.input :password, placeholder:"********" %>
+        <%= f.input :facebook %>
+        <%= f.input :twitter %>
+        <%= f.input :instagram %>
+
         <%#= f.input :photo %>
         <%#= f.input :photo_cache, as: :hidden %>
 
