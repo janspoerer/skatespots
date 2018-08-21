@@ -3,4 +3,12 @@
   <%= form.button :submit %>
 <% end %>
 
-
+<!-- ADD THIS TO SPOTS SHOW HTML
+<ul>
+  <% @spots.each do |spot| %>
+    <li data-spot-id="<%= spot.id %>">
+      <%= spot.name %>
+      <%= link_to "Delete", spot, method: :delete, remote: true %>
+    </li>
+  <% end %>
+</ul> -->
