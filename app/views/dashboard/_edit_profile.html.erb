@@ -14,10 +14,9 @@
         <%= f.input :twitter %>
         <%= f.input :instagram %>
 
-        <%#= f.input :photo %>
-        <%#= f.input :photo_cache, as: :hidden %>
+        <%= f.input :photo %>
+        <%= f.input :photo_cache, as: :hidden %>
 
-        <!-- TODO: #save user profile -->
         <%= f.submit 'Save', class: "btn btn btn-danger" %>
       <% end %>
     </div>
