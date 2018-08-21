@@ -5,7 +5,7 @@
 </div>
 
 <div class="user-main">
-    <h2>Hi, I'm <%= @user.first_name %></h2>
+    <h2><%= cl_image_tag @user.photo, height: 70, width: 70, crop: :fill, class:"img-circle"%> Hi, I'm <%= @user.first_name %></h2>
     <p>Joined in <%= @user.created_at.strftime("%Y") %></p>
     <br />
     <h5><strong>Meet <%= @user.first_name %></strong></h5>
