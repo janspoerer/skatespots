@@ -1,4 +1,6 @@
-<%= simple_form_for([ spot, review ]) do |form| %>
-  <%= form.input :content, as: :text %>
+<%= simple_form_for([ spot, review ] remote: true) do |form| %>
+  <%= form.input :content %>
   <%= form.button :submit %>
 <% end %>
+
+

@@ -5,9 +5,15 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.spot = @spot
     if @review.save
-      redirect_to spot_path(@spot)
+      respond_to do |format|
+        format.html { redirect_to spot_path(@spot) }
+        format.js  # <-- will render `app/views/reviews/create.js.erb`
+      end
     else
-      render 'spots/show'
+      respond_to do |format|
+        format.html { render 'spots/show' }
+        format.js  # <-- idem
+      end
     end
   end
 
