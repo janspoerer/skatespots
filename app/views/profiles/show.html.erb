@@ -9,10 +9,10 @@
     <p>Joined in <%= @user.created_at.strftime("%Y") %></p>
     <br />
     <h5><strong>Meet <%= @user.first_name %></strong></h5>
-    <p>Lives in <%= @user.city %></p>
+    <p><i class="fas fa-home"></i> Lives in <%= @user.city.name %></p>
 
     <br />
-    <h5><strong><%= @user.first_name %>'s favorite skatespots</strong></h5>
+    <h5><strong><i class="fas fa-heart"></i> <%= @user.first_name %>'s favorite skatespots</strong></h5>
 
     <%= render 'cards' %>
 </div>
