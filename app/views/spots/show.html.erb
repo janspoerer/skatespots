@@ -5,8 +5,14 @@
     <!-- Details box -->
     <div class="listing col-md-8">
       <div class="listing-title">
-        <h3><strong><%= "TITLE" #@spot.title %></strong></h3>
-        <p><%= "ADDRESS" #@spot.address %></p>
+        <h3>
+          <strong>
+            <%= "TITLE @spot.title" %>
+          </strong>
+        </h3>
+        <p>
+          <%= "ADDRESS @spot.address" %>
+        </p>
       </div>
       <br>
 
@@ -17,7 +23,7 @@
           </div>
 
           <div class="col-xs-9">
-              <%= "DESCRIPTION" #@spot.description %>
+              <%= "DESCRIPTION @spot.description" %>
           </div>
         </div>
         <br><br>
@@ -25,7 +31,7 @@
 
       <!-- Check whether we need class listing-reviews -->
       <div class="listing-reviews">
-        <%= render 'reviews/form', spots: @spot, review: @review %>
+        <%= render 'reviews/form', spot: @spot, review: @review %>
       </div>
 
     </div>
