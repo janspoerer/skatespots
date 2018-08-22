@@ -1,6 +1,7 @@
 <section class="spots">
   <div class="container-fluid">
     <h3><%= @spots.count %> spots</h3>
+
     <div class="Cards">
       <div class="Cards__grid">
         <% @spots.each do |spot|  %>
@@ -22,3 +23,4 @@
 </section>
 
 <%= javascript_pack_tag "map" %>dsafdsf
+

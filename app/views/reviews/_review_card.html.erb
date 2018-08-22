@@ -1,0 +1,21 @@
+
+
+
+
+
+
+
+
+<h2>
+  <%= pluralize @spot.reviews.size, "review" %>
+</h2>
+
+<div id="reviews">
+  <% if @spot.reviews.blank? %>
+    Leave a review for <%= @spot.name %>
+  <% else %>
+    <% @spot.reviews.each do |review| %>
+      <%= render 'reviews/review_card', review: review %>
+    <% end %>
+  <% end %>
+</div>

@@ -1,0 +1,18 @@
+<div class="sidenav user-sidebar">
+  <a class="sidebar-link" href="<%= @user.facebook %>"><i class="fab fa-facebook"></i></a>
+  <a class="sidebar-link" href="<%= @user.twitter %>"><i class="fab fa-twitter"></i></a>
+  <a class="sidebar-link" href="<%= @user.instagram %>"><i class="fab fa-instagram"></i></a>
+</div>
+
+<div class="user-main">
+    <h2><%= cl_image_tag @user.photo, height: 70, width: 70, crop: :fill, class:"img-circle"%> Hi, I'm <%= @user.first_name %></h2>
+    <p>Joined in <%= @user.created_at.strftime("%Y") %></p>
+    <br />
+    <h5><strong>Meet <%= @user.first_name %></strong></h5>
+    <p><i class="fas fa-home"></i> Lives in <%= @user.city.name %></p>
+
+    <br />
+    <h5><strong><i class="fas fa-heart"></i> <%= @user.first_name %>'s favorite skatespots</strong></h5>
+
+    <%= render 'cards' %>
+</div>

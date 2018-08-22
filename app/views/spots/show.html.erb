@@ -1,47 +1,34 @@
-<%= render 'image' %>
+<!-- Review content -->
+<div class="review-box" style="border-bottom: solid 1px rgb(220, 224, 223)">
+  <% if @spot.reviews.present? %>
+  <ul>
+    <% @spot.reviews.each do |review| %>
+        <img src=@user.photo alt="" width="40" class="img-circle">
+      <li>
+        <% if review.user.first_name.blank?  %>
+          <p><strong>Anonymous</strong></p>
+        <% else %>
+          <p><strong><%= review.user.first_name %></strong></p>
+        <% end %>
+        <p>Comment: <%= review.content %></p>
+        <p>Post on: <%= review.created_at.strftime("%Y-%m-%d") %></p>
 
-<div class="container-listing">
-  <div class="row listing-content">
-    <!-- Details box -->
-    <div class="listing col-md-8">
-      <div class="listing-title">
-        <h3>
-          <strong>
-            <%= "TITLE @spot.title" %>
-          </strong>
-        </h3>
-        <p>
-          <%= "ADDRESS @spot.address" %>
-        </p>
-      </div>
-      <br>
+        <div class="d-flex">
+          <div id="rater"></div>
 
-      <div class="listing-details">
-        <div class="row-content">
-          <div class="col-xs-3">
-            <p><strong>Highlights</strong></p>
-          </div>
-
-          <div class="col-xs-9">
-              <%= "DESCRIPTION @spot.description" %>
-          </div>
+         <!--  <% (1..5).to_a.each do |el| %>
+            <% if el <= review.rating %>
+              <i class="fas fa-star" style="color: #ffb400;"></i>
+            <% else %>
+              <i class="fas fa-star" style="color: #ccc"></i>
+            <% end %>
+          <% end %> -->
+         
+          </div>  
         </div>
-        <br><br>
-      </div>
 
-      <!-- Check whether we need class listing-reviews -->
-      <div class="listing-reviews">
-        <%#= render 'reviews/form', spot: @spot, review: @review %>
-      </div>
+          <%= link_to "Delete review", review_path(review), method: "delete", data: { confirm: 'Are you sure?' }  %>
+        
+<%= render 'reviews/form' %>
 
-    </div>
-
-    <br><br><br>
-  </div>
-
-  <!-- TODO: Add spots's location/map -->
-
-  <div class="listing-map">
-    <%# render 'map' %>
-  </div>
-</div>
+<%= render 'image' %>
