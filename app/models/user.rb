@@ -9,6 +9,6 @@ class User < ApplicationRecord
   mount_uploader :photo, PhotoUploader
 
   def avatar_url
-    photo_url || "https://www.synbio.cam.ac.uk/images/avatar-generic.jpg/image"
+    photo_url || ActionController::Base.helpers.asset_path("avatar-anonymous.png")
   end
 end
