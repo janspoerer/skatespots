@@ -1,0 +1,24 @@
+<section class="spots">
+  <div class="container-fluid">
+    <h3><%= @spots.count %> spots</h3>
+    <div class="Cards">
+      <div class="Cards__grid">
+        <% @spots.each do |spot|  %>
+          <div class="grid-item">
+            <%= render 'shared/card', spot: spot %>
+          </div>
+        <% end %>
+      </div>
+      <div class="Map Cards__map">
+        <div class="Map__inner">
+          <div id="map"
+            style="width: 100%;"
+            data-markers="<%= @markers.to_json %>">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%= javascript_pack_tag "map" %>dsafdsf
