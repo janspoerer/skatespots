@@ -1,6 +1,6 @@
 // Define variables for your color scheme
 
-// For example:
+// Example color them:
 $red: #EE5F5B;
 $blue: #469AE0;
 $yellow: #FDB631;
@@ -8,3 +8,32 @@ $orange: #E67E22;
 $green: #32B796;
 $gray: #000000;
 $light-gray: #F4F4F4;
+
+
+// New color theme
+$primary: #512DA8;
+$secondary: #ff61ab;
+$success: #1EB7C0;
+$error: #F84F77;
+$dark: #24124D;
+$warm: #FFB302;
+$gray-text: #979797;
+$gray-disabled: #dddde6;
+$gray-border: #e7e7f0;
+$gray-background: #F8F7FC;
+$white: #fff;
+
+$colors-map: (
+  primary: #5757ff,
+  secondary: #ff61ab,
+  success: #46cf7b,
+  error: #ff5572,
+  dark: #2a2a30,
+  grey-text: #bbbccd,
+  grey-disabled: #dddde6,
+  grey-border: #e7e7f0,
+  grey-background: #f3f3f9,
+  white: #fff,
+);
+
+$navbar-height: 60px;
