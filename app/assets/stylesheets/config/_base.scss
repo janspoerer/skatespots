@@ -1,0 +1,27 @@
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: $brand-primary;
+  color: #fff;
+}
+
+// Sticky footer
+// Adjusts the position of the main content
+.Site {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  &__content {
+    margin-top: $navbar-height;
+    flex: 1;
+  }
+}
+
+@each $color, $value in $colors-map {
+  .color-#{$color} {
+    color: $value;
+  }
+}

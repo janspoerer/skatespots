@@ -1,3 +1,2 @@
-//= require rails-ujs
-//= require rater-js
-//= require_tree .
+// = require rails-ujs
+// = require_tree .
