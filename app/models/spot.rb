@@ -18,4 +18,7 @@ class Spot < ApplicationRecord
       tsearch: { prefix: true }
     }
   # rubocop:enable Layout/AlignParameters
+  
+  mount_uploader :photo, PhotoUploader
+
 end

@@ -1,0 +1,54 @@
+.profile-body {
+  color: grey;
+  padding-right: 300px;
+  padding-left: 40px
+}
+
+/* The sidebar menu */
+.sidenav {
+    height: 100vh;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(0deg, rgba(240, 51, 255, 0.5) 0%, rgba(85, 85, 255, 0.5) 97%), asset-url('boat4.jpg'), url('https://images.unsplash.com/photo-1533329284562-979ec7fd9fe0?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ce129abda40a2d589bda4569f11253bb&auto=format&fit=crop&w=800&q=60');
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
+}
+
+@media(max-width: 600px) {
+  .sidenav {
+    width: 120px !important;
+  }
+}
+
+/* sidebar menu link */
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 30px;
+    color: #818181;
+    display: block;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.user-sidebar {
+  padding: 10px 30px
+}
+
+.user-card {
+  border: 1px solid grey;
+  margin: 20px
+}
+.user.row {
+  padding: 20px
+}
+
+.user-main {
+  margin-left: 200px; /* Same as the width of the sidebar */
+  padding: 0 40px;
+}
