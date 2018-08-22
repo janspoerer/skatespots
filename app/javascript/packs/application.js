@@ -1,5 +1,11 @@
 import "bootstrap";
 
+import { cityAutocomplete } from '../components/algolia_search.js';
+
+document.addEventListener('DOMContentLoaded', () => {
+  cityAutocomplete();
+});
+
 var myRating = raterJs( {
     // shows a rating tooltip
     showToolTip: true,
@@ -22,7 +28,3 @@ var myRating = raterJs( {
       done();
     }
   });
-
-
-
-
