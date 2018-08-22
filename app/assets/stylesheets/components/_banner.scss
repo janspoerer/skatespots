@@ -1,0 +1,42 @@
+.Banner {
+  margin-top: -#{$navbar-height};
+  width: 100%;
+  height: 100vh;
+  color: $white;
+  background: linear-gradient(0deg, rgba(105, 45, 255, 0.58) 0%, rgba(85, 85, 255, 0.58) 97%), asset-url('skate2.jpg');  
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  &__content {
+    max-width: 835px;
+  }
+
+  &__heading {
+    font-size: 52px;
+    font-weight: bold;
+    max-width: 680px;
+    // text-align: center;
+  }
+
+  &__leading {
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+
+  &__form {
+    box-shadow: 0 15px 46px rgba(26, 26, 29, 0.3), 0 15px 90px rgba(0, 0, 0, 0.2) !important;
+  }
+
+  &__input {
+    height: 70px;
+    font-size: 18px;
+  }
+}
