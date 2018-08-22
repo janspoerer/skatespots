@@ -9,18 +9,7 @@
       <% end %>
 
       <!-- Search -->
-      <% form_classes = controller_name == 'pages' && action_name == 'home' ? 'navbar-form hidden js-navbar-form' : 'navbar-form' %>
-
-      <%= form_tag '/spots', method: "get", class: form_classes do %>
-        <div class="input-group">
-          <%= text_field_tag(:query, nil, placeholder: "Are you reader for your next skate adventure?", class: "Input--search form-control") %>
-          <div class="input-group-btn">
-            <%= button_tag :submit, class: "btn btn-primary" do %>
-              <i class="fa fa-search" aria-hidden="true"></i>
-            <% end %>
-          </div>
-        </div>
-      <% end %>
+      <%= render 'shared/search_input' %>
     </div>
 
     <!-- Right Navigation -->

@@ -1,16 +1,21 @@
-// Graphical variables
-@import "config/fonts";
-@import "config/colors";
-@import "config/bootstrap_variables";
-@import "config/base";
+// https://sass-guidelin.es/#the-7-1-pattern
+@charset "UTF-8";
 
-// External libraries
-@import "bootstrap-sprockets";
-@import "bootstrap";
-@import "font-awesome-sprockets";
-@import "font-awesome";
+@import "abstracts/variables";
+@import "abstracts/mixins";
+@import "abstracts/bootstrap_variables";
 
-// Your CSS partials
-@import "layouts/index";
+@import "vendor/index";
+
+@import "config/overrides";
+
+@import "base/base";
+@import "base/helpers";
+
+@import "layout/navigation";
+@import "layout/footer";
+@import "layout/registration_form";
+
 @import "components/index";
+
 @import "pages/index";

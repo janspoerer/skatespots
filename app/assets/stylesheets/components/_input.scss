@@ -7,16 +7,17 @@
     box-shadow: 0 0 0 4px rgba($brand-primary, 0.25);
   }
 
-  // &--search {
+  &--search {
   //   background-color: $gray-background;
-  //
-  //   @include media(768px) {
-  //     width: 400px!important;
-    // }
-  // }
+
+    @include media(768px) {
+      width: 400px!important;
+    }
+  }
 }
 
-/* Change Autocomplete styles in Chrome */
+// Change Autocomplete styles in Chrome
+// scsslint:disable VendorPrefix
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
