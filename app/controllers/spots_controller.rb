@@ -10,6 +10,7 @@ class SpotsController < ApplicationController
     if params[:query].present?
       @spots = policy_scope(Spot).search_by_title_and_address(params[:query])
     else
+      # policy_scope(Spot).search_by_city_and_name(params[:query]) 
       @spots = policy_scope(Spot)
       authorize @spots
     end

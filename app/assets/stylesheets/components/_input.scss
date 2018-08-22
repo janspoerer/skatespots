@@ -7,13 +7,13 @@
     box-shadow: 0 0 0 4px rgba($brand-primary, 0.25);
   }
 
-  // &--search {
-  //   background-color: $gray-background;
-  //
-  //   @include media(768px) {
-  //     width: 400px!important;
-    // }
-  // }
+  &--search {
+    background-color: $gray-background;
+
+    @include media(768px) {
+      width: 400px!important;
+    }
+  }
 }
 
 /* Change Autocomplete styles in Chrome */

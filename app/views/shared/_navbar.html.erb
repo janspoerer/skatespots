@@ -13,7 +13,7 @@
 
       <%= form_tag '/spots', method: "get", class: form_classes do %>
         <div class="input-group">
-          <%= text_field_tag(:query, nil, placeholder: "Are you reader for your next skate adventure?", class: "Input--search form-control") %>
+          <%= text_field_tag(:query, nil, placeholder: "Are you ready for your next skate adventure?", class: "Input--search form-control") %>
           <div class="input-group-btn">
             <%= button_tag :submit, class: "btn btn-primary" do %>
               <i class="fa fa-search" aria-hidden="true"></i>
@@ -30,6 +30,9 @@
       <% if user_signed_in? %>
 
         <!-- Links when logged in -->
+        <%= link_to "Explore", spots_path, class: "Navbar__link-item" %>
+
+        <!-- TODO: need to update link to redirect to user's favorites -->
         <%= link_to "Favorites", spots_path, class: "Navbar__link-item" %>
 
         <!-- TODO: add message system later -->
@@ -37,7 +40,8 @@
         <div class="dropdown Navbar__link-item">
           <a href="#" class="Navbar__dropdown dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="false">Help</a>
             <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-              <li><a href="#">123</a></li>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Customer support</a></li>
             </ul>
         </div>
 
