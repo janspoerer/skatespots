@@ -1,0 +1,25 @@
+<%# TODO: Add the right url / path  %>
+<%= form_tag root_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Try skate spots in Berlin"
+  %>
+<% end %>
+
+<%# TODO: Add this to javascript packs + include on the right page  %>
+<script src="https://cdn.jsdelivr.net/npm/places.js@1.9.0"></script>
+<script>
+(function() {
+  var placesAutocomplete = places({
+    container: document.querySelector('#query'),
+    type: 'city',
+    aroundLatLngViaIP: false,
+    templates: {
+      value: function(suggestion) {
+        return suggestion.name;
+      }
+    }
+  });
+})();
+</script>
