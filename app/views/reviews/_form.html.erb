@@ -1,20 +1,10 @@
-<%= simple_form_for([ spot, review ] remote: true) do |form| %>
-  <%= form.input :content %>
-  <%= form.button :submit %>
-<% end %>
-
-<!-- ADD THIS TO SPOTS SHOW HTML
-<ul>
-  <% @spots.each do |spot| %>
-    <li data-spot-id="<%= spot.id %>">
-      <%= spot.name %>
-      <%= link_to "Delete", spot, method: :delete, remote: true %>
-    </li>
-  <% end %>
-</ul> -->
+<!--<%= #simple_form_for([ spot, review ], remote: true) do |form| %>
+  <%= #form.input :content %>
+  <%= #form.button :submit %>
+<% #end %>-->
 
 <div class="submit-review">
-  <%= simple_form_for [@spot, @review] do |f| %>
+  <%= simple_form_for ([spot, review], remote: true) do |f| %>
     <label for="review">How was your experience?</label><br>
     <%= f.label :rating %>
     <%= f.select :rating, options_for_select([["Please select one", ""], 5, 4, 3, 2, 1]) %>

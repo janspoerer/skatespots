@@ -1,14 +1,3 @@
-
-
-<!-- Review header -->
-<div class="listing-title">
-    <% if @spot.reviews.present? %>
-      <h4><strong><%= @spot.reviews.count %> Reviews</strong></h4>
-    <% else %>
-      <h4><strong>Reviews</strong></h4>
-    <% end %>
-</div>
-
 <!-- Review content -->
 <div class="review-box" style="border-bottom: solid 1px rgb(220, 224, 223)">
   <% if @spot.reviews.present? %>
@@ -34,18 +23,12 @@
               <i class="fas fa-star" style="color: #ccc"></i>
             <% end %>
           <% end %> -->
+         
+          </div>  
+        </div>
 
           <%= link_to "Delete review", review_path(review), method: "delete", data: { confirm: 'Are you sure?' }  %>
-        </div>
-      <% end %>
-      <% else %>
-      <p>There is no review for this spot yet</p>
-      <% end %>
-    </li>
-  </ul>
-
-
-</div><br>
-
+        
 <%= render 'reviews/form' %>
 
+<%= render 'image' %>

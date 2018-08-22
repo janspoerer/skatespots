@@ -1,9 +1,12 @@
 class ReviewsController < ApplicationController
+  after_action :verify_authorized, unless: :skip_pundit?
 
   def create
     @spot = Spot.find(params[:spot_id])
     @review = Review.new(review_params)
     @review.spot = @spot
+    @review.user = current_user
+    authorize @review
     if @review.save
       respond_to do |format|
         format.html { redirect_to spot_path(@spot) }
@@ -22,5 +25,4 @@ class ReviewsController < ApplicationController
   def review_params
     params.require(:review).permit(:content)
   end
-
 end
