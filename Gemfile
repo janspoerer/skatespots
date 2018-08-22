@@ -19,6 +19,7 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 
+# Search gems
 gem 'pg_search'
 gem 'geocoder'
 
