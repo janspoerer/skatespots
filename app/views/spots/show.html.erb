@@ -1,47 +1,45 @@
-<%= render 'image' %>
+<!-- Review content -->
 
-<div class="container-listing">
-  <div class="row listing-content">
-    <!-- Details box -->
-    <div class="listing col-md-8">
-      <div class="listing-title">
-        <h3>
-          <strong>
-            <%= "TITLE @spot.title" %>
-          </strong>
-        </h3>
-        <p>
-          <%= "ADDRESS @spot.address" %>
-        </p>
+<div class="flexbox">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-xs-12 col-sm-6 col-md-4">
       </div>
-      <br>
 
-      <div class="listing-details">
-        <div class="row-content">
-          <div class="col-xs-3">
-            <p><strong>Highlights</strong></p>
-          </div>
+      <!-- SPOT CARD (likes, faves, etc) + REVIEWS -->
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="review-box" style="border-bottom: solid 1px rgb(220, 224, 223)">
+          <%#= render 'reviews/form' %>
 
-          <div class="col-xs-9">
-              <%= "DESCRIPTION @spot.description" %>
-          </div>
+          <% if @spot.reviews.present? %>
+            <% @spot.reviews.each do |review| %>
+              <%#= @user.photo.present? ? photo_url = @user.photo : photo_url   %>
+              <%= image_tag(review.user.avatar_url, width: 40, crop: :fill, class: "img-circle") %>
+              <!-- <img src=<%#= cl_image_tag(photo_url) %> alt="" width="40" class="img-circle"> -->
+
+                <% if review.user.first_name.blank?  %>
+                  <p><strong>Anonymous</strong></p>
+                <% else %>
+                  <p><strong><%= review.user.first_name %></strong></p>
+                <% end %>
+
+                <p>Comment: <%= review.content %></p>
+                <p>Post on: <%= review.created_at.strftime("%Y-%m-%d") %></p>
+
+              <% end %>
+          <% end %>
         </div>
-        <br><br>
       </div>
 
-      <!-- Check whether we need class listing-reviews -->
-      <div class="listing-reviews">
-        <%#= render 'reviews/form', spot: @spot, review: @review %>
+      <div class="col-xs-12 col-sm-6 col-md-4">
       </div>
 
     </div>
-
-    <br><br><br>
-  </div>
-
-  <!-- TODO: Add spots's location/map -->
-
-  <div class="listing-map">
-    <%# render 'map' %>
   </div>
 </div>
+
+
+
+
+
