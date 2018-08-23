@@ -1,3 +1,5 @@
+console.log("hello")
+
 function refreshForm(innerHTML) {
   const newReviewForm = document.getElementById('new_review');
   newReviewForm.innerHTML = innerHTML;
@@ -14,3 +16,4 @@ function addReview(reviewHTML) {
   addReview('<%= j render "reviews/show", review: @review %>');
   refreshForm('<%= j render "reviews/form", spot: @spot, review: Review.new %>');
 <% end %>
+
