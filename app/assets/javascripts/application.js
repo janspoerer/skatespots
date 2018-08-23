@@ -1,3 +1,6 @@
-//= require rails-ujs
+// = require rails-ujs
+// = require_tree
 //= require rater-js
-//= require_tree .
+  
+// REMEMBER TO yarn add rater-js --save
+
