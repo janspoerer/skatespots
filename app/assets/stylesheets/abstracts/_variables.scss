@@ -1,0 +1,45 @@
+// Import Google fonts
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Hind:500");
+
+// Colors
+$primary: #5468ff;
+$secondary: #ff61ab;
+$success: #46cf7b;
+$error: #ff5572;
+$dark: #32325d;
+$grey: #525f7f;
+// $grey: #bbbccd;
+$gray-text: #bbbccd;
+$gray-disabled: #dddde6;
+$gray-border: #c5c9e0;
+$gray-background: #f5f5fa;
+$white: #fff;
+
+$colors-map: (
+  primary: $primary,
+  secondary: $secondary,
+  success: $success,
+  error: $error,
+  dark: $dark,
+  grey-text: #bbbccd,
+  grey-disabled: #dddde6,
+  grey-border: #e7e7f0,
+  grey-background: #f3f3f9,
+  white: $white,
+);
+
+// Define fonts for body and headers
+$headings-font: "Hind", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$body-font: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+// To use a font file (.woff) uncomment following lines
+// @font-face {
+//   font-family: "Font Name";
+//   src: font-url('FontFile.eot');
+//   src: font-url('FontFile.eot?#iefix') format('embedded-opentype'),
+//        font-url('FontFile.woff') format('woff'),
+//        font-url('FontFile.ttf') format('truetype')
+// }
+// $my-font: "Font Name";
+
+$navbar-height: 76px;

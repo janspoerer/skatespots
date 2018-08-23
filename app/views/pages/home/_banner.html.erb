@@ -1,0 +1,19 @@
+<section class="Banner">
+  <div class="Banner__bg"></div>
+  <div class="Banner__content">
+    <div class="Banner__inner container">
+      <div class="Banner__body">
+        <h1 class="Banner__heading">Are you ready for the next skate adventure?</h1>
+        <p class="Banner__leading">Find the perfect spot to skate.</p>
+        <%= form_tag('/spots', method: "get", class: "Banner__form") do %>
+          <div class="Banner__input-group input-group input-group-lg">
+            <%= text_field_tag(:query, nil, id: 'query_banner', placeholder: "Where do you want to skate?", class: "Input Banner__input form-control js-banner-search") %>
+            <%= button_tag :submit, class: "Banner__btn btn btn-primary btn-lg" do %>
+              <i class="fa fa-search" aria-hidden="true"></i>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>

@@ -18,8 +18,12 @@ function showHideNavbar() {
           brand.classList.add('Navbar__brand--white');
         }
     };
-    window.addEventListener('scroll', throttle(showHideOnScroll, 100));
+    if (window.location.pathname === '/') {
+      window.addEventListener('scroll', throttle(showHideOnScroll, 100));
+    } else {
+      window.removeEventListener('scroll', throttle(showHideOnScroll, 100));
+    }
   }
 }
 
-export { showHideNavbar };
+export default showHideNavbar;

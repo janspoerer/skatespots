@@ -1,18 +1,49 @@
-<div class="sidenav user-sidebar">
-  <a class="sidebar-link" href="<%= @user.facebook %>"><i class="fab fa-facebook"></i></a>
-  <a class="sidebar-link" href="<%= @user.twitter %>"><i class="fab fa-twitter"></i></a>
-  <a class="sidebar-link" href="<%= @user.instagram %>"><i class="fab fa-instagram"></i></a>
-</div>
+<div class="user-profile">
 
-<div class="user-main">
-    <h2><%= cl_image_tag @user.photo, height: 70, width: 70, crop: :fill, class:"img-circle"%> Hi, I'm <%= @user.first_name %></h2>
-    <p>Joined in <%= @user.created_at.strftime("%Y") %></p>
-    <br />
-    <h5><strong>Meet <%= @user.first_name %></strong></h5>
-    <p><i class="fas fa-home"></i> Lives in <%= @user.city.name %></p>
+  <div class="user-cover-photo">
+    
+  </div>
+  <!-- <img align="left" class="user-cover-photo" src="https://www.wallpaperup.com/uploads/wallpapers/2014/03/29/313721/acd564acb7e9aacb1daa22acc7b42685.jpg" class="img-responsive" alt="Profile image"/> -->
 
-    <br />
-    <h5><strong><i class="fas fa-heart"></i> <%= @user.first_name %>'s favorite skatespots</strong></h5>
+  <div class="user-container">
 
-    <%= render 'cards' %>
-</div>
+    <div class="col-md-3">
+      <div class="user-details-box" style="border-bottom: solid 1px rgb(220, 224, 223)">
+        <div class="user-image">
+          <%= cl_image_tag @user.photo, crop: :fill, class:"user-image-profile"%>
+        </div>
+        <div class="user-info">
+          <br>
+          <div class="user-profile-text">
+            <p><strong>About:</strong> Just a simple gal who loves skating</p>
+            <p><strong>Member since: </strong><%= @user.created_at.strftime("%Y") %></p><br><br>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-8">
+      <div class="user-body">
+        <h2><strong><%= @user.first_name %></strong></h2>
+        <p><i class="fas fa-home"></i> Lives in <%= @user.city.name %></p>
+      </div>
+      <h4 style="margin: 20px"><strong>Welcome to my Favorites home</strong></h4>
+
+      <div class="user-favorites">
+        <%= render 'favorites' %>
+      </div>
+    </div>
+    <div class="col-md-1">
+      <div class="user-social-media text-center">
+        <a href="<%= @user.facebook %>"><i class="fab fa-facebook"></i></a>
+      </div>
+      <div class="user-social-media text-center">
+        <a href="<%= @user.twitter %>"><i class="fab fa-twitter"></i></a>
+      </div>
+      <div class="user-social-media text-center">
+        <a href="<%= @user.instagram %>"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+
+</div> <!-- end of user-container -->
