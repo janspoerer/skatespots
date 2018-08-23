@@ -1,0 +1,31 @@
+<%#= link_to spot_path(spot), class: "Card" do %>
+<div class="col-md-4">
+  <div class="Card__inner">
+    <figure class="Card__img">
+      <img align="left" class="user-cover-photo" src="https://images.unsplash.com/photo-1514850884497-a353f6397b30?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=87bd6bdfc6ee74acf7a7f74ccc8383c0" class="img-responsive" alt="Profile image"/>
+    </figure>
+
+    <div class="Card__body">
+      <h3 class="Card__name"><%#= spot.name %></h3>
+      <div class="Card__meta">
+        <div class="Card__rating">
+            <div class="d-flex">
+              <%# (1..5).to_a.each do |el| %>
+                <%# if  boat.reviews.present? %>
+                    <%# if el <= boat.reviews.last.rating %>
+                      <i class="fas fa-star" style="color: #ffb400;"></i>
+                  <%# else %>
+                    <i class="fas fa-star" style="color: #ccc"></i>
+                  <%# end %>
+                <%# end %>
+              <%# end %>
+            </div>
+          </span>
+        </div>
+          <i class="fas fa-heart color-grey-text"></i>
+      </div>
+    </div>
+  </div>
+<%# end %>
+
+</div>

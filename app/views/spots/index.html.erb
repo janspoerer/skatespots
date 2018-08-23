@@ -2,7 +2,7 @@
 
 <section class="spots">
   <div class="container-fluid">
-    <h3><%= @spots.count %> Spots</h3>
+    <h3><%= @spots&.count %> Spots</h3>
     <div class="Cards">
       <div class="Cards__grid">
         <% @spots.each do |spot|  %>
