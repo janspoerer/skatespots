@@ -13,12 +13,14 @@ class SpotsController < ApplicationController
       @spots = policy_scope(Spot)
       authorize @spots
     end
-    #@markers = Spot.where.not(latitude: nil, longitude: nil).map do |spot|
-    #  {
-    #    lat: spot.latitude,
-    #    lng: spot.longitude
-    #  }
-    #end
+
+    @markers = Spot.where.not(latitude: nil, longitude: nil).map do |spot|
+     {
+       lat: spot.latitude,
+       lng: spot.longitude
+       # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+     }
+    end
   end
 
   def show

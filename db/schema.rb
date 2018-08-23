@@ -70,6 +70,8 @@ ActiveRecord::Schema.define(version: 2018_08_22_135810) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "city_id"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["city_id"], name: "index_spots_on_city_id"
   end
 
