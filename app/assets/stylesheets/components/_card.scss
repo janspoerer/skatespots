@@ -4,7 +4,7 @@
   width: 100%;
   text-decoration: none;
   color: inherit;
-  border-radius: 50%;
+  border-radius: 6px;
   overflow: hidden;
   margin-bottom: 20px;
 
@@ -16,9 +16,8 @@
 
   &__inner {
     background: $white;
-    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.05);
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.05);
     border-radius: 6px;
-    margin: 20px
   }
 
   &__img {
@@ -50,11 +49,17 @@
     background-color: $white;
   }
 
-  &__name {
+  &__title {
     margin: 0;
     font-size: 21px;
     line-height: 1.5;
     font-weight: bold;
+  }
+
+  &__price {
+    font-size: 14px;
+    line-height: 1.5;
+    color: $success;
   }
 
   &__rating-text {
@@ -81,15 +86,12 @@
   display: block;
   font-family: "blur-up: always", "object-fit: cover";
   object-fit: cover;
-}
-
-.ls-blur-up-img {
   filter: blur(10px);
   opacity: 1;
   transition: opacity 1000ms, filter 1500ms;
-}
 
-.ls-blur-up-img.ls-inview.ls-original-loaded {
-  opacity: 0;
-  filter: blur(5px);
+  &.ls-inview.ls-original-loaded {
+    opacity: 0;
+    filter: blur(5px);
+  }
 }

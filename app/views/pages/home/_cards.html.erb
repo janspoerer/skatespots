@@ -1,0 +1,15 @@
+
+<section class="Spots">
+  <div class="container">
+    <h2 class="Spots__heading">Recently Added Spots</h2>
+    <div class="row">
+      <% @spots.each do |spot| %>
+        <div class="col-sm-6 col-md-4">
+          <%= render 'shared/card', spot: spot %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>
+
+

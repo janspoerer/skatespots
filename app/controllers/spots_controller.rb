@@ -1,6 +1,8 @@
+# froze_string_literal: true
+
 class SpotsController < ApplicationController
-  skip_before_action :authenticate_user!, only: %i(index show)
-  before_action :set_spot, only: %i(show edit update destroy)
+  skip_before_action :authenticate_user!, only: %i[index show]
+  before_action :set_spot, only: %i[show edit update destroy]
 
   include Pundit
   after_action :verify_authorized, except: :index, unless: :skip_pundit?
@@ -69,9 +71,21 @@ class SpotsController < ApplicationController
     authorize @spot
   end
 
+  # rubocop:disable Metrics/MethodLength
   def spot_params
-    params[:spot].permit(:title, :price, :description, :capacity, :is_available, :has_captain, :license_plate, :photo, :address)
+    params[:spot].permit(
+      :title,
+      :price,
+      :description,
+      :capacity,
+      :is_available,
+      :has_captain,
+      :license_plate,
+      :photo,
+      :address
+    )
   end
+  # rubocop:enable Metrics/MethodLength
 
   def skip_pundit?
     false

@@ -1,8 +1,15 @@
-<%# TODO: Add the right url / path  %>
-<%= form_tag root_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Try skate spots in Berlin"
-  %>
+<% form_classes = controller_name == 'pages' && action_name == 'home' ? 'navbar-form hidden js-navbar-form' : 'navbar-form js-navbar-form' %>
+  <%= form_tag '/spots', method: :get, class: form_classes do %>
+    <div class="input-group d-flex">
+    <%= text_field_tag :query,
+      params[:query],
+      placeholder: "Try skate spots in Berlin",
+      class: "Input--search form-control js-nav-search"
+     %>
+    <div class="input-group-btn">
+      <%= button_tag :submit, class: "btn btn-primary" do %>
+        <i class="fa fa-search" aria-hidden="true"></i>
+      <% end %>
+    </div>
+  </div>
 <% end %>

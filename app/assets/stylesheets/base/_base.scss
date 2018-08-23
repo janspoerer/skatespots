@@ -4,7 +4,7 @@ body {
 
 ::selection {
   background-color: $brand-primary;
-  color: #fff;
+  color: $white;
 }
 
 // Sticky footer
@@ -17,11 +17,5 @@ body {
   &__content {
     margin-top: $navbar-height;
     flex: 1;
-  }
-}
-
-@each $color, $value in $colors-map {
-  .color-#{$color} {
-    color: $value;
   }
 }

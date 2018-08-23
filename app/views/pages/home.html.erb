@@ -1,4 +1,15 @@
-<!-- TODO render banner here once complete -->
-<%= render 'shared/banner' %>
+<%= render 'pages/home/banner' %>
+<%= render 'pages/home/featurette_1' %>
+<%= render 'pages/home/featurette_2' %>
+<%= render 'pages/home/recently_added' %>
+<%= render 'pages/home/cards' %>
+<%= render 'pages/home/cta' %>
+<%= render 'shared/footer' %>
+
+<%= content_for(:after_js) do %>
+  <%= javascript_pack_tag 'home' %>
+<% end %>
+
+<%#= render 'shared/banner' %>
 <%= render 'shared/search_input' %>
 <div id="rater"></div>

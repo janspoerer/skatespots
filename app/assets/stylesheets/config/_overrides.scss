@@ -1,0 +1,22 @@
+.form-control {
+  box-shadow: none;
+  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+  &:focus {
+    border-color: $brand-primary;
+    box-shadow: 0 0 0 4px rgba($brand-primary, 0.3);
+  }
+}
+
+.navbar-form {
+  padding: 0;
+
+  .input-group {
+    display: flex;
+  }
+}
+
+.icon-color {
+  color: $gray-text;
+}
+

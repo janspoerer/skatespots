@@ -25,9 +25,9 @@ PreCommit:
  #  enabled: true
  #  exclude:
  #      - 'bin/scss-lint'
- ScssLint:
-  enabled: true
-  flags: ['-c', '.scss-lint.yml']
+ # ScssLint:
+ #  enabled: true
+ #  flags: ['-c', '.scss-lint.yml']
  RuboCop:
    enabled: true
    on_warn: fail # Treat all warnings as failures

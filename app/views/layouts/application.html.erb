@@ -13,17 +13,18 @@
   <body class="Site">
 
     <%= render 'shared/navbar' %>
+
     <%= render 'shared/flashes' %>
 
     <main class="Site__content">
       <%= yield %>
     </main>
 
-    <%= render 'shared/footer' %>
-
     <%= javascript_include_tag 'application' %>
     <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>
     <%= javascript_pack_tag 'application' %>
+    <%= yield(:after_js) %>
     <%= javascript_pack_tag "map" %>
+
   </body>
 </html>
