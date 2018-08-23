@@ -4,7 +4,7 @@ class Spot < ApplicationRecord
   belongs_to :city
   has_many :reviews
 
-  validates :city, presence: true
+  validates :city, :address, :name, presence: true
 
   # TODO: Check if the address needs to be geocoded
   geocoded_by :address
