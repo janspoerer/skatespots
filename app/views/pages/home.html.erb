@@ -4,12 +4,9 @@
 <%= render 'pages/home/recently_added' %>
 <%= render 'pages/home/cards' %>
 <%= render 'pages/home/cta' %>
-<%= render 'shared/footer' %>
 
 <%= content_for(:after_js) do %>
   <%= javascript_pack_tag 'home' %>
 <% end %>
 
-<%#= render 'shared/banner' %>
 <%= render 'shared/search_input' %>
-
