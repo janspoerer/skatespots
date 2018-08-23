@@ -7,12 +7,16 @@
 }
 
 .main-card-image {
-  background-color: black;
+  background-color: white;
   margin: 0%;
 
 }
 
 .bg-skate {
   background-image: url("skating_california.jpg");
+  background-size: cover;
+}
+
+.bg-map {
   background-size: cover;
 }
