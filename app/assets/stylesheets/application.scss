@@ -2,20 +2,14 @@
 @charset "UTF-8";
 
 // Graphical variables
-@import "config/fonts";
-@import "config/colors";
-@import "config/bootstrap_variables";
-@import "config/base";
-@import "config/mixins";
+// @import "config/fonts";
+// @import "config/overrides";
 
 @import "abstracts/variables";
 @import "abstracts/mixins";
 @import "abstracts/bootstrap_variables";
 
 @import "vendor/index";
-
-@import "config/overrides";
-
 @import "base/base";
 @import "base/helpers";
 
