@@ -1,12 +1,14 @@
 <!-- Review content -->
 
 
-<div class="container">
+<div class="container-main-cards">
   <div class="flexbox">
     <div class="row">
 
       <div class="col-xs-12 col-md-4">
-        <div class="card"></div>
+        <div class="card bg-skate">
+          <%# image_tag "skating_california.jpg" %>
+        </div>
       </div>
 
       <!-- SPOT CARD (likes, faves, etc) + REVIEWS -->
@@ -36,7 +38,15 @@
       </div>
 
       <div class="col-xs-12 col-md-4">
-        <div class="card"></div>
+        <div class="card">
+          <div
+            id="map"
+            style="width: 100%;
+            height: 100%;"
+            data-markers="<%= @markers.to_json %>"
+          ></div>
+
+        </div>
       </div>
 
     </div>
