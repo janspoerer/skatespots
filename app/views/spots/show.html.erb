@@ -1,34 +1,42 @@
+<%= pluralize(@spot.likes.count, "like")%>
+
+<%= link_to "Upvote", upvote_like_path(@like), class: "" %>
+<%= link_to "Downvote", downvote_like_path(@like), class: "" %>
+
 <!-- Review content -->
 <div class="review-box" style="border-bottom: solid 1px rgb(220, 224, 223)">
   <% if @spot.reviews.present? %>
-  <ul>
-    <% @spot.reviews.each do |review| %>
-        <img src=@user.photo alt="" width="40" class="img-circle">
-      <li>
-        <% if review.user.first_name.blank?  %>
-          <p><strong>Anonymous</strong></p>
-        <% else %>
-          <p><strong><%= review.user.first_name %></strong></p>
-        <% end %>
-        <p>Comment: <%= review.content %></p>
-        <p>Post on: <%= review.created_at.strftime("%Y-%m-%d") %></p>
+    <ul>
+      <% @spot.reviews.each do |review| %>
+          <img src=@user.photo alt="" width="40" class="img-circle">
+          <li>
+          <% if review.user.first_name.blank?  %>
+            <p><strong>Anonymous</strong></p>
+          <% else %>
+            <p><strong><%= review.user.first_name %></strong></p>
+          <% end %>
+          <p>Comment: <%= review.content %></p>
+          <p>Post on: <%= review.created_at.strftime("%Y-%m-%d") %></p>
 
-        <div class="d-flex">
-          <div id="rater"></div>
+          <div class="d-flex">
+            <div id="rater"></div>
 
-         <!--  <% (1..5).to_a.each do |el| %>
-            <% if el <= review.rating %>
-              <i class="fas fa-star" style="color: #ffb400;"></i>
-            <% else %>
-              <i class="fas fa-star" style="color: #ccc"></i>
-            <% end %>
-          <% end %> -->
-         
-          </div>  
-        </div>
+           <!--  <% (1..5).to_a.each do |el| %>
+              <% if el <= review.rating %>
+                <i class="fas fa-star" style="color: #ffb400;"></i>
+              <% else %>
+                <i class="fas fa-star" style="color: #ccc"></i>
+              <% end %>
+            <% end %> -->
 
-          <%= link_to "Delete review", review_path(review), method: "delete", data: { confirm: 'Are you sure?' }  %>
-        
-<%= render 'reviews/form' %>
+            </div>
+          </div>
+          </li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
+
+<%= render 'reviews/form', spot: @spot, review: @review %>
 
 <%= render 'image' %>
