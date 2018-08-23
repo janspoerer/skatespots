@@ -25,6 +25,10 @@ class SpotsController < ApplicationController
 
   def show
     @review = Review.new
+    @markers = [{
+      lat: @spot.latitude,
+      lng: @spot.longitude
+    }]
   end
 
   def new

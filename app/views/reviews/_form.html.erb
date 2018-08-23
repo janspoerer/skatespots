@@ -1,11 +1,12 @@
 <div class="submit-review">
   <%= simple_form_for([spot, review], remote: true) do |f| %>
     <label for="review">How was your experience?</label><br>
-    <%= f.input :rating %>
+    <div id="rater"></div>
+    <%# f.input :rating %>
     <%# f.select :rating, options_for_select([["Please select one", ""], 5, 4, 3, 2, 1]) %>
 
-    <%= f.input :content, placeholder:"Seomthing about this spot . . ." %>
-    <%= f.submit "Submit your review", class: "btn btn-default" %> <br><br>
+    <%= f.input :content, placeholder:"Something about this spot . . ." %>
+    <%= f.submit "Submit", class: "btn btn-default" %> <br><br>
   <% end %>
 </div>
 
