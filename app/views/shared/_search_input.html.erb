@@ -1,0 +1,8 @@
+<%# TODO: Add the right url / path  %>
+<%= form_tag root_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Try skate spots in Berlin"
+  %>
+<% end %>

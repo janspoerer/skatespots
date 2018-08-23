@@ -4,39 +4,61 @@
 <%= link_to "Downvote", downvote_like_path(@like), class: "" %>
 
 <!-- Review content -->
-<div class="review-box" style="border-bottom: solid 1px rgb(220, 224, 223)">
-  <% if @spot.reviews.present? %>
-    <ul>
-      <% @spot.reviews.each do |review| %>
-          <img src=@user.photo alt="" width="40" class="img-circle">
-          <li>
-          <% if review.user.first_name.blank?  %>
-            <p><strong>Anonymous</strong></p>
-          <% else %>
-            <p><strong><%= review.user.first_name %></strong></p>
-          <% end %>
-          <p>Comment: <%= review.content %></p>
-          <p>Post on: <%= review.created_at.strftime("%Y-%m-%d") %></p>
+<div class="container-main-cards">
+  <div class="flexbox">
+    <div class="row">
 
-          <div class="d-flex">
-            <div id="rater"></div>
+      <div class="col-xs-12 col-md-4">
+        <div class="card bg-skate">
+          <%# image_tag "skating_california.jpg" %>
+        </div>
+      </div>
 
-           <!--  <% (1..5).to_a.each do |el| %>
-              <% if el <= review.rating %>
-                <i class="fas fa-star" style="color: #ffb400;"></i>
-              <% else %>
-                <i class="fas fa-star" style="color: #ccc"></i>
+      <!-- SPOT CARD (likes, faves, etc) + REVIEWS -->
+      <div class="col-xs-12 col-md-4">
+        <div class="card">
+        <div class="review-box" style="border-bottom: solid 1px rgb(220, 224, 223)">
+          <%= render 'reviews/form', spot: @spot, review: @review %>
+
+          <% if @spot.reviews.present? %>
+            <% @spot.reviews.each do |review| %>
+              <%#= @user.photo.present? ? photo_url = @user.photo : photo_url   %>
+              <%= image_tag(review.user.avatar_url, width: 40, crop: :fill, class: "img-circle") %>
+
+                <% if review.user.first_name.blank?  %>
+                  <p><strong>Anonymous</strong></p>
+                <% else %>
+                  <p><strong><%= review.user.first_name %></strong></p>
+                <% end %>
+
+                <p>Comment: <%= review.content %></p>
+                <p>Post on: <%= review.created_at.strftime("%Y-%m-%d") %></p>
+
               <% end %>
-            <% end %> -->
+          <% end %>
+        </div>
+        </div>
+      </div>
 
-            </div>
-          </div>
-          </li>
-      <% end %>
-    </ul>
-  <% end %>
+      <div class="col-xs-12 col-md-4">
+        <div class="card">
+          <div
+            class="bg-map"
+            id="map"
+            style="width: 100%;
+            height: 100%;"
+            data-markers="<%= @markers.to_json %>"
+          ></div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
 </div>
 
-<%= render 'reviews/form', spot: @spot, review: @review %>
 
-<%= render 'image' %>
+
+
+>>>>>>> master
+
