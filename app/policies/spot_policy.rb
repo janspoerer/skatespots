@@ -4,4 +4,12 @@ class SpotPolicy < ApplicationPolicy
       scope.all
     end
   end
+
+  def upvote?
+    user.present?
+  end
+
+  def downvote?
+    upvote?
+  end
 end

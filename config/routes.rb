@@ -9,4 +9,11 @@ Rails.application.routes.draw do
     resources :reviews, only: [:new, :create]
     resources :spot_photos, only: [:new, :create]
   end
+
+  resources :likes, only: [] do
+    member do
+      get 'upvote'
+      get 'downvote'
+    end
+  end
 end
