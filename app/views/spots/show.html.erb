@@ -26,16 +26,6 @@
               <i class="far fa-heart main-card-image-favorites-button"></i>
             </div>
           </div>
-          <div class="main-card-image-likes">
-            <div class="main-card-image-likes-buttons">
-
-
-            </div>
-            <div>
-
-            </div>
-          </div>
-          <div class="main-card-image-likes-background"></div>
         </div>
 
       </div>
@@ -44,17 +34,20 @@
       <div class="col-xs-12 col-md-4">
 
         <div class="card scrollable">
-        <div class="review-box" style="border-bottom: solid 1px rgb(220, 224, 223)">
-          <%= render 'spot-card', spot: @spot %>
-          <br>
-          <%= render 'reviews/form', spot: @spot, review: @review %>
+          <div class="review-box" style="border-bottom: solid 1px rgb(220, 224, 223)">
+            <%= render 'spot-card', spot: @spot %>
+            <br>
+            <%= render 'reviews/form', spot: @spot, review: @review %>
 
-          <% if @spot.reviews.present? %>
-            <% @spot.reviews.each do |review| %>
-              <%#= @user.photo.present? ? photo_url = @user.photo : photo_url   %>
-              <%= image_tag(review.user.avatar_url, width: 40, crop: :fill, class: "img-circle") %>
-          <% end %>
-          <% end %>
+            <% if @spot.reviews.present? %>
+              <% @spot.reviews.each do |review| %>
+                <%#= @user.photo.present? ? photo_url = @user.photo : photo_url   %>
+                <%= image_tag(review.user.avatar_url, width: 40, crop: :fill, class: "img-circle") %>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+
         <div class="card">
           <div class="review-box" style="border-bottom: solid 1px rgb(220, 224, 223)">
             <%= render 'spot-card', spot: @spot %>
