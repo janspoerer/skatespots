@@ -51,7 +51,8 @@
             <% @spot.reviews.each do |review| %>
               <%#= @user.photo.present? ? photo_url = @user.photo : photo_url   %>
               <%= image_tag(review.user.avatar_url, width: 40, crop: :fill, class: "img-circle") %>
-
+          <% end %>
+          <% end %>
         <div class="card">
           <div class="review-box" style="border-bottom: solid 1px rgb(220, 224, 223)">
             <%= render 'spot-card', spot: @spot %>
