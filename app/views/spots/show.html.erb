@@ -6,9 +6,10 @@
     <div class="row">
 
       <div class="col-xs-12 col-md-4">
-        <div class="card bg-skate">
-          <%# image_tag "skating_california.jpg" %>
-        </div>
+        <!-- <div class="card bg-skate"> -->
+          <%# cl_image_tag("spots/skating_california", ") %>
+          <%= cl_image_tag @spot.spot_photos.first.photo, crop: :fit, class: "card bg-skate" %>
+        <!-- </div> -->
       </div>
 
       <!-- SPOT CARD (likes, faves, etc) + REVIEWS -->

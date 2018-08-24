@@ -13,8 +13,11 @@
 }
 
 .bg-skate {
-  background-image: url("skating_california.jpg");
-  background-size: cover;
+  // background-image: url("skating_california.jpg");
+  // background-size: cover;
+  width: 100%;
+  padding: 0px !important;
+  object-fit: cover;
 }
 
 #map {
