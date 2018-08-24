@@ -1,16 +1,15 @@
 <div class="user-profile">
 
   <div class="user-cover-photo">
-    
+
   </div>
   <!-- <img align="left" class="user-cover-photo" src="https://www.wallpaperup.com/uploads/wallpapers/2014/03/29/313721/acd564acb7e9aacb1daa22acc7b42685.jpg" class="img-responsive" alt="Profile image"/> -->
-
   <div class="user-container">
 
     <div class="col-md-3">
       <div class="user-details-box" style="border-bottom: solid 1px rgb(220, 224, 223)">
         <div class="user-image">
-          <%= cl_image_tag @user.photo, crop: :fill, class:"user-image-profile"%>
+          <%= cl_image_tag @user.photo.url, crop: :fill, class:"user-image-profile"%>
         </div>
         <div class="user-info">
           <br>
@@ -25,7 +24,7 @@
     <div class="col-md-8">
       <div class="user-body">
         <h2><strong><%= @user.first_name %></strong></h2>
-        <p><i class="fas fa-home"></i> Lives in <%= @user.city.name %></p>
+        <p><i class="fas fa-home"></i> Lives in <%= @user.city&.name %></p>
       </div>
       <h4 style="margin: 20px"><strong>Welcome to my Favorites home</strong></h4>
 

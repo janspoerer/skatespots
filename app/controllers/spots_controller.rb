@@ -45,14 +45,16 @@ class SpotsController < ApplicationController
 
   def new
     @spot = Spot.new
+    # @spot_photo = SpotPhoto.new
     authorize @spot
   end
 
   def create
     @spot = Spot.new(spot_params)
-    @spot.user = current_user
+    # @spot_photo = SpotPhoto.new(spot_photo_params, spot: @spot)
+    # @spot_photo.save
     authorize @spot
-    if @spot.save
+    if @spot.save!
       redirect_to spot_path(@spot)
     else
       render :new
@@ -87,17 +89,13 @@ class SpotsController < ApplicationController
 
   # rubocop:disable Metrics/MethodLength
   def spot_params
-    params[:spot].permit(
-      :name,
-      :description,
-      :address,
-      :city,
-      :category,
-      :photo,
-      :photo_cache
-    )
+    params[:spot].permit(:name, :description, :address, :city_id, :category,  {photos: []})
   end
   # rubocop:enable Metrics/MethodLength
+
+  # def spot_photo_params
+  #   params.permit(:photo, :user_id, :spot_id)
+  # end
 
   def skip_pundit?
     false
