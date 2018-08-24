@@ -22,6 +22,8 @@
         <%= link_to "Explore", spots_path, class: "Navbar__link-item" %>
 
         <!-- TODO: need to update link to redirect to user's favorites -->
+        <%= link_to "favorites", spots_path, class: "Navbar__link-item" %>
+        
         <%= link_to "Profile", profile_path(current_user), class: "Navbar__link-item" %>
 
         <!-- TODO: add message system later -->

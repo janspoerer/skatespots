@@ -2,7 +2,6 @@
   margin: 10px 50px
 }
 
-
 .user-review-avatar .user-review-name {
   display: flex;
   align-items: center;
@@ -12,4 +11,8 @@
 .user-review-content {
   flex: 1 0;
   margin-left: 5px;
+}
+
+.spot-img {
+  background-image: cover;
 }

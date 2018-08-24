@@ -4,16 +4,7 @@
       <% if spot.photos.present? %>
         <% spot.photos.each do |photo| %>
           <%= cl_image_tag photo.url %>
-
         <% end %>
-      <!-- <%# else %>
-        <img
-          src='<%#= "#{photo(:placeholder)}" %>'
-          data-lowsrc='<%#= "#{photo(:placeholder)}" %>'
-          data-src='<%#= "#{photo}" %>'
-          alt='<%#= "#{spot.name}" %>'
-          class="lazyload"
-          /> -->
       <% end %>
     </figure>
 
