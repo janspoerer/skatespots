@@ -1,4 +1,4 @@
-<%= simple_form_for [@spot, @spot_photo] do |f| %>
+<%= simple_form_for [@spot] do |f| %>
   <div class="form-group">
     <%= f.label :name %>
     <%= f.text_field :name, class: 'form-control' %>
@@ -28,7 +28,7 @@
   <div class="form-group">
     <%#= f.input :spot_photo.photo %>
     <%#= f.input :photo_cache, as: :hidden, class: 'form-control'  %>
-    <%= form.file_field :photos, multiple: true, class: 'form-control' %>
+    <%= f.file_field :photos, multiple: true %>
   </div>
 
   <%= f.submit class: 'btn btn-primary' %>

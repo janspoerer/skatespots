@@ -1,16 +1,17 @@
 <%= link_to spot_path(spot), class: "Card" do %>
   <div class="Card__inner">
     <figure class="Card__img">
-      <% if spot.spot_photos.present? %>
-        <% spot.spot_photos.each do |spot_photo| %>
-          <%= spot_photo.photo %>
+      <% if spot.photos.present? %>
+        <% spot.photos.each do |photo| %>
+          <%= cl_image_tag photo.url %>
+
         <% end %>
-      <!-- <#% else %>
+      <!-- <%# else %>
         <img
-          src='<%= "#{spot_photo(:placeholder)}" %>'
-          data-lowsrc='<%= "#{spot_photo(:placeholder)}" %>'
-          data-src='<%= "#{spot_photo}" %>'
-          alt='<%= "#{spot.name}" %>'
+          src='<%#= "#{photo(:placeholder)}" %>'
+          data-lowsrc='<%#= "#{photo(:placeholder)}" %>'
+          data-src='<%#= "#{photo}" %>'
+          alt='<%#= "#{spot.name}" %>'
           class="lazyload"
           /> -->
       <% end %>
