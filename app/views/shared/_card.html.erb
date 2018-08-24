@@ -23,7 +23,7 @@
         <div class="Card__rating">
             <div class="d-flex">
               <% (1..5).to_a.each do |el| %>
-                <% if not spot.reviews.blank? %>
+                <% if not spot.reviews&.blank? %>
                   <% if el <= spot.average_rating %>
                     <i class="fas fa-star" style="color: #ffb400;"></i>
                   <% else %>

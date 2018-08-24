@@ -2,11 +2,11 @@
   <div class="col-md-9">
     <div class="profile-body">
       <%# FORM FOR UPDATING PROFILE  %>
-      <%= simple_form_for @user, url: profile_path(@user), html: { method: :patch } do |f| %>
+      <%= simple_form_for[@user, @city], url: profile_path(@user), html: { method: :patch } do |f| %>
         <%= f.error_notification %>
         <%= f.input :first_name%>
         <%= f.input :last_name %>
-        <%= f.input :city %>
+        <%= f.input :city, collection: [:Berlin, :Budapest, :Munich, :Hamburg, :Cologne, :Frankfurt, :Sylt, :Dusseldor, :Stuttgart], include_blank: "- Please select one -" %>
         <p class="small">Your public profile only shows your first name.</p>
         <%= f.input :email %>
         <p class="small">We won’t share your private email address with other Skaters.</p>
