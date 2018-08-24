@@ -6,6 +6,7 @@ class Spot < ApplicationRecord
   has_many :likes
   has_many :favorites
   has_many :reviews
+  has_many :spot_photos
 
   validates :address, :name, presence: true
 

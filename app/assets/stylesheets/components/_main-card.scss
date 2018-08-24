@@ -1,5 +1,5 @@
 .card {
-    height: 900px;
+    height: 80vh;
     padding: 40px;
     background-color: white;
     border-radius: 4px;
@@ -12,11 +12,16 @@
 
 }
 
+.scrollable {
+  overflow: auto;
+}
+
 .bg-skate {
-  background-image: url("skating_california.jpg");
-  background-size: cover;
-  position: relative;
-  padding: 5px;
+  // background-image: url("skating_california.jpg");
+  // background-size: cover;
+  width: 100%;
+  padding: 0px !important;
+  object-fit: cover;
 }
 
 #map {
