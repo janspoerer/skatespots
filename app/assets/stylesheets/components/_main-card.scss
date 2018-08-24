@@ -15,8 +15,75 @@
 .bg-skate {
   background-image: url("skating_california.jpg");
   background-size: cover;
+  position: relative;
+  padding: 5px;
 }
 
 .bg-map {
   background-size: cover;
+}
+
+.main-card-image-uploadedby-favorites{
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-card-image-favorites {
+  display: flex;
+  position: relative;
+  right: 2px;
+  justify-content: flex-end;
+}
+
+.main-card-image-favorites-text{
+  font-size: 16px;
+  text-align: right;
+  margin: 2px;
+}
+
+.main-card-image-favorites-button{
+  margin: 2px;
+}
+
+.main-card-image-uploadedby {
+}
+
+.main-card-image-uploadedby-text {
+  font-size: 16px;
+  margin: 2px;
+}
+
+.main-card-image-likes{
+    margin: auto;
+    width: 50;
+    position: relative;
+}
+
+.main-card-image-likes-text{
+  text-align: center;
+  font-size: 16px;
+  margin: 2px;
+}
+
+.main-card-image-likes-buttons{
+  margin: auto;
+  width: 50%;
+  text-align: center;
+}
+
+.main-card-image-likes-button{
+  font-size: 16px;
+  margin: 2px;
+}
+
+.main-card-image-like::after {
+  content: "";
+  background-image: linear-gradient($secondary);
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
 }

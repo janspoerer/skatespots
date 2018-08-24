@@ -30,6 +30,11 @@ class SpotsController < ApplicationController
     else
       @like = Like.where(spot_id: @spot.id).first
     end
+    # Like counter below
+    @no_of_likes = 0
+    @spot.likes.each do |like|
+      @no_of_likes += like.value
+    end
   end
 
   def new
