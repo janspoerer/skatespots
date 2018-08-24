@@ -7,11 +7,12 @@ class Spot < ApplicationRecord
   has_many :favorites
   has_many :reviews
 
-  validates :city, presence: true
+  validates :city, :address, :name, presence: true
 
   # TODO: Check if the address needs to be geocoded
-  # geocoded_by :address
-  # after_validation :geocode, if: :will_save_change_to_address?
+  geocoded_by :address
+  reverse_geocoded_by :latitude, :longitude
+  after_validation :geocode, if: :will_save_change_to_address?
 
   include PgSearch
   pg_search_scope :search_by_city_and_name,
@@ -23,5 +24,9 @@ class Spot < ApplicationRecord
   # rubocop:enable Layout/AlignParameters
 
   mount_uploader :photo, PhotoUploader
+
+  def average_rating
+    self.reviews.average('rating')
+  end
 
 end

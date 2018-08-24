@@ -3,7 +3,7 @@
     padding: 40px;
     background-color: white;
     border-radius: 4px;
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.1);
 }
 
 .main-card-image {
@@ -19,8 +19,14 @@
   padding: 5px;
 }
 
-.bg-map {
-  background-size: cover;
+#map {
+  height : 100%;
+  width : 100%;
+  z-index : 200;
+}
+
+.no-padding {
+  padding: 0px;
 }
 
 .main-card-image-uploadedby-favorites{

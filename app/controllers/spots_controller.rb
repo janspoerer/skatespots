@@ -1,6 +1,8 @@
+# froze_string_literal: true
+
 class SpotsController < ApplicationController
-  skip_before_action :authenticate_user!, only: %i(index show)
-  before_action :set_spot, only: %i(show edit update destroy)
+  skip_before_action :authenticate_user!, only: %i[index show]
+  before_action :set_spot, only: %i[show edit update destroy]
 
   include Pundit
   after_action :verify_authorized, except: :index, unless: :skip_pundit?
@@ -35,6 +37,10 @@ class SpotsController < ApplicationController
     @spot.likes.each do |like|
       @no_of_likes += like.value
     end
+    @markers = [{
+      lat: @spot.latitude,
+      lng: @spot.longitude
+    }]
   end
 
   def new
@@ -79,9 +85,19 @@ class SpotsController < ApplicationController
     authorize @spot
   end
 
+  # rubocop:disable Metrics/MethodLength
   def spot_params
-    params[:spot].permit(:title, :price, :description, :capacity, :is_available, :has_captain, :license_plate, :photo, :address)
+    params[:spot].permit(
+      :name,
+      :description,
+      :address,
+      :city,
+      :category,
+      :photo,
+      :photo_cache
+    )
   end
+  # rubocop:enable Metrics/MethodLength
 
   def skip_pundit?
     false

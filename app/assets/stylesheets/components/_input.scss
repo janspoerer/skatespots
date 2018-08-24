@@ -16,7 +16,8 @@
   }
 }
 
-/* Change Autocomplete styles in Chrome */
+// Change Autocomplete styles in Chrome
+// scsslint:disable VendorPrefix
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,

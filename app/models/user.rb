@@ -9,6 +9,6 @@ class User < ApplicationRecord
   mount_uploader :photo, PhotoUploader
 
   def avatar_url
-    photo_url || "https://www.synbio.cam.ac.uk/images/avatar-generic.jpg/image"
+    photo_url || "https://res.cloudinary.com/hienn/image/upload/v1535036453/logo_Anonymous.png"
   end
 end

@@ -1,0 +1,15 @@
+.spot-flexbox {
+  margin: 10px 50px
+}
+
+
+.user-review-avatar .user-review-name {
+  display: flex;
+  align-items: center;
+  flex-direction: row
+}
+
+.user-review-content {
+  flex: 1 0;
+  margin-left: 5px;
+}
