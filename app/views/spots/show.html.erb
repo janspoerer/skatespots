@@ -1,10 +1,9 @@
 <!-- Review content -->
-
-
 <div class="container-main-cards">
   <div class="spot-flexbox">
     <div class="row">
 
+      <!-- SPOT IMAGE card -->
       <div class="col-xs-12 col-md-4">
         <div class="card bg-skate">
           <%# image_tag "skating_california.jpg" %>
@@ -14,16 +13,15 @@
       <!-- SPOT CARD (likes, faves, etc) + REVIEWS -->
       <div class="col-xs-12 col-md-4">
         <div class="card">
-        <div class="review-box" style="border-bottom: solid 1px rgb(220, 224, 223)">
-          <%= render 'spot-card', spot: @spot %>
-          <br>
-          <%= render 'reviews/form', spot: @spot, review: @review %>
+          <div class="review-box" style="border-bottom: solid 1px rgb(220, 224, 223)">
+            <%= render 'spot-card', spot: @spot %>
+            <br>
+            <%= render 'reviews/form', spot: @spot, review: @review %>
 
-          <% if @spot.reviews.present? %>
-            <% @spot.reviews.each do |review| %>
-              <%#= @user.photo.present? ? photo_url = @user.photo : photo_url   %>
-              <%= image_tag(review.user.avatar_url, width: 40, crop: :fill, class: "img-circle") %>
-
+            <% if @spot.reviews.present? %>
+              <% @spot.reviews.each do |review| %>
+                <%#= @user.photo.present? ? photo_url = @user.photo : photo_url   %>
+                <%= image_tag(review.user.avatar_url, width: 40, height: 40, crop: :fill, class: "img-circle") %>
                 <% if review.user.first_name.blank?  %>
                   <p><strong>Anonymous</strong></p>
                 <% else %>
@@ -31,29 +29,20 @@
                 <% end %>
 
                 <p>"<%= review.content %>"</p>
-                <p>Written on <%= review.created_at.strftime("%Y-%m-%d") %></p>
-
+                <p class="small" style="font-style: italic; border-bottom: solid 1px rgb(190, 189, 186); padding-top: 5px">Posted on <%= review.created_at.strftime("%Y-%m-%d") %></p>
               <% end %>
-          <% end %>
-        </div>
+            <% end %>
+          </div>
         </div>
       </div>
 
+      <!--  SPOT MAP -->
       <div class="col-xs-12 col-md-4">
         <div class="card bg-map no-padding">
-          <div
-            id="map"
-            data-markers="<%= @markers.to_json %>"
-          ></div>
-
+          <div id="map" data-markers="<%= @markers.to_json %>"></div>
         </div>
       </div>
 
     </div>
   </div>
 </div>
-
-
-
-
-
