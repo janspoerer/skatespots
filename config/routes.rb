@@ -7,7 +7,14 @@ Rails.application.routes.draw do
   get 'dashboard', to: 'dashboard#index'
   resources :profiles, only: [:update, :show]
 
-  resources :spots, only: [ :index, :show ] do
+  resources :spots, only: [:index, :show] do
     resources :reviews, only: :create
+  end
+
+  resources :likes, only: [] do
+    member do
+      get 'upvote'
+      get 'downvote'
+    end
   end
 end

@@ -1,10 +1,9 @@
 import places from "places.js";
 
-function cityAutocomplete() {
-  const searchField = document.querySelector('#query');
-
+const cityAutocomplete = () => {
+  const searchField = document.querySelector('.js-nav-search');
   if (searchField) {
-    const placesAutocomplete = places({
+    places({
       container: searchField,
       type: 'city',
       aroundLatLngViaIP: true,

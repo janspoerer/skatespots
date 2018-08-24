@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 2018_08_23_102336) do
     t.bigint "spot_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "value"
     t.index ["spot_id"], name: "index_likes_on_spot_id"
     t.index ["user_id"], name: "index_likes_on_user_id"
   end

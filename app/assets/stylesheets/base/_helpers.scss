@@ -1,0 +1,13 @@
+@each $color, $value in $colors-map {
+  .color-#{$color} {
+    color: $value;
+  }
+}
+
+.d-flex {
+  display: flex;
+}
+
+.align-center {
+  align-items: center;
+}

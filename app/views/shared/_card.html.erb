@@ -1,0 +1,36 @@
+<%= link_to spot_path(spot), class: "Card" do %>
+  <div class="Card__inner">
+    <figure class="Card__img">
+      <% if spot&.photo&.present? %>
+        <img
+          src='<%= "#{boat.photo_url(:placeholder)}" %>'
+          data-lowsrc='<%= "#{boat.photo_url(:placeholder)}" %>'
+          data-src='<%= "#{boat.photo}" %>'
+          alt='<%= "#{boat.title}" %>'
+          class="lazyload"
+          />
+      <% end %>
+    </figure>
+
+    <div class="Card__body">
+      <h3 class="Card__title"><%= spot.name %></h3>
+      <div class="Card__meta">
+        <div class="Card__rating">
+            <div class="d-flex">
+              <% (1..5).to_a.each do |el| %>
+                <% if not spot.reviews.blank? %>
+                  <% if el <= spot.average_rating %>
+                    <i class="fas fa-star" style="color: #ffb400;"></i>
+                  <% else %>
+                    <i class="fas fa-star" style="color: #ccc"></i>
+                  <% end %>
+                <% end %>
+              <% end %>
+            </div>
+          </span>
+        </div>
+          <i class="fas fa-heart color-grey-text"></i>
+      </div>
+    </div>
+  </div>
+<% end %>

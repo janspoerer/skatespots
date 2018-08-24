@@ -2,10 +2,13 @@
 
 class Spot < ApplicationRecord
   belongs_to :city
+
+  has_many :likes
+  has_many :favorites
   has_many :reviews
   has_many :spot_photos
 
-  validates :city, presence: true
+  validates :city, :address, :name, presence: true
 
   # TODO: Check if the address needs to be geocoded
   geocoded_by :address
@@ -22,5 +25,9 @@ class Spot < ApplicationRecord
   # rubocop:enable Layout/AlignParameters
 
   mount_uploader :photo, PhotoUploader
+
+  def average_rating
+    self.reviews.average('rating')
+  end
 
 end

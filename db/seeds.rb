@@ -7,7 +7,7 @@ Spot.delete_all
 User.delete_all
 City.delete_all
 
-puts 'Creating city seed...'
+puts 'Creating city seeds'
 city1 = City.create!(
   name: "Frankfurt"
 )
@@ -34,7 +34,7 @@ city8 = City.create!(
   name: "Sylt"
 )
 
-puts 'Creating user seeds...'
+puts 'Creating user seeds'
 user1 = User.create!(
   email: "malcolm@gmail.com",
   first_name: "Malcolm",
@@ -85,8 +85,8 @@ user5 = User.create!(
   remote_photo_url: "https://res.cloudinary.com/hienn/image/upload/v1535105239/avatars/avatar_JanO.jpg"
 )
 
+puts 'Creating spot seeds'
 
-puts 'Creating spot seeds...'
 spot1 = Spot.create!(
   name: "Buda Strasse",
   description: "Central skatepark for pro",
@@ -231,7 +231,7 @@ spot_photo = SpotPhoto.create!(
   )
 
 
-puts 'Creating review seed....'
+puts 'Creating review seeds'
 
 review1 = Review.create!(
   rating: 5,
@@ -331,7 +331,9 @@ review14 = Review.create!(
   spot: spot10
 )
 
-puts "Creating favorite seed"
+
+puts "Creating favorite seeds"
+
 favorite1 = Favorite.create!(
   user: user1,
   spot: spot1
@@ -339,6 +341,24 @@ favorite1 = Favorite.create!(
 favorite2 = Favorite.create!(
   user: user1,
   spot: spot2
+)
+
+puts "Creating like seeds"
+like1 = Like.create!(
+  user: user1,
+  spot: spot1,
+  value: 1
+)
+like2 = Like.create!(
+  user: user1,
+  spot: spot2,
+  value: -1
+)
+
+like3 = Like.create!(
+  user: user2,
+  spot: spot2,
+  value: 0
 )
 
 puts 'Seed: Finished seeding!'
