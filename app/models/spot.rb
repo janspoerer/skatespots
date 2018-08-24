@@ -2,6 +2,9 @@
 
 class Spot < ApplicationRecord
   belongs_to :city
+
+  has_many :likes
+  has_many :favorites
   has_many :reviews
 
   validates :city, :address, :name, presence: true

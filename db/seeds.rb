@@ -4,7 +4,7 @@ Review.delete_all
 Spot.delete_all
 User.delete_all
 
-puts 'Creating city seed...'
+puts 'Creating city seeds'
 city1 = City.create!(
   name: "Budapest"
 )
@@ -13,7 +13,7 @@ city2 = City.create!(
   name: "Berlin"
 )
 
-puts 'Creating user seeds...'
+puts 'Creating user seeds'
 user1 = User.create!(
   email: "malcolm@gmail.com",
   first_name: "Malcolm",
@@ -50,7 +50,7 @@ user4 = User.create!(
   city: city2
 )
 
-puts 'Creating spot seeds...'
+puts 'Creating spot seeds'
 spot1 = Spot.create!(
   name: "Budapest Skatepark",
   description: "Central skatepark for pro",
@@ -65,7 +65,7 @@ spot2 = Spot.create!(
   city: city2
 )
 
-puts 'Creating review seed....'
+puts 'Creating review seeds'
 
 review1 = Review.create!(
   rating: 5,
@@ -81,7 +81,7 @@ review2 = Review.create!(
   spot: spot2
 )
 
-puts "Creating favorite seed"
+puts "Creating favorite seeds"
 favorite1 = Favorite.create!(
   user: user1,
   spot: spot1
@@ -89,6 +89,24 @@ favorite1 = Favorite.create!(
 favorite2 = Favorite.create!(
   user: user1,
   spot: spot2
+)
+
+puts "Creating like seeds"
+like1 = Like.create!(
+  user: user1,
+  spot: spot1,
+  value: 1
+)
+like2 = Like.create!(
+  user: user1,
+  spot: spot2,
+  value: -1
+)
+
+like3 = Like.create!(
+  user: user2,
+  spot: spot2,
+  value: 0
 )
 
 puts 'Seed: Finished seeding!'
