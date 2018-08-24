@@ -1,5 +1,5 @@
 .card {
-    height: 900px;
+    height: 80vh;
     padding: 40px;
     background-color: white;
     border-radius: 4px;
@@ -10,6 +10,10 @@
   background-color: white;
   margin: 0%;
 
+}
+
+.scrollable {
+  overflow: auto;
 }
 
 .bg-skate {
