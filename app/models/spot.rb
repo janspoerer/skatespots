@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
 class Spot < ApplicationRecord
-  belongs_to :city
+  belongs_to :city, optional: true
   has_many :reviews
 
-  validates :city, :address, :name, presence: true
+  validates :address, :name, presence: true
 
   # TODO: Check if the address needs to be geocoded
   geocoded_by :address
@@ -20,7 +20,8 @@ class Spot < ApplicationRecord
     }
   # rubocop:enable Layout/AlignParameters
 
-  mount_uploader :photo, PhotoUploader
+  # Upload multiple photos
+  mount_uploaders :photos, PhotoUploader
 
   def average_rating
     self.reviews.average('rating')
