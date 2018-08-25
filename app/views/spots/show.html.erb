@@ -6,13 +6,7 @@
       <!-- SPOT IMAGE card -->
       <div class="col-xs-12 col-md-4">
         <div class="card bg-skate">
-          <figure class="Card__img">
-            <% if @spot.photos.present? %>
-              <% @spot.photos.each do |photo| %>
-                <%= cl_image_tag photo.url %>
-              <% end %>
-            <% end %>
-          </figure>
+          <%= render 'image' %>
         </div>
       </div>
 
