@@ -27,8 +27,8 @@ class SpotsController < ApplicationController
 
   def show
     @review = Review.new
-    if Like.where(spot_id: @spot.id) == []
-      @like = Like.new(spot: @spot, value: 0)
+    if Like.where(spot_id: @spot.id, user_id: current_user.id) == []
+      @like = Like.create(spot: @spot, user: current_user, value: 0)
     else
       @like = Like.where(spot_id: @spot.id).first
     end

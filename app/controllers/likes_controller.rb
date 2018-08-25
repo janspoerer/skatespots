@@ -1,8 +1,8 @@
 class LikesController < ApplicationController
   before_action :authenticate_user!
 
-  before_action :set_spot, only: %i(calculate_number_of_likes upvote downvote)
   before_action :set_like, only: %i(calculate_number_of_likes upvote downvote)
+  before_action :set_spot, only: %i(calculate_number_of_likes upvote downvote)
 
   include Pundit
   after_action :verify_authorized, except: %i(number_of_likes set_spot), unless: :skip_pundit?
@@ -34,7 +34,7 @@ class LikesController < ApplicationController
   end
 
   def set_spot
-    @spot = Spot.find(params[:id])
+    @spot = @like.spot
   end
 
   def vote_value
