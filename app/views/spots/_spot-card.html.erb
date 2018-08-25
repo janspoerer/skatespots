@@ -1,16 +1,17 @@
 <div class="spot-title">
 
   <div class="row">
-    <div class="col-md-9">
+    <div class="col-md-8">
       <h4><strong><%= @spot.name %></strong></h4>
     </div>
 
-    <div class="col-md-3">
+    <div class="col-md-4">
       <div class="main-card-image-uploadedby-favorites">
         <div class="main-card-image-favorites">
           <% if user_signed_in? %>
-            <p class="small btn"><%= link_to "<i class='fas fa-thumbs-up'></i>".html_safe, upvote_like_path(@spot.id) %> </p>
-            <p class="small btn"><%= link_to "<i class='fas fa-thumbs-down'></i>".html_safe, downvote_like_path(@spot.id) %></p>
+            <p><%= @no_of_likes %></p>
+            <p class="small btn main-card-image-likes-button"><%= link_to "<i class='fas fa-thumbs-up'></i>".html_safe, upvote_like_path(@like) %> </p>
+            <p class="small btn main-card-image-likes-button"><%= link_to "<i class='fas fa-thumbs-down'></i>".html_safe, downvote_like_path(@like) %></p>
             <br><br>
           <% end %>
         </div>

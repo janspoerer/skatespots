@@ -1,6 +1,6 @@
 .card {
     height: 80vh;
-    padding: 40px;
+    padding: 30px;
     background-color: white;
     border-radius: 4px;
     box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.1);
@@ -85,6 +85,7 @@
 .main-card-image-likes-button{
   font-size: 16px;
   margin: 2px;
+  padding: 0px;
 }
 
 .main-card-image-like::after {
