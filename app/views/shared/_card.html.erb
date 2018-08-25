@@ -12,20 +12,15 @@
       <h3 class="Card__title"><%= spot.name %></h3>
       <div class="Card__meta">
         <div class="Card__rating">
-            <div class="d-flex">
-              <%# (1..5).to_a.each do |el| %>
-                <%# if not spot.reviews&.blank? %>
-                  <%# if el <= spot.average_rating %>
-                    <i class="fas fa-star" style="color: #ffb400;"></i>
-                  <%# else %>
-                    <i class="fas fa-star" style="color: #ccc"></i>
-                  <%# end %>
-                <%# end %>
-              <%# end %>
-            </div>
-          </span>
+          <div class="d-flex">
+            <% if spot.reviews&.blank? %>
+              <p class="small">0 <i class="fas fa-star" style="color: #ccc"> </i></p>
+            <% else %>
+              <% spot.average_rating %><i class="fas fa-star" style="color: #ffb400;"></i>
+            <% end %>
+            <p class="small"> | <%= pluralize(@number_of_likes, "")%> <i class="far fa-heart"></i></p>
+          </div>
         </div>
-          <i class="fas fa-heart color-grey-text"></i>
       </div>
     </div>
   </div>

@@ -12,8 +12,16 @@ Rails.application.routes.draw do
 
   resources :likes, only: [] do
     member do
-      get 'upvote'
-      get 'downvote'
+      get 'upvote', to: "likes#upvote"
+      get 'downvote', to: "likes#downvote"
     end
   end
 end
+
+
+# resources :contents do
+#     member do
+#         put "like", to: "contents#like"
+#         put "dislike", to: "contents#dislike"
+#     end
+# end
