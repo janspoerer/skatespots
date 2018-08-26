@@ -15,21 +15,8 @@
         <div class="card scrollable">
           <div class="review-box">
             <%= render 'spot-card', spot: @spot %><br>
+            <%= render 'reviews/review_card', spot: @spot, review: @review %>
             <%= render 'reviews/form', spot: @spot, review: @review %>
-
-            <% if @spot.reviews.present? %>
-              <% @spot.reviews.each do |review| %>
-                <%= image_tag(review.user.avatar_url, width: 40, height: 40, crop: :fill, class: "img-circle") %>
-                <% if review.user.first_name.blank?  %>
-                  <p><strong>Anonymous</strong></p>
-                <% else %>
-                  <p><strong><%= review.user.first_name %></strong></p>
-                <% end %>
-
-                <p>"<%= review.content %>"</p>
-                <p class="small" style="font-style: italic; border-bottom: solid 1px rgb(190, 189, 186); padding-top: 5px">Posted on <%= review.created_at.strftime("%Y-%m-%d") %></p>
-              <% end %>
-            <% end %>
           </div>
         </div>
       </div>

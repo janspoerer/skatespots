@@ -1,36 +1,29 @@
 <div class="spot-title">
 
   <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-9">
       <h4><strong><%= @spot.name %></strong></h4>
     </div>
 
-    <div class="col-md-4">
-      <div class="main-card-image-uploadedby-favorites">
-        <div class="main-card-image-favorites">
-          <% if user_signed_in? %>
-            <p><%= @no_of_likes %></p>
-            <p class="small btn main-card-image-likes-button"><%= link_to "<i class='fas fa-thumbs-up'></i>".html_safe, upvote_like_path(@like) %> </p>
-            <p class="small btn main-card-image-likes-button"><%= link_to "<i class='fas fa-thumbs-down'></i>".html_safe, downvote_like_path(@like) %></p>
-            <br><br>
-          <% end %>
-        </div>
-      </div>
+    <div class="col-md-3">
+      <% if user_signed_in? %>
+        <p class="small btn main-card-image-likes-button"><%= link_to "<i class='far fa-thumbs-up'></i>".html_safe, upvote_like_path(@like) %> Like</p>
+        <!-- <p class="small btn main-card-image-likes-button"><%#= link_to "<i class='fas fa-thumbs-down'></i>".html_safe, downvote_like_path(@like) %></p> -->
+      <% end %>
     </div>
   </div>
 
   <div class="d-flex">
     <% if spot.reviews&.blank? %>
-      <p class="small">0 <i class="fas fa-star" style="color: #ccc"> </i></p>
+      <p class="small"> 0 <i class="fas fa-star" style="color: #ccc"> </i></p>
     <% else %>
-        <% @spot.average_rating %><i class="fas fa-star" style="color: #ffb400;"></i>
+      <% @spot.average_rating %><i class="fas fa-star" style="color: #ffb400;"></i>
     <% end %>
-    <p class="small"> | <%= pluralize(@number_of_likes, "")%> <i class="far fa-heart"></i></p>
+    <p class="small"> | <%= @no_of_likes %> <i class="fas fa-heart" style="color: rgb(214, 59, 55);"></i></p>
   </div>
-
-  <p><%= @spot.address %> <%= @spot.city %></p>
+  <p class="small"><strong>Address: </strong><%= @spot.address %> <%= @spot.city %></p>
 </div>
 
 <div class="spot-details" style="border-bottom: solid 1px rgb(190, 189, 186); padding-top: 5px">
-  <p><strong>Description: </strong><%= @spot.description %></p>
+  <p class="small"><strong>Description: </strong><%= @spot.description %></p>
 </div>

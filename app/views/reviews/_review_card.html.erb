@@ -1,13 +1,35 @@
-<h2>
-  <%= pluralize @spot.reviews.size, "review" %>
-</h2>
-
+<!-- Review header -->
 <div id="reviews">
-  <% if @spot.reviews.blank? %>
+  <% if @spot.reviews&.blank? %>
     Leave a review for <%= @spot.name %>
   <% else %>
+    <h4><strong><%= @spot.reviews.count %> Reviews</strong></h4>
+
+    <!-- Review content -->
     <% @spot.reviews.each do |review| %>
-      <%= render 'reviews/review_card', review: review %>
+      <div class="d-flex" style="border-bottom: solid 1px rgb(190, 189, 186); padding-top: 4px">
+        <div class="row">
+          <div class="col-md-3">
+            <%= image_tag(review.user.avatar_url, width: 40, height: 40, crop: :fill, class: "img-circle") %>
+            <% if review.user&.first_name&.blank?  %>
+              <p><strong>Anonymous</strong></p>
+            <% else %>
+              <p><strong><%= review.user.first_name %></strong></p>
+            <% end %>
+          </div>
+
+          <div class="col-md-9">
+            <% if spot.reviews&.blank? %>
+              <p class="small">0 <i class="fas fa-star" style="color: #ccc"> </i></p>
+            <% else %>
+              <% spot.average_rating %><i class="fas fa-star" style="color: #ffb400;"></i>
+            <% end %>
+            <p class="small"><%= review.content %></p>
+            <p class="small" style="font-style: italic;">Posted on: <%= review.created_at.strftime("%Y-%m-%d") %></p>
+            <%#= link_to "Delete review", spots_path(@spot), method: "delete", data: { confirm: 'Are you sure?' }, class: "small"  %>
+          </div>
+        </div>
+      </div>
     <% end %>
   <% end %>
 </div>
