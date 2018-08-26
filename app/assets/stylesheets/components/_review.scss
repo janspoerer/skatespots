@@ -1,6 +1,6 @@
 .card {
     height: 80vh;
-    padding: 30px;
+    padding: 20px;
     background-color: white;
     border-radius: 4px;
     box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.1);
@@ -8,8 +8,6 @@
 
 .main-card-image {
   background-color: white;
-  margin: 0%;
-
 }
 
 .scrollable {
@@ -30,10 +28,6 @@
   z-index : 200;
 }
 
-.no-padding {
-  padding: 0px;
-}
-
 .main-card-image-uploadedby-favorites{
   display: flex;
   justify-content: space-between;
@@ -52,10 +46,6 @@
   margin: 2px;
 }
 
-.main-card-image-favorites-button{
-  margin: 2px;
-}
-
 .main-card-image-uploadedby {
 }
 
@@ -64,28 +54,27 @@
   margin: 2px;
 }
 
-.main-card-image-likes{
-    margin: auto;
-    width: 50;
-    position: relative;
-}
-
-.main-card-image-likes-text{
-  text-align: center;
-  font-size: 16px;
-  margin: 2px;
-}
-
-.main-card-image-likes-buttons{
+.main-card-image-likes {
   margin: auto;
-  width: 50%;
+  width: 50;
+  position: relative;
+}
+
+.main-card-image-likes-text {
+  text-align: center;
+  font-size: 16px;
+  margin: 2px;
+}
+
+.main-card-image-likes-button a {
+  color: $brand-info;
+  font-size: 18px;
   text-align: center;
 }
 
-.main-card-image-likes-button{
+.main-card-image-likes-button {
   font-size: 16px;
   margin: 2px;
-  padding: 0px;
 }
 
 .main-card-image-like::after {
