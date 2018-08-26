@@ -28,23 +28,23 @@
   z-index : 200;
 }
 
-.main-card-image-uploadedby-favorites{
-  display: flex;
-  justify-content: space-between;
-}
+// .main-card-image-uploadedby-favorites{
+//   display: flex;
+//   justify-content: space-between;
+// }
 
-.main-card-image-favorites {
-  display: flex;
-  position: relative;
-  right: 2px;
-  justify-content: flex-end;
-}
-
-.main-card-image-favorites-text{
-  font-size: 16px;
-  text-align: right;
-  margin: 2px;
-}
+// .main-card-image-favorites {
+//   display: flex;
+//   position: relative;
+//   right: 2px;
+//   justify-content: flex-end;
+// }
+//
+// .main-card-image-favorites-text{
+//   font-size: 16px;
+//   text-align: right;
+//   margin: 2px;
+// }
 
 .main-card-image-uploadedby {
 }
@@ -68,8 +68,7 @@
 
 .main-card-image-likes-button a {
   color: $brand-info;
-  font-size: 18px;
-  text-align: center;
+  font-size: 16px;
 }
 
 .main-card-image-likes-button {
