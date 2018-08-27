@@ -31,4 +31,8 @@ class Spot < ApplicationRecord
     reviews.average(:rating)
   end
 
+  def liked_by(a_user)
+    favorites.find_by(user: a_user)
+  end
+
 end

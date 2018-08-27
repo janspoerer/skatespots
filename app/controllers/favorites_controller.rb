@@ -1,5 +1,5 @@
 class FavoritesController < ApplicationController
-  skip_before_action :authenticate_user!, only: :index
+  skip_before_action :authenticate_user!, only: [:index, :destroy]
 
   def index
     @spots = policy_scope(Spot)
@@ -17,9 +17,9 @@ class FavoritesController < ApplicationController
   end
 
   def destroy
+    skip_pundit?
     @spot = Spot.find(params[:spot_id])
-    @favorite = Favorite.find(1)
-    raise
+    @favorite = Favorite.find(params[:id])
     @favorite.destroy
     redirect_to spot_path(@spot)
   end
@@ -27,6 +27,6 @@ class FavoritesController < ApplicationController
   private
 
   def skip_pundit?
-    false
+    true
   end
 end
