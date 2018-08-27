@@ -14,16 +14,16 @@
 
     <!-- Right Navigation -->
     <div class="Navbar__flex hidden-xs hidden-sm">
-      <%= link_to t(".add_a_new_spot", default: "Add a new spot"), new_spot_path, class: "Navbar__link-item" %>
+      <%= link_to "Explore", spots_path, class: "Navbar__link-item" %>
 
       <% if user_signed_in? %>
 
         <!-- Links when logged in -->
-        <%= link_to "Explore", spots_path, class: "Navbar__link-item" %>
+        <%= link_to t(".add_a_new_spot", default: "Add a new spot"), new_spot_path, class: "Navbar__link-item" %>
 
         <!-- TODO: need to update link to redirect to user's favorites -->
         <%= link_to "favorites", spots_path, class: "Navbar__link-item" %>
-        
+
         <%= link_to "Profile", profile_path(current_user), class: "Navbar__link-item" %>
 
         <!-- TODO: add message system later -->
