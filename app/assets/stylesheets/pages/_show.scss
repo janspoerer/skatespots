@@ -39,3 +39,30 @@
       bottom: 5px !important;
   }
 }
+
+
+.container-main-cards {
+  padding: 1px 0px;
+}
+
+.section-title {
+    font-size: 15px;
+    font-weight: light;
+    color: grey;
+    margin-left: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+.events-display {
+  padding: 13px;
+  h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+  }
+}
+
+.event-card-title {
+  margin: 0;
+  display: flex;
+}
