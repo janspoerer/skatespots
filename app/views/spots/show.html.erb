@@ -2,11 +2,25 @@
 <div class="container-main-cards">
   <div class="spot-flexbox">
     <div class="row">
-
       <!-- SPOT IMAGE card -->
       <div class="col-xs-12 col-md-4">
         <div class="card bg-skate">
           <%= render 'image' %>
+          <div class="events">
+            <h1 class='section-title'>Upcoming Events</h1>
+            <div class="events-display">
+                <h1>Event Title</h1>
+                <p>this is a short description of the event</p>
+                <p>Date: 12 April</p>
+                <%= simple_form_for [@spot] do |f| %>
+            <div class="form-group">
+              <%= f.file_field :photos, multiple: true %>
+            </div>
+            <%= f.submit class: 'btn btn-primary' %>
+          <% end %>
+            </div>
+          </div>
+
         </div>
       </div>
 
