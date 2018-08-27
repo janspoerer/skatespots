@@ -6,7 +6,7 @@
   color: inherit;
   border-radius: 6px;
   overflow: hidden;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   align-items: center;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
@@ -20,7 +20,7 @@
     background: $white;
     box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.05);
     border-radius: 6px;
-    height: 480px;
+    height: 380px;
   }
 
   &__img {
@@ -28,7 +28,7 @@
     background: $dark;
     position: relative;
     overflow: hidden;
-    height: 380px;
+    height: 280px;
 
     > * {
       position: absolute;

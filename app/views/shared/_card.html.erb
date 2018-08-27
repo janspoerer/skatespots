@@ -19,11 +19,11 @@
               <p>
               <% (1..5).to_a.each do |el| %>
                 <% if spot.reviews&.present? %>
-                  <% if el <= spot.average_rating %>
+                  <%# if el <= spot.average_rating& %>
                     <i class="fas fa-star" style="color: #ffb400;"></i>
                   <% else %>
                     <i class="fas fa-star" style="color: #ccc"></i>
-                  <% end %>
+                  <%# end %>
                 <% end %>
               <% end %>
               (<%= spot.reviews.count %> reviews)

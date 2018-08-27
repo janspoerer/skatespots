@@ -28,10 +28,10 @@ class Spot < ApplicationRecord
   mount_uploaders :photos, PhotoUploader
 
   def average_rating
-    if reviews.blank?
+    if @reviews.blank?
       return 0
     else
-      reviews.average(:rating)
+      @reviews.average(:rating)
     end
   end
 
