@@ -11,6 +11,7 @@ gem 'pg', '~> 0.21'
 gem 'puma'
 gem 'rails', '5.2.1'
 gem 'redis'
+gem 'select2-rails', '~> 4.0', '>= 4.0.3'
 
 # Fronted gems
 gem 'autoprefixer-rails'

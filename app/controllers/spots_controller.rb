@@ -92,7 +92,7 @@ class SpotsController < ApplicationController
 
   # rubocop:disable Metrics/MethodLength
   def spot_params
-    params[:spot].permit(:name, :description, :address, :city_id, :category, photos: [])
+    params[:spot].permit(:name, :description, :address, :city_id, :category, :photos_cache, photos: [])
   end
   # rubocop:enable Metrics/MethodLength
 

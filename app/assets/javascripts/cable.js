@@ -11,3 +11,6 @@
   App.cable = ActionCable.createConsumer();
 
 }).call(this);
+
+$(document).ready(function(){ $(‘#spot_city’).select2();
+});
