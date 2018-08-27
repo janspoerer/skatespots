@@ -201,12 +201,12 @@ review1 = Review.create!(
   spot: spot1
 )
 
-# review2 = Review.create!(
-#   rating: 5,
-#   content: "Perfect location in Berlin for all skaters!",
-#   user: user2,
-#   spot: spot1
-# )
+review2 = Review.create!(
+  rating: 5,
+  content: "Perfect location in Berlin for all skaters!",
+  user: user2,
+  spot: spot1
+)
 
 review3 = Review.create!(
   rating: 4,
