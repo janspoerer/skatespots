@@ -46,9 +46,6 @@
 //   margin: 2px;
 // }
 
-.main-card-image-uploadedby {
-}
-
 .main-card-image-uploadedby-text {
   font-size: 16px;
   margin: 2px;
@@ -67,12 +64,13 @@
 }
 
 .main-card-image-likes-button a {
-  color: $brand-info;
+  color: $brand-success;
   font-size: 16px;
 }
 
 .main-card-image-likes-button {
   font-size: 16px;
+  color: $brand-info;
   margin: 2px;
 }
 
@@ -86,4 +84,8 @@
   right: 0;
   position: absolute;
   z-index: -1;
+}
+
+.no-padding {
+  padding: 0px;
 }
