@@ -1,4 +1,4 @@
-<%= simple_form_for [@spot] do |f| %>
+<%= simple_form_for @spot do |f| %>
   <div class="form-group">
     <%= f.label :name %>
     <%= f.text_field :name, class: 'form-control' %>
@@ -11,7 +11,7 @@
 
   <!-- TODO: Need to add autocomplte dropdown for cities  -->
   <div class="form-group">
-    <%= f.input :city, class: 'form-control', collection: [:Berlin, :Budapest, :Munich, :Hamburg, :Cologne, :Frankfurt, :Sylt, :Dusseldor, :Stuttgart], include_blank: "- Please select one -" %>
+    <%= f.input :city_id, collection: City.all, include_blank: "- Please select one -" %>
   </div>
 
   <div class="form-group">
@@ -26,8 +26,6 @@
   </div>
 
   <div class="form-group">
-    <%#= f.input :spot_photo.photo %>
-    <%#= f.input :photo_cache, as: :hidden, class: 'form-control'  %>
     <%= f.file_field :photos, multiple: true %>
   </div>
 
