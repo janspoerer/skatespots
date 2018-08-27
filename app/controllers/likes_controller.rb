@@ -8,10 +8,18 @@ class LikesController < ApplicationController
   after_action :verify_authorized, except: %i(number_of_likes set_spot), unless: :skip_pundit?
 
   def upvote
-    if vote_value > 0
-      @like.update(user: current_user, spot: @spot, value: 0)
+    if Like.where(spot_id: @spot.id, user_id: current_user.id) == []
+      @like = Like.create(spot: @spot, user: current_user, value: 0)
     else
-      @like.update(user: current_user, spot: @spot, value: 1)
+      @like = Like.where(spot_id: @spot.id).first
+    end
+    # require 'byebug'
+    # byebug
+
+    if vote_value > 0
+      @like.update(value: 0)
+    else
+      @like.update(value: 1)
     end
     redirect_to spot_path(@spot) # AJAX would be even better
     authorize @spot

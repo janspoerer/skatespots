@@ -5,6 +5,9 @@
         <% spot.photos.each do |photo| %>
           <%= cl_image_tag photo.url %>
         <% end %>
+      <% else %>
+        <%= spot.inspect %>
+        <%= spot.photos.inspect %>
       <% end %>
     </figure>
 
@@ -29,7 +32,7 @@
               (<%= spot.reviews.count %> reviews)
               </p>
             <% end %>
-            <p class="small"> | <%= spot.likes&.length %>  <i class='far fa-thumbs-up main-card-image-likes-button'></i></p>
+            <p class="small"> | <%= spot.likes&.sum(:value) %>  <i class='far fa-thumbs-up main-card-image-likes-button'></i></p>
           </div>
         </div>
       </div>

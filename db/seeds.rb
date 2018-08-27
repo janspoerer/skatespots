@@ -95,11 +95,12 @@ spot1 = Spot.create!(
   city: city7,
   photos: ["https://res.cloudinary.com/hienn/image/upload/v1535105658/Spots/scott-walsh-656484-unsplash.jpg"]
 )
-spot_photo = SpotPhoto.create!(
-  spot: spot1,
-  user: user1,
-  remote_photo_url: "https://res.cloudinary.com/hienn/image/upload/v1535105658/Spots/scott-walsh-656484-unsplash.jpg"
-  )
+
+# spot_photo = SpotPhoto.create!(
+#   spot: spot1,
+#   user: user1,
+#   remote_photo_url: "https://res.cloudinary.com/hienn/image/upload/v1535105658/Spots/scott-walsh-656484-unsplash.jpg"
+#   )
 
 spot2 = Spot.create!(
   name: "Harbor Cruising",
@@ -108,11 +109,12 @@ spot2 = Spot.create!(
   city: city3,
   photos: ["https://res.cloudinary.com/hienn/image/upload/v1535105658/Spots/scott-walsh-656484-unsplash.jpg"]
 )
-spot_photo = SpotPhoto.create!(
-  spot: spot2,
-  user: user2,
-  remote_photo_url: "https://res.cloudinary.com/hienn/image/upload/v1535105734/Spots/amogh-manjunath-772463-unsplash.jpg"
-  )
+
+# spot_photo = SpotPhoto.create!(
+#   spot: spot2,
+#   user: user2,
+#   remote_photo_url: "https://res.cloudinary.com/hienn/image/upload/v1535105734/Spots/amogh-manjunath-772463-unsplash.jpg"
+#   )
 
 spot3 = Spot.create!(
   name: "Breezy hole",
@@ -121,11 +123,11 @@ spot3 = Spot.create!(
   city: city8,
   photos: ["https://res.cloudinary.com/hienn/image/upload/v1535105658/Spots/scott-walsh-656484-unsplash.jpg"]
 )
-spot_photo = SpotPhoto.create!(
-  spot: spot3,
-  user: user3,
-  remote_photo_url: "https://res.cloudinary.com/hienn/image/upload/v1535107048/Spots/skating_california.jpg"
-  )
+# spot_photo = SpotPhoto.create!(
+#   spot: spot3,
+#   user: user3,
+#   remote_photo_url: "https://res.cloudinary.com/hienn/image/upload/v1535107048/Spots/skating_california.jpg"
+#   )
 
 # spot4 = Spot.create!(
 #   name: "The Nest",
