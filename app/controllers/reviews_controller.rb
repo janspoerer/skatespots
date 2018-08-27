@@ -18,6 +18,7 @@ class ReviewsController < ApplicationController
         format.js  # <-- idem
       end
     end
+    redirect_to spot_path(@spot)
   end
 
   private

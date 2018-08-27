@@ -1,13 +1,19 @@
 <div class="spot-title">
 
   <div class="row">
-    <div class="col-md-9">
+    <div class="col-md-10">
       <h4><strong><%= @spot.name %></strong></h4>
+
     </div>
 
-    <div class="col-md-3">
+    <div class="col-md-2">
       <% if user_signed_in? %>
 
+      <% if @spot.liked_by(current_user) %>
+        <%=  link_to(content_tag(:i, '', class: 'fas fa-heart btn main-card-image-likes-button', style: "color: rgb(219, 44, 44); font-size: 20px"), spot_favorite_path(@spot, @spot.liked_by(current_user)), :method => :delete)  %> <!-- colorful heart  -->
+      <% else %>
+        <%=  link_to(content_tag(:i, '', class: 'far fa-heart btn main-card-image-likes-button', style: "font-size: 20px"), spot_favorites_path(@spot), :method => :post)  %> <!-- blank heart  -->
+      <% end %>
         <!-- <p class="small btn main-card-image-likes-button"><%#= link_to "<i class='fas fa-thumbs-down'></i>".html_safe, downvote_like_path(@like) %></p> -->
       <% end %>
     </div>
@@ -18,22 +24,21 @@
     <% if spot.reviews&.blank? %>
       0 <i class="fas fa-star" style="color: #ccc"> </i>
     <% else %>
-      <% @spot.average_rating %><i class="fas fa-star" style="color: #ffb400;"></i>
-    <% end %>
-    | <%= @spot.likes&.length %><%= link_to "<i class='far fa-thumbs-up btn main-card-image-likes-button'></i>".html_safe, upvote_like_path(@like) %></p>
-
-      <% if @spot.liked_by(current_user) %>
-        <%=  link_to(content_tag(:i, '', class: 'fas fa-heart btn main-card-image-likes-button'), spot_favorite_path(@spot, @spot.liked_by(current_user)), :method => :delete)  %> <!-- colorful heart  -->
-      <% else %>
-        <%=  link_to(content_tag(:i, '', class: 'far fa-heart btn main-card-image-likes-button'), spot_favorites_path(@spot), :method => :post)  %> <!-- blank heart  -->
+      <% (1..5).to_a.each do |el| %>
+        <% if el <= @spot.average_rating&.round(1) %>
+          <i class="fas fa-star" style="color: #ffb400;"></i>
+        <% else %>
+          <i class="fas fa-star" style="color: #ccc"></i>
+        <% end %>
       <% end %>
+    <% end %>
+    (<%= @spot.average_rating.round(1) %>) | <%= @spot.likes&.length %><%= link_to "<i class='far fa-thumbs-up btn main-card-image-likes-button'></i>".html_safe, upvote_like_path(@like) %></p>
 
   </div>
-  <p class="small"><strong>Address: </strong><%= @spot.address %> <%= @spot.city %></p>
+  <p class="small"><strong>Address: </strong><%= @spot.address %></p>
+  <p class="small"><strong>City: </strong><%= @spot.city.name %></p>
 </div>
 
 <div class="spot-details" style="border-bottom: solid 1px rgb(190, 189, 186); padding-top: 5px">
   <p class="small"><strong>Description: </strong><%= @spot.description %></p>
 </div>
-
-

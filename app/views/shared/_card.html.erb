@@ -14,11 +14,11 @@
         <div class="Card__rating">
           <div class="d-flex">
             <% if spot.reviews&.blank? %>
-              <p class="small">0 <i class="fas fa-star" style="color: #ccc"> </i></p>
+              <p class="small"> 0 <i class="fas fa-star" style="color: #ccc"> </i> </p>
             <% else %>
-              <% spot.average_rating %><i class="fas fa-star" style="color: #ffb400;"></i>
+              <p class="small"> <%= spot.average_rating.round(1) %> <i class="fas fa-star" style="color: #ffb400;"></i></p>
             <% end %>
-            <p class="small"> | <%= spot.likes&.length %><i class='far fa-thumbs-up main-card-image-likes-button'></i></p>
+            <p class="small"> | <%= spot.likes&.length %>  <i class='far fa-thumbs-up main-card-image-likes-button'></i></p>
           </div>
         </div>
       </div>
