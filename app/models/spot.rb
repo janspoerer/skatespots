@@ -28,7 +28,7 @@ class Spot < ApplicationRecord
   mount_uploaders :photos, PhotoUploader
 
   def average_rating
-    self.reviews.average('rating')
+    reviews.average(:rating)
   end
 
 end

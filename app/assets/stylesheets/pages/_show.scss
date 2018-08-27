@@ -42,14 +42,13 @@
 
 
 .container-main-cards {
-  padding: 31px 0px;
+  padding: 1px 0px;
 }
 
-
-  .section-title {
+.section-title {
     font-size: 15px;
     font-weight: light;
-    color: lightgrey;
+    color: grey;
     margin-left: 13px;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -60,6 +59,10 @@
     margin: 0;
     font-size: 24px;
     font-weight: bold;
-
   }
+}
+
+.event-card-title {
+  margin: 0;
+  display: flex;
 }

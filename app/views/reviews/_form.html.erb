@@ -1,6 +1,8 @@
 <div class="submit-review" style="border-bottom: solid 1px rgb(220, 224, 223); padding-top: 5px;">
   <%= simple_form_for([@spot, @review], remote: true) do |f| %>
-    <label for="review">How was your experience?</label><br>
+    <%= f.input :rating, label: "How was your experience", input_html: { class: "hidden" } %>
+
+    <!-- <label for="review">How was your experience?</label><br> -->
     <div id="rater"></div>
     <%# f.input :rating %>
     <%# f.select :rating, options_for_select([["Please select one", ""], 5, 4, 3, 2, 1]) %>

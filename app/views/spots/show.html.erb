@@ -6,23 +6,25 @@
       <div class="col-xs-12 col-md-4">
         <div class="card bg-skate">
           <%= render 'image' %>
+
           <div class="events">
             <h1 class='section-title'>Upcoming Events</h1>
             <div class="events-display">
-                <h1>Event Title</h1>
-                <p>this is a short description of the event</p>
-                <p>Date: 12 April</p>
-                <%= simple_form_for [@spot] do |f| %>
-            <div class="form-group">
-              <%= f.file_field :photos, multiple: true %>
+              <p class="event-card-title d-flex">
+                <strong>Highest Jump</strong>
+                 | Date: 12.Apr.2018
+                <p >this is a short description of the event </p>
+                <strong>Back From Summer</strong>
+                 | Date: 12.Apr.2018
+                <p >this is a short description of the event </p>
+                <strong>Trashing Trail</strong>
+                 | Date: 12.Apr.2018
+                <p >this is a short description of the event </p>
+              </p>
             </div>
-            <%= f.submit class: 'btn btn-primary' %>
-          <% end %>
-            </div>
-          </div>
-
         </div>
       </div>
+    </div>
 
       <!-- SPOT CARD (likes, faves, etc) + REVIEWS -->
       <div class="col-xs-12 col-md-4">
