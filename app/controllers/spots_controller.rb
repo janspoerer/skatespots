@@ -51,8 +51,6 @@ class SpotsController < ApplicationController
 
   def create
     @spot = Spot.new(spot_params)
-    # @spot_photo = SpotPhoto.new(spot_photo_params, spot: @spot)
-    # @spot_photo.save
     authorize @spot
     if @spot.save!
       redirect_to spot_path(@spot)
@@ -73,11 +71,8 @@ class SpotsController < ApplicationController
   end
 
   def destroy
-    if @spot.destroy
-      redirect_to spots_path
-    else
-      render :index
-    end
+    @spot.destroy
+    redirect_to :index
   end
 
   private
@@ -89,7 +84,7 @@ class SpotsController < ApplicationController
 
   # rubocop:disable Metrics/MethodLength
   def spot_params
-    params[:spot].permit(:name, :description, :address, :city_id, :category,  {photos: []})
+    params[:spot].permit(:name, :description, :address, :city_id, :category, {photos: []})
   end
   # rubocop:enable Metrics/MethodLength
 

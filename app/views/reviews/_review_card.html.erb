@@ -3,7 +3,7 @@
   <% if @spot.reviews&.blank? %>
     Leave a review for <%= @spot.name %>
   <% else %>
-    <h4><strong><%= @spot.reviews.count %> Reviews</strong></h4>
+    <h5><strong><%= @spot.reviews.count %> Reviews</strong></h5>
 
 <!-- Review content -->
     <% @spot.reviews.each do |review| %>
@@ -31,7 +31,7 @@
               <% end %>
               <p class="small"><%= review.content %></p>
               <p class="small" style="font-style: italic;">Posted on: <%= review.created_at.strftime("%Y-%m-%d") %></p>
-              <%#= link_to "Delete review", spots_path(@spot), method: "delete", data: { confirm: 'Are you sure?' }, class: "small"  %>
+              <%= link_to "Delete review", spot_path(@spot), method: "delete", data: { confirm: 'Are you sure?' }, class: "small"  %>
             </div>
           </div>
         </div>

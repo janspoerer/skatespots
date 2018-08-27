@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :profiles, only: [:update, :show]
 
   resources :spots do
-    resources :reviews, only: [:new, :create]
+    resources :reviews, only: [:new, :create, :destroy]
     resources :spot_photos, only: [:new, :create]
     resources :favorites, only: [:create, :destroy]
   end
@@ -20,11 +20,3 @@ Rails.application.routes.draw do
 
   resources :favorites, only: [:index]
 end
-
-
-# resources :contents do
-#     member do
-#         put "like", to: "contents#like"
-#         put "dislike", to: "contents#dislike"
-#     end
-# end
