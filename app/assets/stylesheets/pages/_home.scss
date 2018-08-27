@@ -1,6 +1,7 @@
 .Featurette {
   padding: 7% 0;
   position: relative;
+  background-color: $gray-background;
 
 
   &--with-skew::after {
@@ -20,8 +21,8 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
-    // transform: skewY(-7deg);
-    // transform-origin: 0;
+    transform: skewY(-7deg);
+    transform-origin: 0;
   }
 
   &__inner {
