@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :spots do
     resources :reviews, only: [:new, :create]
     resources :spot_photos, only: [:new, :create]
+    resources :favorites, only: [:create, :destroy]
   end
 
   resources :likes, only: [] do
@@ -16,6 +17,8 @@ Rails.application.routes.draw do
       get 'downvote', to: "likes#downvote"
     end
   end
+
+  resources :favorites, only: [:index]
 end
 
 
