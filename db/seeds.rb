@@ -13,9 +13,9 @@ city1 = City.create!(
   name: "Frankfurt"
 )
 
-city2 = City.create!(
-  name: "Berlin"
-)
+# city2 = City.create!(
+#   name: "Berlin"
+# )
 city3 = City.create!(
   name: "Hamburg"
 )
