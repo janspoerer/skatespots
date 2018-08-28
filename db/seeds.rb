@@ -99,7 +99,7 @@ spot2 = Spot.create!(
   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis nobis quod aperiam ipsa cupiditate aut numquam, nostrum fugit eos officiis sapiente voluptates. Corrupti esse nesciunt officiis, sequi, sint aspernatur doloribus?",
   address: "Elbchaussee 285, 22605 Hamburg",
   city: city3,
-  remote_photos_urls: ["https://res.cloudinary.com/hienn/image/upload/v1535105658/Spots/scott-walsh-656484-unsplash.jpg"]
+  remote_photos_urls: ["https://res.cloudinary.com/hienn/image/upload/v1535107048/Spots/skating_california.jpg"]
 )
 
 spot3 = Spot.create!(
@@ -107,7 +107,7 @@ spot3 = Spot.create!(
   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis nobis quod aperiam ipsa cupiditate aut numquam, nostrum fugit eos officiis sapiente voluptates. Corrupti esse nesciunt officiis, sequi, sint aspernatur doloribus?",
   address: "Strandstraße 26, 25996 Wenningstedt-Braderup (Sylt)",
   city: city8,
-  remote_photos_urls: ["https://res.cloudinary.com/hienn/image/upload/v1535105658/Spots/scott-walsh-656484-unsplash.jpg"]
+  remote_photos_urls: ["https://res.cloudinary.com/hienn/image/upload/v1535105655/Spots/beach_john-verhoestra-295155-unsplash.jpg"]
 )
 
 spot4 = Spot.create!(
@@ -157,7 +157,7 @@ spot9 = Spot.create!(
   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis nobis quod aperiam ipsa cupiditate aut numquam, nostrum fugit eos officiis sapiente voluptates. Corrupti esse nesciunt officiis, sequi, sint aspernatur doloribus?",
   address: "Rheinkniebrücke, 40219 Düsseldorf",
   city: city6,
-  remote_photos_urls: ["https://res.cloudinary.com/hienn/image/upload/v1535105655/Spots/beach_john-verhoestra-295155-unsplash.jpg"]
+  remote_photos_urls: ["https://res.cloudinary.com/hienn/image/upload/v1535105734/Spots/zac-ong-630584-unsplash.jpg"]
 )
 
 spot10 = Spot.create!(
@@ -197,96 +197,96 @@ review1 = Review.create!(
   spot: spot1
 )
 
-# review2 = Review.create!(
-#   rating: 5,
-#   content: "Perfect location in Berlin for all skaters!",
-#   user: user2,
-#   spot: spot1
-# )
+review2 = Review.create!(
+  rating: 5,
+  content: "Perfect location in Berlin for all skaters!",
+  user: user2,
+  spot: spot1
+)
 
-# review3 = Review.create!(
-#   rating: 4,
-#   content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis nobis quod aperiam ipsa cupiditate aut numquam, nostrum fugit eos officiis sapiente voluptates. Corrupti esse nesciunt officiis, sequi, sint aspernatur doloribus?",
-#   user: user3,
-#   spot: spot1
-# )
+review3 = Review.create!(
+  rating: 4,
+  content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis nobis quod aperiam ipsa cupiditate aut numquam, nostrum fugit eos officiis sapiente voluptates. Corrupti esse nesciunt officiis, sequi, sint aspernatur doloribus?",
+  user: user3,
+  spot: spot1
+)
 
-# review4 = Review.create!(
-#   rating: 5,
-#   content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis nobis quod aperiam ipsa cupiditate aut numquam, nostrum fugit eos officiis sapiente voluptates. Corrupti esse nesciunt officiis, sequi, sint aspernatur doloribus?",
-#   user: user4,
-#   spot: spot1
-# )
+review4 = Review.create!(
+  rating: 5,
+  content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis nobis quod aperiam ipsa cupiditate aut numquam, nostrum fugit eos officiis sapiente voluptates. Corrupti esse nesciunt officiis, sequi, sint aspernatur doloribus?",
+  user: user4,
+  spot: spot1
+)
 
-# review5 = Review.create!(
-#   rating: 4,
-#   content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis nobis quod aperiam ipsa cupiditate aut numquam, nostrum fugit eos officiis sapiente voluptates. Corrupti esse nesciunt officiis, sequi, sint aspernatur doloribus?",
-#   user: user5,
-#   spot: spot1
-# )
+review5 = Review.create!(
+  rating: 4,
+  content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis nobis quod aperiam ipsa cupiditate aut numquam, nostrum fugit eos officiis sapiente voluptates. Corrupti esse nesciunt officiis, sequi, sint aspernatur doloribus?",
+  user: user5,
+  spot: spot1
+)
 
-# review6 = Review.create!(
-#   rating: 3,
-#   content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis nobis quod aperiam ipsa cupiditate aut numquam, nostrum fugit eos officiis sapiente voluptates. Corrupti esse nesciunt officiis, sequi, sint aspernatur doloribus?",
-#   user: user5,
-#   spot: spot2
-# )
+review6 = Review.create!(
+  rating: 3,
+  content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis nobis quod aperiam ipsa cupiditate aut numquam, nostrum fugit eos officiis sapiente voluptates. Corrupti esse nesciunt officiis, sequi, sint aspernatur doloribus?",
+  user: user5,
+  spot: spot2
+)
 
-# review7 = Review.create!(
-#   rating: 3,
-#   content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis nobis quod aperiam ipsa cupiditate aut numquam, nostrum fugit eos officiis sapiente voluptates. Corrupti esse nesciunt officiis, sequi, sint aspernatur doloribus?",
-#   user: user4,
-#   spot: spot3
-# )
+review7 = Review.create!(
+  rating: 3,
+  content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis nobis quod aperiam ipsa cupiditate aut numquam, nostrum fugit eos officiis sapiente voluptates. Corrupti esse nesciunt officiis, sequi, sint aspernatur doloribus?",
+  user: user4,
+  spot: spot3
+)
 
-# review8 = Review.create!(
-#   rating: 3,
-#   content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis nobis quod aperiam ipsa cupiditate aut numquam, nostrum fugit eos officiis sapiente voluptates. Corrupti esse nesciunt officiis, sequi, sint aspernatur doloribus?",
-#   user: user3,
-#   spot: spot4
-# )
+review8 = Review.create!(
+  rating: 3,
+  content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis nobis quod aperiam ipsa cupiditate aut numquam, nostrum fugit eos officiis sapiente voluptates. Corrupti esse nesciunt officiis, sequi, sint aspernatur doloribus?",
+  user: user3,
+  spot: spot4
+)
 
-# review9 = Review.create!(
-#   rating: 3,
-#   content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis nobis quod aperiam ipsa cupiditate aut numquam, nostrum fugit eos officiis sapiente voluptates. Corrupti esse nesciunt officiis, sequi, sint aspernatur doloribus?",
-#   user: user1,
-#   spot: spot5
-# )
+review9 = Review.create!(
+  rating: 3,
+  content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis nobis quod aperiam ipsa cupiditate aut numquam, nostrum fugit eos officiis sapiente voluptates. Corrupti esse nesciunt officiis, sequi, sint aspernatur doloribus?",
+  user: user1,
+  spot: spot5
+)
 
-# review10 = Review.create!(
-#   rating: 3,
-#   content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis nobis quod aperiam ipsa cupiditate aut numquam, nostrum fugit eos officiis sapiente voluptates. Corrupti esse nesciunt officiis, sequi, sint aspernatur doloribus?",
-#   user: user1,
-#   spot: spot6
-# )
+review10 = Review.create!(
+  rating: 3,
+  content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis nobis quod aperiam ipsa cupiditate aut numquam, nostrum fugit eos officiis sapiente voluptates. Corrupti esse nesciunt officiis, sequi, sint aspernatur doloribus?",
+  user: user1,
+  spot: spot6
+)
 
-# review11 = Review.create!(
-#   rating: 3,
-#   content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis nobis quod aperiam ipsa cupiditate aut numquam, nostrum fugit eos officiis sapiente voluptates. Corrupti esse nesciunt officiis, sequi, sint aspernatur doloribus?",
-#   user: user2,
-#   spot: spot7
-# )
+review11 = Review.create!(
+  rating: 3,
+  content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis nobis quod aperiam ipsa cupiditate aut numquam, nostrum fugit eos officiis sapiente voluptates. Corrupti esse nesciunt officiis, sequi, sint aspernatur doloribus?",
+  user: user2,
+  spot: spot7
+)
 
-# review12 = Review.create!(
-#   rating: 3,
-#   content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis nobis quod aperiam ipsa cupiditate aut numquam, nostrum fugit eos officiis sapiente voluptates. Corrupti esse nesciunt officiis, sequi, sint aspernatur doloribus?",
-#   user: user3,
-#   spot: spot8
-# )
+review12 = Review.create!(
+  rating: 3,
+  content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis nobis quod aperiam ipsa cupiditate aut numquam, nostrum fugit eos officiis sapiente voluptates. Corrupti esse nesciunt officiis, sequi, sint aspernatur doloribus?",
+  user: user3,
+  spot: spot8
+)
 
-# review13 = Review.create!(
-#   rating: 3,
-#   content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis nobis quod aperiam ipsa cupiditate aut numquam, nostrum fugit eos officiis sapiente voluptates. Corrupti esse nesciunt officiis, sequi, sint aspernatur doloribus?",
-#   user: user4,
-#   spot: spot9
-# )
+review13 = Review.create!(
+  rating: 3,
+  content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis nobis quod aperiam ipsa cupiditate aut numquam, nostrum fugit eos officiis sapiente voluptates. Corrupti esse nesciunt officiis, sequi, sint aspernatur doloribus?",
+  user: user4,
+  spot: spot9
+)
 
-# review14 = Review.create!(
-#   rating: 3,
-#   content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis nobis quod aperiam ipsa cupiditate aut numquam, nostrum fugit eos officiis sapiente voluptates. Corrupti esse nesciunt officiis, sequi, sint aspernatur doloribus?",
-#   user: user5,
-#   spot: spot10
-# )
+review14 = Review.create!(
+  rating: 3,
+  content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis nobis quod aperiam ipsa cupiditate aut numquam, nostrum fugit eos officiis sapiente voluptates. Corrupti esse nesciunt officiis, sequi, sint aspernatur doloribus?",
+  user: user5,
+  spot: spot10
+)
 
 
 # puts "Creating favorite seeds"
