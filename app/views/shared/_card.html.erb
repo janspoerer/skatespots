@@ -1,7 +1,7 @@
 <%= link_to spot_path(spot), class: "Card" do %>
   <div class="Card__inner">
     <figure class="Card__img">
-      <% if spot.photos.present? %>
+      <% if spot.photos&.present? %>
         <% spot.photos.each do |photo| %>
           <%= cl_image_tag photo.url %>
         <% end %>

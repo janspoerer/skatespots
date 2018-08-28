@@ -1,12 +1,11 @@
 # frozen_string_literal: true
 
 class Spot < ApplicationRecord
-  belongs_to :city, optional: true
+  belongs_to :city
 
   has_many :likes
   has_many :favorites
   has_many :reviews
-  # has_many :spot_photos
 
   validates :address, :name, presence: true
 

@@ -1,5 +1,14 @@
 <section class="Banner">
-  <div class="Banner__bg"></div>
+  <div class="Banner__bg">
+     <!-- <video loop muted autoplay poster="../../images/videoframe.png" class="fullscreen-bg__video">
+        <source src="../../videos/Skate.webm" type="videos/webm">
+        <source src="../../videos/Skate.mp4" type="videos/mp4">
+        <source src="../../videos/Skate.ogv" type="videos/ogg">
+    </video> -->
+    <!-- <video src="../../videos/Skate.mp4" id="myVideo"></video> -->
+    <%= video_tag "Skate.mp4", autoplay: :autoplay, loop: :loop, mute: :mute, class: "video" %>
+  </div>
+
   <div class="Banner__content">
     <div class="Banner__inner container">
       <div class="Banner__body">

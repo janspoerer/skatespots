@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  belongs_to :city, optional: true
+  belongs_to :city
   has_many :user
 
   # Include default devise modules. Others available are:
