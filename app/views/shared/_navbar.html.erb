@@ -16,29 +16,29 @@
     <div class="Navbar__flex hidden-xs hidden-sm links">
 
        <div class="Navbar__link-item">
-        <%= link_to "Explore", spots_path, :class => current_class?(spots_path)  %>
+        <h6><%= link_to "Explore", spots_path, :class => current_class?(spots_path)  %></h6>
        </div>
        <div class="Navbar__link-item">
-        <%= link_to "Events", events_path, :class => current_class?(events_path)  %>
+        <h6><%= link_to "Events", events_path, :class => current_class?(events_path)  %></h6>
        </div>
 
       <% if user_signed_in? %>
 
         <!-- Links when logged in -->
         <div class="Navbar__link-item">
-          <%= link_to t(".add_a_new_spot", default: "Add a new spot"), new_spot_path, :class => current_class?(new_spot_path)  %>
+          <h6><%= link_to t(".add_a_new_spot", default: "Add a new spot"), new_spot_path, :class => current_class?(new_spot_path) %></h6>
         </div>
         <!-- TODO: need to update link to redirect to user's favorites -->
         <div class="Navbar__link-item">
-          <%= link_to "favorites", favorites_path, :class => current_class?(favorites_path) %>
+          <h6><%= link_to "favorites", favorites_path, :class => current_class?(favorites_path) %></h6>
         </div>
         <div class="Navbar__link-item">
-          <%= link_to "Profile", profile_path(current_user), :class => current_class?(profile_path(current_user)) %>
+          <h6><%= link_to "Profile", profile_path(current_user), :class => current_class?(profile_path(current_user)) %></h6>
         </div>
         <!-- TODO: add message system later -->
         <%#= link_to "Messages", conversations_path, class: "Navbar__link-item" %>
         <div class="dropdown Navbar__link-item">
-          <a href="#" class="Navbar__dropdown dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="false">Help</a>
+          <a href="#" class="Navbar__dropdown dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="false"><h6>Help</h6></a>
             <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
               <li><a href="#">FAQ</a></li>
               <li><a href="#">Customer support</a></li>
@@ -49,7 +49,7 @@
         <div class="dropdown Navbar__link-item">
           <% if current_user.photo.present? %>
             <%# TODO: BETTER CROPPING??? %>
-            <%= cl_image_tag(current_user.photo.url, gravity: 'face', width: 80, height: 80, crop: "fill", class: "Navbar__avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown") %>
+            <%= cl_image_tag(current_user.photo.url, gravity: 'face', width: 40, height: 40, crop: "fill", class: "Navbar__avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown") %>
           <% else %>
             <div class="Navbar__avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
               <i class="fas fa-user-circle Navbar__user-icon"></i>

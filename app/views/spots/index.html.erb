@@ -1,24 +1,42 @@
-<section class="container-fluid spot-wrapper-body">
-  <h2>Explore and find your favorite skatespots (<%= @spots&.count %>)</h2>
+<div class="container-index">
 
-  <div class="col-md-8 Cards">
-    <div class="Cards__grid">
-      <div class="row">
-        <% @spots&.each do |spot|  %>
-          <div class="col-md-4 grid-item">
-            <%= render 'shared/card', spot: spot %>
+  <div class="wrapper-body">
+    <div class="row">
+      <div class="col-md-4 Cards">
+        <div class="spot-index-title">
+          <h1><strong>Explore and find your favorite skatespots </strong></h1>
+
+          <!-- (<%#= @spots&.count %>) -->
+        </div>
+      </div>
+
+      <div class="col-md-8 Map Cards__map no-padding">
+        <div class="Map__inner card bg-map no-padding" style="height: 500px">
+          <div id="map"
+            style="width: 100%;"
+            data-markers="<%= @markers.to_json %>">
           </div>
-        <% end %>
+        </div>
       </div>
     </div>
   </div>
 
-  <div class="col-md-4 Map Cards__map">
-    <div class="Map__inner card bg-map no-padding">
-      <div id="map"
-        style="width: 100%;"
-        data-markers="<%= @markers.to_json %>">
+  <%= render 'spots/perks' %>
+
+
+  <div class="wrapper-body">
+
+    <div class="container-fluid">
+      <div class="row">
+
+        <div class="Cards__grid">
+          <% @spots&.each do |spot|  %>
+            <div class="col-md-2 grid-item">
+              <%= render 'shared/card', spot: spot %>
+            </div>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
-</section>
+</div>
