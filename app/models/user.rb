@@ -1,4 +1,8 @@
 class User < ApplicationRecord
+
+  has_many :user
+  has_many :participants
+
   belongs_to :city, optional: true
   has_many :likes
   has_many :reviews
