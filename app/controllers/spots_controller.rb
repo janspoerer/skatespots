@@ -69,7 +69,7 @@ class SpotsController < ApplicationController
   private
 
   def set_city
-    @city = City.find_by(name: params[:spot][:city])
+   @city = City.find_by(name: params[:spot][:city])
   end
 
   def set_spot
@@ -79,7 +79,7 @@ class SpotsController < ApplicationController
 
   # rubocop:disable Metrics/MethodLength
   def spot_params
-    params[:spot].permit(:name, :description, :address, :city_id, :category, {photos: []})
+    params[:spot].permit(:name, :description, :address, :city_id, :category, photos: [])
   end
   # rubocop:enable Metrics/MethodLength
 

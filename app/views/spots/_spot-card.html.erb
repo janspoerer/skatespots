@@ -7,8 +7,8 @@
 
     <% if user_signed_in? %>
       <div class="col-md-2">
-        <% if @spot.favourite_by(current_user) %>
-          <%=  link_to(content_tag(:i, '', class: 'fas fa-heart btn main-card-image-likes-button', style: "color: rgb(219, 44, 44); font-size: 20px"), spot_favorite_path(@spot, @spot.liked_by(current_user)), :method => :delete)  %> <!-- colorful heart  -->
+        <% if @spot.favorite_by(current_user) %>
+          <%=  link_to(content_tag(:i, '', class: 'fas fa-heart btn main-card-image-likes-button', style: "color: rgb(219, 44, 44); font-size: 20px"), spot_favorite_path(@spot, @spot.favorite_by(current_user)), :method => :delete)  %> <!-- colorful heart  -->
         <% else %>
           <%=  link_to(content_tag(:i, '', class: 'far fa-heart btn main-card-image-likes-button', style: "font-size: 20px"), spot_favorites_path(@spot), :method => :post)  %> <!-- blank heart  -->
         <% end %>

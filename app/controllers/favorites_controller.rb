@@ -20,8 +20,9 @@ class FavoritesController < ApplicationController
     skip_pundit?
     @spot = Spot.find(params[:spot_id])
     @favorite = Favorite.find(params[:id])
+    authorize @favorite
     @favorite.destroy
-    redirect_to spot_path(@spot)
+    redirect_to spot_path(@spot.id)
   end
 
   private

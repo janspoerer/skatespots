@@ -13,12 +13,5 @@ Rails.application.routes.draw do
 
   resources :likes, only: :destroy
 
-  # resources :likes, only: [] do
-  #   member do
-  #     get 'upvote', to: "likes#upvote"
-  #     get 'downvote', to: "likes#downvote"
-  #   end
-  # end
-
   resources :favorites, only: [:index]
 end

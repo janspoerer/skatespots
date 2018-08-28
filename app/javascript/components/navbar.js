@@ -1,8 +1,6 @@
 import throttle from 'lodash.throttle';
 import { colors } from '../utils';
 
-
-
 function showHideNavbar() {
 
   const navbar = document.querySelector('.js-navbar-nav');
@@ -30,5 +28,3 @@ function showHideNavbar() {
 }
 
 export default showHideNavbar;
-
-
