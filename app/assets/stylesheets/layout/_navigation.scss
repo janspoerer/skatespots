@@ -83,6 +83,7 @@
   &--white {
     color: $white;
   }
+
 }
 
 .Navbar__search-group {
@@ -102,8 +103,7 @@
   letter-spacing: 1.5px;
   font-weight: 600;
 
-  &:hover,
-  &:focus {
+  &:hover {
     color: inherit;
     text-decoration: none;
   }
@@ -113,8 +113,19 @@
   }
 }
 
+
+
+.active {
+  color: $gray-dark;
+    &:hover {
+    text-decoration: none;
+    color: $gray-dark;
+  }
+}
+
+
 .Navbar__dropdown {
-  color: inherit;
+  color: #5521FF;
 
   &:hover,
   &:focus {

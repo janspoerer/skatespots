@@ -303,22 +303,22 @@ review14 = Review.create!(
 #   spot: spot2
 # )
 
-puts "Creating like seeds"
-like1 = Like.create!(
-  user: user1,
-  spot: spot1,
-  value: 1
-)
-like2 = Like.create!(
-  user: user1,
-  spot: spot2,
-  value: -1
-)
+# puts "Creating like seeds"
+# like1 = Like.create!(
+#   user: user1,
+#   spot: spot1,
+#   value: 1
+# )
+# like2 = Like.create!(
+#   user: user1,
+#   spot: spot2,
+#   value: -1
+# )
 
-like3 = Like.create!(
-  user: user2,
-  spot: spot2,
-  value: 0
-)
+# like3 = Like.create!(
+#   user: user2,
+#   spot: spot2,
+#   value: 0
+# )
 
 puts 'Seed: Finished seeding!'
