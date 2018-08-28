@@ -91,7 +91,7 @@ spot1 = Spot.create!(
   description: "Central skatepark for pro",
   address: "Ludwigstraße 34B, 70176 Stuttgart",
   city: city7,
-  photos: ["../assets/imageskating_california.jpg"]
+  photos: ["../assets/images/spots/skating_california.jpg"]
 )
 
 # spot2 = Spot.create!(
