@@ -45,11 +45,51 @@
 }
 
 .spot-wrapper-body {
-  padding: 0 30px 0 30px;
+  margin-top: 30px;
+  margin-bottom: 100px
 }
 
 // Style for event section in spot card
 
 .event-show-page {
   text-align: right
+}
+
+// Style for spots#index page
+.spot-index-title {
+  padding: 25px;
+  color: grey;
+}
+
+.Cards__grid {
+  margin-right: 20px;
+}
+
+.container-index {
+  // padding-left: 15px;
+  // padding-right: 15px;
+  padding-bottom: 40px
+}
+
+.wrapper-body {
+  padding-bottom: 40px;
+}
+
+// Specific CSS for your home-page
+.Perks {
+  background-color: $white;
+  text-align: center;
+  padding-bottom: 20px;
+
+}
+
+// Style for Index Favoriate page
+
+.container-index-fav {
+  padding-left: 30px;
+  padding-right: 30px
+}
+
+.spot-index-title-fav {
+  margin-bottom: 40px
 }
