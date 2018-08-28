@@ -2,8 +2,8 @@
 
 class SpotsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
-  before_action :set_spot, only: %i[show edit update destroy]
   before_action :set_city, only: [:create]
+  before_action :set_spot, only: %i[show edit update destroy favorite]
 
   include Pundit
   after_action :verify_authorized, except: :index, unless: :skip_pundit?

@@ -1,6 +1,6 @@
 import rater from 'rater-js';
 
-var myRating = raterJs( {
+var myRating = rater( {
     // shows a rating tooltip
     showToolTip: true,
     // the number of stars
@@ -17,8 +17,10 @@ var myRating = raterJs( {
     readOnly: false,
 
     element:document.querySelector("#rater"),
-    rateCallback:function rateCallback(rating, done) {
+    rateCallback: function rateCallback(rating, done) {
       this.setRating(rating);
+      const input = document.getElementById('review_rating')
+      input.value = rating
       done();
     }
 });

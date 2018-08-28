@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :cities, only: [:new, :create, :update] do
     resources :spots
     resources :users
+    resources :favorites, only: [:create, :destroy]
   end
 
   resources :likes, only: [] do
@@ -20,4 +21,6 @@ Rails.application.routes.draw do
       get 'downvote', to: "likes#downvote"
     end
   end
+
+  resources :favorites, only: [:index]
 end
