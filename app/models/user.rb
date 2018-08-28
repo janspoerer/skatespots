@@ -1,6 +1,7 @@
 class User < ApplicationRecord
-  belongs_to :city
-  has_many :user
+  belongs_to :city, optional: true
+  has_many :likes
+  has_many :reviews
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
