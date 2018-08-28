@@ -29,7 +29,7 @@
       <% end %>
 
   </div>
-  <p class="small"><strong>Address: </strong><%= @spot.address %> <%= @spot.city %></p>
+  <p class="small"><strong>Address: </strong><%= @spot.address %>, <%= @spot.city&.name&.capitalize %></p>
 </div>
 
 <div class="spot-details" style="border-bottom: solid 1px rgb(190, 189, 186); padding-top: 5px">

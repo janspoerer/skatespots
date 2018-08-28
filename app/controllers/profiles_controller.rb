@@ -1,5 +1,6 @@
 class ProfilesController < ApplicationController
   before_action :set_user, only: [:update]
+  before_action :set_city, only: [:update]
   skip_after_action :verify_authorized, only: :show
   skip_after_action :verify_policy_scoped, only: :show
 
@@ -9,7 +10,7 @@ class ProfilesController < ApplicationController
 
   def update
     authorize @user
-    if @user.update(user_params)
+    if @user.update!(user_params)
       flash[:notice] = 'Your profile has been successfully updated!'
       redirect_to dashboard_path
     else
@@ -23,7 +24,11 @@ class ProfilesController < ApplicationController
     @user = current_user
   end
 
+  def set_city
+    @city = City.find_by(name: params[:user][:city])
+  end
+
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :facebook, :twitter, :instagram, :photo, :photo_cache)
+    params[:user].permit(:first_name, :last_name, :facebook, :twitter, :instagram, :photo, :photo_cache, :city_id, :email)
   end
 end

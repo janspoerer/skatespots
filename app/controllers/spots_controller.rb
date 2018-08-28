@@ -2,6 +2,7 @@
 
 class SpotsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
+  before_action :set_city, only: [:create]
   before_action :set_spot, only: %i[show edit update destroy favorite]
 
   include Pundit
@@ -45,14 +46,12 @@ class SpotsController < ApplicationController
 
   def new
     @spot = Spot.new
-    # @spot_photo = SpotPhoto.new
     authorize @spot
   end
 
   def create
     @spot = Spot.new(spot_params)
-    # @spot_photo = SpotPhoto.new(spot_photo_params, spot: @spot)
-    # @spot_photo.save
+    # @spot.city = @city
     authorize @spot
     if @spot.save!
       redirect_to spot_path(@spot)
@@ -82,6 +81,10 @@ class SpotsController < ApplicationController
 
   private
 
+  def set_city
+    @city = City.find_by(name: params[:spot][:city])
+  end
+
   def set_spot
     @spot = Spot.find(params[:id])
     authorize @spot
@@ -89,13 +92,9 @@ class SpotsController < ApplicationController
 
   # rubocop:disable Metrics/MethodLength
   def spot_params
-    params[:spot].permit(:name, :description, :address, :city_id, :category,  {photos: []})
+    params[:spot].permit(:name, :description, :address, :city_id, :category, :photos_cache, photos: [])
   end
   # rubocop:enable Metrics/MethodLength
-
-  # def spot_photo_params
-  #   params.permit(:photo, :user_id, :spot_id)
-  # end
 
   def skip_pundit?
     false
