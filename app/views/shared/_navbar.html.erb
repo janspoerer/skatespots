@@ -13,19 +13,25 @@
     </div>
 
     <!-- Right Navigation -->
-    <div class="Navbar__flex hidden-xs hidden-sm">
-      <%= link_to "Explore", spots_path, class: "Navbar__link-item" %>
+    <div class="Navbar__flex hidden-xs hidden-sm links">
+
+       <div class="Navbar__link-item">
+        <%= link_to "Explore", spots_path, :class => current_class?(spots_path)  %>
+       </div>
 
       <% if user_signed_in? %>
 
         <!-- Links when logged in -->
-        <%= link_to t(".add_a_new_spot", default: "Add a new spot"), new_spot_path, class: "Navbar__link-item" %>
-
+        <div class="Navbar__link-item">
+          <%= link_to t(".add_a_new_spot", default: "Add a new spot"), new_spot_path, :class => current_class?(new_spot_path)  %>
+        </div>
         <!-- TODO: need to update link to redirect to user's favorites -->
-        <%= link_to "favorites", favorites_path, class: "Navbar__link-item" %>
-
-        <%= link_to "Profile", profile_path(current_user), class: "Navbar__link-item" %>
-
+        <div class="Navbar__link-item">
+          <%= link_to "favorites", favorites_path, :class => current_class?(favorites_path) %>
+        </div>
+        <div class="Navbar__link-item">
+          <%= link_to "Profile", profile_path(current_user), :class => current_class?(profile_path(current_user)) %>
+        </div>
         <!-- TODO: add message system later -->
         <%#= link_to "Messages", conversations_path, class: "Navbar__link-item" %>
         <div class="dropdown Navbar__link-item">
@@ -64,7 +70,7 @@
 
         <!-- Login link (when logged out) -->
         <div class="dropdown Navbar__link-item">
-          <a href="#" class="Navbar__dropdown dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="false">Help</a>
+          <a href="#" class="Navbar__dropdown dropdown-toggle Navbar__help" role="button" data-toggle="dropdown" aria-expanded="false">Help</a>
             <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
               <li><a href="#">FAQ</a></li>
               <li><a href="#">Customer support</a></li>

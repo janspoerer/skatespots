@@ -2,6 +2,7 @@
 
 class SpotsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
+  before_action :set_city, only: [:create]
   before_action :set_spot, only: %i[show edit update destroy favorite]
 
   include Pundit
@@ -36,7 +37,6 @@ class SpotsController < ApplicationController
 
   def new
     @spot = Spot.new
-    # @spot_photo = SpotPhoto.new
     authorize @spot
   end
 
@@ -67,6 +67,10 @@ class SpotsController < ApplicationController
   end
 
   private
+
+  def set_city
+    @city = City.find_by(name: params[:spot][:city])
+  end
 
   def set_spot
     @spot = Spot.find(params[:id])
