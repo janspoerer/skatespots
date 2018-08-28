@@ -17,22 +17,20 @@
         <div class="Card__rating">
           <div class="d-flex small">
             <% if spot.reviews&.blank? %>
-              <p> 0 <i class="fas fa-star" style="color: #ccc"> </i> </p>
+              <p>0 <i class="fas fa-star" style="color: #ccc"> </i></p>
             <% else %>
               <p>
-              <% (1..5).to_a.each do |el| %>
-                <% if spot.reviews&.present? %>
-                  <%# if el <= spot.average_rating& %>
+                <% (1..5).to_a.each do |el| %>
+                  <% if el <= spot.reviews&.average(:rating).round(1) %>
                     <i class="fas fa-star" style="color: #ffb400;"></i>
                   <% else %>
                     <i class="fas fa-star" style="color: #ccc"></i>
-                  <%# end %>
+                  <% end %>
                 <% end %>
-              <% end %>
-              (<%= spot.reviews.count %> reviews)
+                (<%= spot.reviews.count %> reviews)
               </p>
             <% end %>
-            <p class="small"> | <%= spot.likes&.sum(:value) %>  <i class='far fa-thumbs-up main-card-image-likes-button'></i></p>
+            <p class="small"> | <%= spot.number_of_likes %>  <i class='far fa-thumbs-up main-card-image-likes-button'></i></p>
           </div>
         </div>
       </div>
