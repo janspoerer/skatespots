@@ -18,6 +18,9 @@
        <div class="Navbar__link-item">
         <%= link_to "Explore", spots_path, :class => current_class?(spots_path)  %>
        </div>
+       <div class="Navbar__link-item">
+        <%= link_to "Events", events_path, :class => current_class?(events_path)  %>
+       </div>
 
       <% if user_signed_in? %>
 
