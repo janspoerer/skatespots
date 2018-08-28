@@ -14,7 +14,7 @@
 
                     <div class="event-card__body">
                       <div class="event-name event-card__title"> <h3> <%= event.name %> </h3></div>
-                      <div class="event-description"><%= event.description %> </div>
+                      <div class="event-description"><strong>Details: </strong><%= event.description %> </div>
                       <div class="event-time-card"><strong>Date: <%= event.event_date %>: <%= event.start_time %> ~ <%= event.end_time %> </strong></div>
                       <div class="event-spot"> Location: <%= event.spot.name %>
                         <%#= link_to "Spot link", spot_path(event.spot) %>
