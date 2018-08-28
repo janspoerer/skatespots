@@ -3,6 +3,8 @@ puts 'Seed: Deleting existing records...'
 Review.delete_all
 Like.delete_all
 Favorite.delete_all
+Participant.delete_all
+Event.delete_all
 Spot.delete_all
 User.delete_all
 City.delete_all
