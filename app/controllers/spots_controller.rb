@@ -28,11 +28,6 @@ class SpotsController < ApplicationController
   def show
     @review = Review.new
     @like = Like.where(spot_id: @spot.id)
-    # Like counter below
-    @no_of_likes = 0
-    @spot.likes.each do |like|
-      @no_of_likes += like.value
-    end
     @markers = [{
       lat: @spot.latitude,
       lng: @spot.longitude
@@ -83,10 +78,6 @@ class SpotsController < ApplicationController
     params[:spot].permit(:name, :description, :address, :city_id, :category, {photos: []})
   end
   # rubocop:enable Metrics/MethodLength
-
-  # def spot_photo_params
-  #   params.permit(:photo, :user_id, :spot_id)
-  # end
 
   def skip_pundit?
     false

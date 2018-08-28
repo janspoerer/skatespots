@@ -6,9 +6,8 @@
     </div>
 
     <% if user_signed_in? %>
-
       <div class="col-md-2">
-        <% if @spot.liked_by(current_user) %>
+        <% if @spot.favourite_by(current_user) %>
           <%=  link_to(content_tag(:i, '', class: 'fas fa-heart btn main-card-image-likes-button', style: "color: rgb(219, 44, 44); font-size: 20px"), spot_favorite_path(@spot, @spot.liked_by(current_user)), :method => :delete)  %> <!-- colorful heart  -->
         <% else %>
           <%=  link_to(content_tag(:i, '', class: 'far fa-heart btn main-card-image-likes-button', style: "font-size: 20px"), spot_favorites_path(@spot), :method => :post)  %> <!-- blank heart  -->
@@ -16,26 +15,36 @@
         <!-- <p class="small btn main-card-image-likes-button"><%#= link_to "<i class='fas fa-thumbs-down'></i>".html_safe, downvote_like_path(@like) %></p> -->
       </div>
     <% end %>
-
   </div>
 
   <div class="d-flex">
-    <p class="small">
-    <% if @spot.reviews&.blank? %>
-      0 <i class="fas fa-star" style="color: #ccc"> </i>
-    <% else %>
-      <% (1..5).to_a.each do |el| %>
-        <% if el <= @spot.average_rating&.round(1) %>
-          <i class="fas fa-star" style="color: #ffb400;"></i>
+    <div class="col-md-8 no-padding">
+      <p class="small">
+        <% if @spot.reviews&.blank? %>
+          0 <i class="fas fa-star" style="color: #ccc"> </i>
         <% else %>
-          <i class="fas fa-star" style="color: #ccc"></i>
+          <% (1..5).to_a.each do |el| %>
+            <% if el <= @spot.average_rating&.round(1) %>
+              <i class="fas fa-star" style="color: #ffb400;"></i>
+            <% else %>
+              <i class="fas fa-star" style="color: #ccc"></i>
+            <% end %>
+          <% end %>
         <% end %>
-      <% end %>
-    <% end %>
-    (<%= @spot.average_rating.round(1) %>) | <%= @spot.likes&.sum(:value) %>
-    <%= link_to "<i class='far fa-thumbs-up main-card-image-likes-button'></i>".html_safe, upvote_like_path(@spot.id) %></p>
+        (<%= @spot.average_rating.round(1) %>) | <%= @spot.number_of_likes %>
+        <% if @spot.liked_by(current_user) %>
+          <%= link_to "<i class='far fa-thumbs-up main-card-image-likes-button'></i>".html_safe, like_path(@spot.liked_by(current_user)), method: :delete %></p>
+        <% else %>
+          <%= link_to "<i class='far fa-thumbs-up main-card-image-likes-button'></i>".html_safe, spot_likes_path(@spot.id), method: :post %></p>
+        <% end %>
+    </div>
 
+    <!-- TODO: Add photo button here  -->
+    <div class="col-md-4 no-padding text-right">
+      <%= render 'spots/edit' %>
+    </div>
   </div>
+
   <p class="small"><strong>Address: </strong><%= @spot.address %></p>
 </div>
 

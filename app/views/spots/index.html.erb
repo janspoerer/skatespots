@@ -14,7 +14,7 @@
   </div>
 
   <div class="col-md-4 Map Cards__map">
-    <div class="Map__inner">
+    <div class="Map__inner card bg-map no-padding">
       <div id="map"
         style="width: 100%;"
         data-markers="<%= @markers.to_json %>">
@@ -23,5 +23,3 @@
   </div>
 
 </section>
-
-<%= javascript_pack_tag "map" %>

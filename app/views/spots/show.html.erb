@@ -5,7 +5,7 @@
       <!-- SPOT IMAGE card -->
       <div class="col-xs-12 col-md-4">
         <div class="card bg-skate no-padding">
-          <%= render 'image' %>
+          <%= render 'spots/image' %>
         </div>
       </div>
 
@@ -13,8 +13,8 @@
       <div class="col-xs-12 col-md-4">
         <div class="card scrollable">
           <div class="review-box">
-            <%= render 'spot-card', spot: @spot %><br>
-            <%= render 'events', spot: @spot %>
+            <%= render 'spots/spot-card', spot: @spot %><br>
+            <%= render 'spots/events', spot: @spot %>
             <%= render 'reviews/review_card', spot: @spot, review: @review %>
             <%= render 'reviews/form', spot: @spot, review: @review %>
           </div>

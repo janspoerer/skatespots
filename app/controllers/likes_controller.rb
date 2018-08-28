@@ -1,51 +1,20 @@
 class LikesController < ApplicationController
-  before_action :authenticate_user!
-
-  before_action :set_like, only: %i(calculate_number_of_likes upvote downvote)
-  before_action :set_spot, only: %i(calculate_number_of_likes upvote downvote)
-
-  include Pundit
-  after_action :verify_authorized, except: %i(number_of_likes set_spot), unless: :skip_pundit?
-
-  def upvote
-    if Like.where(spot_id: @spot.id, user_id: current_user.id) == []
-      @like = Like.create(spot: @spot, user: current_user, value: 0)
+  def create
+    @spot = Spot.find(params[:spot_id])
+    @like = Like.new(spot: @spot, user: current_user)
+    authorize @like
+    if @like.save
+      redirect_to spot_path(@spot)
     else
-      @like = Like.where(spot_id: @spot.id).first
+      @review = Review.new
+      render "spots/show"
     end
-    # require 'byebug'
-    # byebug
-
-    if vote_value > 0
-      @like.update(value: 0)
-    else
-      @like.update(value: 1)
-    end
-    redirect_to spot_path(@spot) # AJAX would be even better
-    authorize @spot
   end
 
-  def downvote
-    if vote_value < 0
-      @like.update(user: current_user, spot: @spot, value: 0)
-    else
-      @like.update(user: current_user, spot: @spot, value: -1)
-    end
-    redirect_to spot_path(@spot) # AJAX would be even better
-    authorize @spot
-  end
-
-  private
-
-  def set_like
+  def destroy
     @like = Like.find(params[:id])
-  end
-
-  def set_spot
-    @spot = @like.spot
-  end
-
-  def vote_value
-    @like.value
+    authorize @like
+    @like.destroy
+    redirect_to spot_path(@like.spot)
   end
 end
