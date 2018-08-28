@@ -27,11 +27,22 @@ class Spot < ApplicationRecord
   mount_uploaders :photos, PhotoUploader
 
   def average_rating
-    reviews.average(:rating)
+    if @reviews.blank?
+      return 0
+    else
+      @reviews.average(:rating)
+    end
   end
 
-  def liked_by(a_user)
+  def favourite_by(a_user)
     favorites.find_by(user: a_user)
   end
 
+  def liked_by(a_user)
+    likes.find_by(user: a_user)
+  end
+
+  def number_of_likes
+    likes.count
+  end
 end

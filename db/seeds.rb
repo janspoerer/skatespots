@@ -94,24 +94,22 @@ spot1 = Spot.create!(
   photos: "https://res.cloudinary.com/hienn/image/upload/v1535105658/Spots/scott-walsh-656484-unsplash.jpg"
 )
 
-
 spot2 = Spot.create!(
   name: "Harbor Cruising",
   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis nobis quod aperiam ipsa cupiditate aut numquam, nostrum fugit eos officiis sapiente voluptates. Corrupti esse nesciunt officiis, sequi, sint aspernatur doloribus?",
   address: "Elbchaussee 285, 22605 Hamburg",
   city: city3,
-  remote_photo_url: "https://res.cloudinary.com/hienn/image/upload/v1535105734/Spots/amogh-manjunath-772463-unsplash.jpg"
-)
 
+  photos: ["https://res.cloudinary.com/hienn/image/upload/v1535105658/Spots/scott-walsh-656484-unsplash.jpg"]
+)
 
 spot3 = Spot.create!(
   name: "Breezy hole",
   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis nobis quod aperiam ipsa cupiditate aut numquam, nostrum fugit eos officiis sapiente voluptates. Corrupti esse nesciunt officiis, sequi, sint aspernatur doloribus?",
   address: "Strandstraße 26, 25996 Wenningstedt-Braderup (Sylt)",
   city: city8,
-  remote_photo_url: "https://res.cloudinary.com/hienn/image/upload/v1535107048/Spots/skating_california.jpg"
+  photos: ["https://res.cloudinary.com/hienn/image/upload/v1535105658/Spots/scott-walsh-656484-unsplash.jpg"]
 )
-
 
 spot4 = Spot.create!(
   name: "The Nest",

@@ -1,6 +1,5 @@
 <div id="myCarousel" class="carousel slide carousel-fade" style="display: flex; justify-content: center;">
   <!-- To make photos sliding automatically, add data-ride to the div above: data-ride="carousel"  -->
-
   <% if @spot.photos.present? %>
     <div id="myCarousel" class="carousel slide">
       <ol class="carousel-indicators">
@@ -9,10 +8,10 @@
                class="<%= 'active' if index == 0 %>" ></li>
         <% end %>
       </ol>
-      <div class="carousel-inner">
+      <div class="card carousel-inner no-padding">
         <% @spot.photos.each_with_index do |photo, index| %>
           <div class="item <%= 'active' if index == 0 %>">
-            <%= cl_image_tag photo.url %>
+            <%= cl_image_tag photo.url, crop: :fill, class: "img-responsive" %>
           </div>
         <% end %>
       </div>

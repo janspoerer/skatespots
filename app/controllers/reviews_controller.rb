@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
   after_action :verify_authorized, unless: :skip_pundit?
+  before_action :set_review, only: %i[destroy]
 
   def create
     @spot = Spot.find(params[:spot_id])
@@ -18,9 +19,21 @@ class ReviewsController < ApplicationController
         format.js  # <-- idem
       end
     end
+    redirect_to spot_path(@spot)
+  end
+
+  def destroy
+    @review.destroy
+    @user = current_user
   end
 
   private
+
+  def set_review
+    @review = Review.find(params[:id])
+    authorize @review
+    redirect_to spot_path(@spot)
+  end
 
   def review_params
     params.require(:review).permit(:content, :rating)

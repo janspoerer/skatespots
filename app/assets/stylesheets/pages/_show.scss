@@ -40,29 +40,16 @@
   }
 }
 
-
 .container-main-cards {
   padding: 1px 0px;
 }
 
-.section-title {
-    font-size: 15px;
-    font-weight: light;
-    color: grey;
-    margin-left: 13px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-.events-display {
-  padding: 13px;
-  h1 {
-    margin: 0;
-    font-size: 24px;
-    font-weight: bold;
-  }
+.spot-wrapper-body {
+  padding: 0 30px 0 30px;
 }
 
-.event-card-title {
-  margin: 0;
-  display: flex;
+// Style for event section in spot card
+
+.event-show-page {
+  text-align: right
 }

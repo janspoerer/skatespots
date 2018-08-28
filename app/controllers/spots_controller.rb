@@ -28,16 +28,7 @@ class SpotsController < ApplicationController
 
   def show
     @review = Review.new
-    if Like.where(spot_id: @spot.id, user_id: current_user.id) == []
-      @like = Like.create(spot: @spot, user: current_user, value: 0)
-    else
-      @like = Like.where(spot_id: @spot.id).first
-    end
-    # Like counter below
-    @no_of_likes = 0
-    @spot.likes.each do |like|
-      @no_of_likes += like.value
-    end
+    @like = Like.where(spot_id: @spot.id)
     @markers = [{
       lat: @spot.latitude,
       lng: @spot.longitude
@@ -51,7 +42,6 @@ class SpotsController < ApplicationController
 
   def create
     @spot = Spot.new(spot_params)
-    # @spot.city = @city
     authorize @spot
     if @spot.save!
       redirect_to spot_path(@spot)
@@ -72,11 +62,8 @@ class SpotsController < ApplicationController
   end
 
   def destroy
-    if @spot.destroy
-      redirect_to spots_path
-    else
-      render :index
-    end
+    @spot.destroy
+    redirect_to :index
   end
 
   private
@@ -92,7 +79,7 @@ class SpotsController < ApplicationController
 
   # rubocop:disable Metrics/MethodLength
   def spot_params
-    params[:spot].permit(:name, :description, :address, :city_id, :category, :photos_cache, photos: [])
+    params[:spot].permit(:name, :description, :address, :city_id, :category, {photos: []})
   end
   # rubocop:enable Metrics/MethodLength
 

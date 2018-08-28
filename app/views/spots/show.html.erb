@@ -4,33 +4,17 @@
     <div class="row">
       <!-- SPOT IMAGE card -->
       <div class="col-xs-12 col-md-4">
-        <div class="card bg-skate">
-          <%= render 'image' %>
-
-          <div class="events">
-            <h1 class='section-title'>Upcoming Events</h1>
-            <div class="events-display">
-              <p class="event-card-title d-flex">
-                <strong>Highest Jump</strong>
-                 | Date: 12.Apr.2018
-                <p >this is a short description of the event </p>
-                <strong>Back From Summer</strong>
-                 | Date: 12.Apr.2018
-                <p >this is a short description of the event </p>
-                <strong>Trashing Trail</strong>
-                 | Date: 12.Apr.2018
-                <p >this is a short description of the event </p>
-              </p>
-            </div>
+        <div class="card bg-skate no-padding">
+          <%= render 'spots/image' %>
         </div>
       </div>
-    </div>
 
       <!-- SPOT CARD (likes, faves, etc) + REVIEWS -->
       <div class="col-xs-12 col-md-4">
         <div class="card scrollable">
           <div class="review-box">
-            <%= render 'spot-card', spot: @spot %><br>
+            <%= render 'spots/spot-card', spot: @spot %><br>
+            <%= render 'spots/events', spot: @spot %>
             <%= render 'reviews/review_card', spot: @spot, review: @review %>
             <%= render 'reviews/form', spot: @spot, review: @review %>
           </div>

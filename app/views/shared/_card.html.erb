@@ -5,6 +5,9 @@
         <% spot.photos.each do |photo| %>
           <%= cl_image_tag photo.url %>
         <% end %>
+      <% else %>
+        <%= spot.inspect %>
+        <%= spot.photos.inspect %>
       <% end %>
     </figure>
 
@@ -12,13 +15,24 @@
       <h3 class="Card__title"><%= spot.name %></h3>
       <div class="Card__meta">
         <div class="Card__rating">
-          <div class="d-flex">
+          <div class="d-flex small">
             <% if spot.reviews&.blank? %>
-              <p class="small">0 <i class="fas fa-star" style="color: #ccc"> </i></p>
+              <p> 0 <i class="fas fa-star" style="color: #ccc"> </i> </p>
             <% else %>
-              <% spot.average_rating %><i class="fas fa-star" style="color: #ffb400;"></i>
+              <p>
+              <% (1..5).to_a.each do |el| %>
+                <% if spot.reviews&.present? %>
+                  <%# if el <= spot.average_rating& %>
+                    <i class="fas fa-star" style="color: #ffb400;"></i>
+                  <% else %>
+                    <i class="fas fa-star" style="color: #ccc"></i>
+                  <%# end %>
+                <% end %>
+              <% end %>
+              (<%= spot.reviews.count %> reviews)
+              </p>
             <% end %>
-            <p class="small"> | <%= spot.likes&.length %><i class='far fa-thumbs-up main-card-image-likes-button'></i></p>
+            <p class="small"> | <%= spot.likes&.sum(:value) %>  <i class='far fa-thumbs-up main-card-image-likes-button'></i></p>
           </div>
         </div>
       </div>
