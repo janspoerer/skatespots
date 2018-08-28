@@ -1,0 +1,40 @@
+<section class="events event-wrapper-body">
+  <h2>Events</h2>
+
+  <div class="row">
+    <div class="container-fluid">
+      <% if @events.present? %>
+        <div class="Cards">
+          <div class="Cards__grid">
+            <% @events&.each do |event|  %>
+              <div class="col-md-3 grid-item">
+                <% if event.present? %>
+
+                  <div class="event-card Card">
+                    <div class="event-name"> <h3> <%= event.name %> </h3></div>
+                    <div class="event-description"> <%= event.description %> </div>
+                    <div class="event-time-card"> <%= event.event_date %>: <%= event.start_time %> ~ <%= event.end_time %> </div>
+                    <div class="event-spot"> Spot: <%= event.spot.name %>
+                      <%= link_to "Location", spot_path(event.spot) %>
+                    </div>
+                    <div class="event-organizer"> Organizer: <%= event.user.last_name %> </div>
+                    <p class="btn btn-danger"> Join </p>
+                    <hr>
+                    <div class="event-participants"> Participants: <p></p>
+                      <% event.participants.each do |participant| %>
+                        <div class="button-participant-card btn btn-primary"> <%= participant.user.last_name %> </div>
+                      <% end %>
+                    </div>
+                  </div>
+
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      <% else %>
+        <h4>You can check events here</h4>
+      <% end %>
+    </div>
+  </div>
+</section>

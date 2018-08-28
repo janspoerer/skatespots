@@ -81,6 +81,9 @@
   }
 }
 
+.event-card {
+  padding: 10px;
+}
 // Lazyload blur up styles
 .ls-blur-up-img {
   position: absolute;
@@ -99,6 +102,15 @@
     opacity: 0;
     filter: blur(5px);
   }
+}
+
+.button-participant-card {
+  padding: 2px;
+  margin: 2px;
+}
+
+.event-time-card {
+  color: $error;
 }
 
 .btn-custom {
