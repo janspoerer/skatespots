@@ -34,7 +34,7 @@ class Spot < ApplicationRecord
     end
   end
 
-  def favourite_by(a_user)
+  def favorite_by(a_user)
     favorites.find_by(user: a_user)
   end
 
