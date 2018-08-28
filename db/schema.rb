@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_24_110241) do
+ActiveRecord::Schema.define(version: 2018_08_28_132602) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,21 @@ ActiveRecord::Schema.define(version: 2018_08_24_110241) do
     t.string "photo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.string "event_date"
+    t.string "start_time"
+    t.string "end_time"
+    t.string "status"
+    t.bigint "user_id"
+    t.bigint "spot_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["spot_id"], name: "index_events_on_spot_id"
+    t.index ["user_id"], name: "index_events_on_user_id"
   end
 
   create_table "favorites", force: :cascade do |t|
@@ -39,6 +54,15 @@ ActiveRecord::Schema.define(version: 2018_08_24_110241) do
     t.integer "value"
     t.index ["spot_id"], name: "index_likes_on_spot_id"
     t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
+  create_table "participants", force: :cascade do |t|
+    t.bigint "event_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_participants_on_event_id"
+    t.index ["user_id"], name: "index_participants_on_user_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -87,10 +111,14 @@ ActiveRecord::Schema.define(version: 2018_08_24_110241) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "events", "spots"
+  add_foreign_key "events", "users"
   add_foreign_key "favorites", "spots"
   add_foreign_key "favorites", "users"
   add_foreign_key "likes", "spots"
   add_foreign_key "likes", "users"
+  add_foreign_key "participants", "events"
+  add_foreign_key "participants", "users"
   add_foreign_key "reviews", "spots"
   add_foreign_key "reviews", "users"
   add_foreign_key "spots", "cities"
