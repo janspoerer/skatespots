@@ -3,6 +3,8 @@ puts 'Seed: Deleting existing records...'
 Review.delete_all
 Like.delete_all
 Favorite.delete_all
+Participant.delete_all
+Event.delete_all
 Spot.delete_all
 User.delete_all
 City.delete_all
@@ -189,6 +191,7 @@ spot1 = Spot.create!(
 # )
 
 
+
 puts 'Creating review seeds'
 
 review1 = Review.create!(
@@ -289,6 +292,74 @@ review1 = Review.create!(
 #   spot: spot10
 # )
 
+
+puts 'Creating event seeds'
+
+event1 = Event.create!(
+ name:"party",
+ description:"The best event ever",
+ event_date:"2018-8-31",
+ start_time:"6pm",
+ end_time:"10pm",
+ status:"coming soon",
+ user_id:1,
+ spot_id:1
+)
+
+event2 = Event.create!(
+ name:"Sunday night skaters",
+ description:"Just come",
+ event_date:"2018-8-31",
+ start_time:"6pm",
+ end_time:"10pm",
+ status:"coming soon",
+ user_id:1,
+ spot_id:1
+)
+
+event3 = Event.create!(
+ name:"Malcom night",
+ description:"The hottest night in 21st century",
+ event_date:"2018-8-31",
+ start_time:"6pm",
+ end_time:"11pm",
+ status:"coming soon",
+ user_id:1,
+ spot_id:1
+)
+
+event3 = Event.create!(
+ name:"Skater Ladies",
+ description:"Skates for Ladies",
+ event_date:"2018-8-31",
+ start_time:"2pm",
+ end_time:"3pm",
+ status:"coming soon",
+ user_id:1,
+ spot_id:1
+)
+
+puts 'Creating participant seeds'
+
+participant1 = Participant.create!(
+  event_id:1,
+  user_id:1
+)
+
+participant2 = Participant.create!(
+  event_id:1,
+  user_id:2
+)
+
+participant3 = Participant.create!(
+  event_id:1,
+  user_id:3
+)
+
+participant4 = Participant.create!(
+  event_id:2,
+  user_id:3
+)
 
 # puts "Creating favorite seeds"
 

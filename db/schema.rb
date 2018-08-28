@@ -76,16 +76,6 @@ ActiveRecord::Schema.define(version: 2018_08_28_132602) do
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
-  create_table "spot_photos", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "spot_id"
-    t.string "photo"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["spot_id"], name: "index_spot_photos_on_spot_id"
-    t.index ["user_id"], name: "index_spot_photos_on_user_id"
-  end
-
   create_table "spots", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -131,8 +121,6 @@ ActiveRecord::Schema.define(version: 2018_08_28_132602) do
   add_foreign_key "participants", "users"
   add_foreign_key "reviews", "spots"
   add_foreign_key "reviews", "users"
-  add_foreign_key "spot_photos", "spots"
-  add_foreign_key "spot_photos", "users"
   add_foreign_key "spots", "cities"
   add_foreign_key "users", "cities"
 end
