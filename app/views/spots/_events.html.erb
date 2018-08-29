@@ -2,25 +2,15 @@
   <h5><strong>Upcoming Events</strong></h5>
   <div class="d-flex small">
     <ul>
-      <li>
-        <strong>Highest Jump</strong> | Date: 12.Apr.2018
-         <p>this is a short description of the event</p>
-      </li>
-      <li>
-        <strong>Back From Summer</strong>
-         | Date: 12.Apr.2018
-        <p >this is a short description of the event </p>
-      </li>
-      <li>
-        <strong>Trashing Trail</strong>
-         | Date: 12.Apr.2018
-        <p >this is a short description of the event </p>
-      </li>
-    </ul>
-  </div>
 
-  <!-- TODO: add @event.count -->
-  <div class="event-show-page small">
-    <strong>See all 3 events</strong>
+      <% @spot.events.each do |event| %>
+        <li>
+          <% if event.spot = @spot %>
+          <strong><%= link_to event.name, spot_event_path(@spot, event) %> </strong> | Date:<%= event.event_date %>
+          <br> <%= event.description %>
+          <% end %>
+        </li>
+        <% end %>
+    </ul>
   </div>
 </div>
