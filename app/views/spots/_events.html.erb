@@ -1,6 +1,16 @@
 <div class="spot-events" style="border-bottom: solid 1px rgb(190, 189, 186); padding-bottom: 10px">
-  <h5><strong>Upcoming Challenges</strong> <%= link_to "Create a challenge", new_event_path, class: "btn btn-primary" %>
-</h5>
+
+  <h5>
+    <div class="col-md-7 no-padding">
+      <strong>Upcoming Challenges</strong>
+    </div>
+
+    <div class="col-md-5">
+      <%= link_to "Create challenge", new_event_path, class: "fas fa-plus-square btn-sm btn-custom btn-success" %>
+    </div>
+  </h5>
+
+  <br>
   <div class="d-flex small">
     <ul>
 
