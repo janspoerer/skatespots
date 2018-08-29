@@ -1,31 +1,31 @@
 <div class="container-fluid container-index">
 
   <div class="spot-index-title">
-    <h2><strong>Explore and find your favorite skatespots (<%= @spots&.count %>)</strong></h2>
   </div>
-
-  <div class="wrapper-body">
+  <div class="col-xs-4">
     <div class="Map Cards__map">
-
       <!-- Map__inner card bg-map  -->
       <div class="no-padding">
         <div id="map"
-          style="width: 580px;"
+          style="width: 450px; height: 100vh;"
           data-markers="<%= @markers.to_json %>">
         </div>
       </div>
     </div>
-
-    <div class="cards-body">
-      <div class="row">
-        <% @spots&.each do |spot|  %>
-          <div class="col-sm-12 col-md-4 grid-item">
-            <%= render 'shared/card', spot: spot %>
-          </div>
-        <% end %>
-      </div>
-    </div>
-
   </div>
-
+  <div class="col-xs-8">
+  <div class="wrapper-body">
+    <div class="cards-body">
+    <h2><strong>Explore and find your favorite skatespots (<%= @spots&.count %>)</strong></h2>
+    <br>
+    <div class="row">
+      <% @spots&.each do |spot|  %>
+        <div class="col-sm-12 col-md-4 grid-item">
+          <%= render 'shared/card', spot: spot %>
+        </div>
+      <% end %>
+    </div>
+    </div>
+  </div>
+</div>
 </div>

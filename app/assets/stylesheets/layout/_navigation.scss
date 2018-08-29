@@ -55,7 +55,8 @@
 
 .Navbar__inner {
   display: flex;
-  height: $navbar-height;
+  height: 90px;
+  padding: 0px 54px;
   align-items: center;
   justify-content: space-between;
 }
