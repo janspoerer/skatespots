@@ -317,7 +317,7 @@ event2 = Event.create!(
 )
 
 event3 = Event.create!(
- name:"Malcom night",
+ name:"Malcolm night",
  description:"The hottest night in 21st century",
  event_date:"2018-8-31",
  start_time:"6pm",
@@ -327,7 +327,7 @@ event3 = Event.create!(
  spot: spot10
 )
 
-event3 = Event.create!(
+event4 = Event.create!(
  name:"Skater Ladies",
  description:"Skates for Ladies",
  event_date:"2018-8-31",
