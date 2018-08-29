@@ -25,7 +25,7 @@
                     </div>
 
                     <div class="event-card__participants"><p><strong>Paticipants:</strong></p>
-                      <% event.participants.take(8).each do |participant| %>
+                      <% event.participants.take(6).each do |participant| %>
                       <%= cl_image_tag participant.user.photo.url, height: 40, width: 40, crop: :fill, class: "img-circle"%>
 
                       <% end %>
