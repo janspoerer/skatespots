@@ -1,5 +1,5 @@
 .spot-flexbox {
-  margin: 10px 50px
+  margin: 10px 10px
 }
 
 .user-review-avatar .user-review-name {
@@ -71,8 +71,8 @@
 }
 
 .container-index {
-  padding-left: 25px;
-  padding-right: 15px;
+  // padding-left: 25px;
+  // padding-right: 15px;
   padding-bottom: 40px
 }
 
@@ -91,6 +91,11 @@
   padding-right: 20px;
   position: sticky;
   top: 5px;
+}
+
+.cards-body {
+  width: 830px;
+  margin-left: 60px
 }
 
 

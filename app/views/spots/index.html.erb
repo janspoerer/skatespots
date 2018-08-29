@@ -1,9 +1,10 @@
 <div class="container-fluid container-index">
+
   <div class="spot-index-title">
     <h2><strong>Explore and find your favorite skatespots (<%= @spots&.count %>)</strong></h2>
   </div>
-  <div class="wrapper-body">
 
+  <div class="wrapper-body">
     <div class="Map Cards__map">
       <div class="Map__inner card bg-map no-padding">
         <div id="map"
@@ -13,7 +14,7 @@
       </div>
     </div>
 
-    <div class="container-index">
+    <div class="cards-body">
       <div class="row">
         <% @spots&.each do |spot|  %>
           <div class="col-md-4 grid-item">
@@ -22,5 +23,7 @@
         <% end %>
       </div>
     </div>
+
   </div>
+  
 </div>
