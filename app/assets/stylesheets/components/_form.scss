@@ -1,3 +1,13 @@
 .form-container {
   margin-bottom: 100px;
 }
+
+.card__form {
+  // margin-top: 80px;
+  margin-top: 40px;
+  padding: 20px;
+  color: inherit;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
