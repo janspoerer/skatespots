@@ -93,7 +93,7 @@ spot1 = Spot.create!(
   description: "Central skatepark for pro",
   address: "Ludwigstraße 34B, 70176 Stuttgart",
   city: city7,
-  remote_photos_urls: ["https://res.cloudinary.com/hienn/image/upload/v1535105658/Spots/scott-walsh-656484-unsplash.jpg"]
+  remote_photos_urls: ["https://res.cloudinary.com/hienn/image/upload/v1535107048/Spots/scott-walsh-656484-unsplash.jpg"]
 )
 
 spot2 = Spot.create!(
@@ -109,7 +109,7 @@ spot3 = Spot.create!(
   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis nobis quod aperiam ipsa cupiditate aut numquam, nostrum fugit eos officiis sapiente voluptates. Corrupti esse nesciunt officiis, sequi, sint aspernatur doloribus?",
   address: "Strandstraße 26, 25996 Wenningstedt-Braderup (Sylt)",
   city: city8,
-  remote_photos_urls: ["https://res.cloudinary.com/hienn/image/upload/v1535105655/Spots/beach_john-verhoestra-295155-unsplash.jpg"]
+  remote_photos_urls: ["https://res.cloudinary.com/hienn/image/upload/v1535107048/Spots/beach_john-verhoestra-295155-unsplash.jpg"]
 )
 
 spot4 = Spot.create!(
@@ -117,7 +117,7 @@ spot4 = Spot.create!(
   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis nobis quod aperiam ipsa cupiditate aut numquam, nostrum fugit eos officiis sapiente voluptates. Corrupti esse nesciunt officiis, sequi, sint aspernatur doloribus?",
   address: "Baseler Pl. 2, 60329 Frankfurt am Main",
   city: city1,
-  remote_photos_urls: ["https://res.cloudinary.com/hienn/image/upload/v1535105658/Spots/tyler-nix-569195-unsplash.jpg"]
+  remote_photos_urls: ["https://res.cloudinary.com/hienn/image/upload/v1535107048/Spots/tyler-nix-569195-unsplash.jpg"]
 )
 
 spot5 = Spot.create!(
@@ -125,7 +125,7 @@ spot5 = Spot.create!(
   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis nobis quod aperiam ipsa cupiditate aut numquam, nostrum fugit eos officiis sapiente voluptates. Corrupti esse nesciunt officiis, sequi, sint aspernatur doloribus?",
   address: "Holstenstraße 30, 22767 Hamburg",
   city: city3,
-  remote_photos_urls: ["https://res.cloudinary.com/hienn/image/upload/v1535105657/Spots/karol-kaczorek-753191-unsplash.jpg"]
+  remote_photos_urls: ["https://res.cloudinary.com/hienn/image/upload/v1535107048/Spots/karol-kaczorek-753191-unsplash.jpg"]
 )
 
 spot6 = Spot.create!(
@@ -133,7 +133,7 @@ spot6 = Spot.create!(
   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis nobis quod aperiam ipsa cupiditate aut numquam, nostrum fugit eos officiis sapiente voluptates. Corrupti esse nesciunt officiis, sequi, sint aspernatur doloribus?",
   address: "Engasserbogen 34, 80639 München",
   city: city4,
-  remote_photos_urls: ["https://res.cloudinary.com/hienn/image/upload/v1535105656/Spots/city_emily-reider-508296-unsplash.jpg"]
+  remote_photos_urls: ["https://res.cloudinary.com/hienn/image/upload/v1535107048/Spots/city_emily-reider-508296-unsplash.jpg"]
 )
 
 spot7 = Spot.create!(
@@ -141,7 +141,7 @@ spot7 = Spot.create!(
   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis nobis quod aperiam ipsa cupiditate aut numquam, nostrum fugit eos officiis sapiente voluptates. Corrupti esse nesciunt officiis, sequi, sint aspernatur doloribus?",
   address: "Dünenstraße 333C, 25996 Wenningstedt-Braderup (Sylt)",
   city: city8,
-  remote_photos_urls: ["https://res.cloudinary.com/hienn/image/upload/v1535105655/Spots/jennifer-bedoya-599213-unsplash.jpg"]
+  remote_photos_urls: ["https://res.cloudinary.com/hienn/image/upload/v1535107048/Spots/jennifer-bedoya-599213-unsplash.jpg"]
 )
 
 
@@ -150,7 +150,7 @@ spot8 = Spot.create!(
   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis nobis quod aperiam ipsa cupiditate aut numquam, nostrum fugit eos officiis sapiente voluptates. Corrupti esse nesciunt officiis, sequi, sint aspernatur doloribus?",
   address: "Subbelrather Str. 488, 50825 Köln",
   city: city5,
-  remote_photos_urls: ["https://res.cloudinary.com/hienn/image/upload/v1535105655/Spots/emily-reider-513130-unsplash.jpg"]
+  remote_photos_urls: ["https://res.cloudinary.com/hienn/image/upload/v1535107048/Spots/emily-reider-513130-unsplash.jpg"]
 )
 
 
@@ -159,7 +159,7 @@ spot9 = Spot.create!(
   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis nobis quod aperiam ipsa cupiditate aut numquam, nostrum fugit eos officiis sapiente voluptates. Corrupti esse nesciunt officiis, sequi, sint aspernatur doloribus?",
   address: "Rheinkniebrücke, 40219 Düsseldorf",
   city: city6,
-  remote_photos_urls: ["https://res.cloudinary.com/hienn/image/upload/v1535105734/Spots/zac-ong-630584-unsplash.jpg"]
+  remote_photos_urls: ["https://res.cloudinary.com/hienn/image/upload/v1535107048/Spots/zac-ong-630584-unsplash.jpg"]
 )
 
 spot10 = Spot.create!(
@@ -167,7 +167,7 @@ spot10 = Spot.create!(
   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis nobis quod aperiam ipsa cupiditate aut numquam, nostrum fugit eos officiis sapiente voluptates. Corrupti esse nesciunt officiis, sequi, sint aspernatur doloribus?",
   address: "Metzgerbach,, 70193 Stuttgart",
   city: city7,
-  remote_photos_urls: ["https://res.cloudinary.com/hienn/image/upload/v1535105654/Spots/lisa-yang-725071-unsplash.jpg"]\
+  remote_photos_urls: ["https://res.cloudinary.com/hienn/image/upload/v1535107048/Spots/lisa-yang-725071-unsplash.jpg"]\
 )
 
 
@@ -176,7 +176,7 @@ spot11 = Spot.create!(
   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis nobis quod aperiam ipsa cupiditate aut numquam, nostrum fugit eos officiis sapiente voluptates. Corrupti esse nesciunt officiis, sequi, sint aspernatur doloribus?",
   address: "Engasserbogen 34, 80639 München",
   city: city4,
-  remote_photos_urls: ["https://res.cloudinary.com/hienn/image/upload/v1535105653/Spots/alex-geerts-661144-unsplash.jpg"]
+  remote_photos_urls: ["https://res.cloudinary.com/hienn/image/upload/v1535107048/Spots/alex-geerts-661144-unsplash.jpg"]
 )
 
 
@@ -186,7 +186,7 @@ spot12 = Spot.create!(
   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis nobis quod aperiam ipsa cupiditate aut numquam, nostrum fugit eos officiis sapiente voluptates. Corrupti esse nesciunt officiis, sequi, sint aspernatur doloribus?",
   address: "Kegelenstraße 21, 70372 Stuttgart",
   city: city7,
-  remote_photos_urls: ["https://res.cloudinary.com/hienn/image/upload/v1535105653/Spots/beach_ash-edmonds-527424-unsplash_1.jpg"]
+  remote_photos_urls: ["https://res.cloudinary.com/hienn/image/upload/v1535107048/Spots/beach_ash-edmonds-527424-unsplash_1.jpg"]
 )
 
 
