@@ -1,5 +1,6 @@
 <% form_classes = controller_name == 'pages' && action_name == 'home' ? 'navbar-form hidden js-navbar-form' : 'navbar-form js-navbar-form' %>
-  <%= form_tag '/spots', method: :get, class: form_classes do %>
+
+  <%= form_tag spots_path, method: :get, class: form_classes do %>
     <div class="input-group d-flex">
     <%= text_field_tag :query,
       params[:query],

@@ -17,7 +17,7 @@ class SpotsController < ApplicationController
       authorize @spots
     end
 
-    @markers = Spot.where.not(latitude: nil, longitude: nil).map do |spot|
+    @markers = @spots.map do |spot|
      {
        lat: spot.latitude,
        lng: spot.longitude
