@@ -301,8 +301,8 @@ event1 = Event.create!(
  start_time:"6pm",
  end_time:"10pm",
  status:"coming soon",
- user_id:1,
- spot_id:1
+ user: user1,
+ spot: spot1
 )
 
 event2 = Event.create!(
@@ -312,8 +312,8 @@ event2 = Event.create!(
  start_time:"6pm",
  end_time:"10pm",
  status:"coming soon",
- user_id:1,
- spot_id:1
+ user: user1,
+ spot: spot10
 )
 
 event3 = Event.create!(
@@ -323,8 +323,8 @@ event3 = Event.create!(
  start_time:"6pm",
  end_time:"11pm",
  status:"coming soon",
- user_id:1,
- spot_id:1
+ user: user1,
+ spot: spot10
 )
 
 event3 = Event.create!(
@@ -334,30 +334,30 @@ event3 = Event.create!(
  start_time:"2pm",
  end_time:"3pm",
  status:"coming soon",
- user_id:1,
- spot_id:1
+ user: user1,
+ spot: spot10
 )
 
 puts 'Creating participant seeds'
 
 participant1 = Participant.create!(
-  event_id:1,
-  user_id:1
+  event: event1,
+  user: user1
 )
 
 participant2 = Participant.create!(
-  event_id:1,
-  user_id:2
+  event: event1,
+  user: user2
 )
 
 participant3 = Participant.create!(
-  event_id:1,
-  user_id:3
+  event: event1,
+  user: user3
 )
 
 participant4 = Participant.create!(
-  event_id:2,
-  user_id:3
+  event: event2,
+  user: user3
 )
 
 # puts "Creating favorite seeds"
