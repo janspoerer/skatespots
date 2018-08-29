@@ -1,0 +1,42 @@
+<!-- Review content -->
+<div class="container-main-cards">
+  <div class="spot-flexbox">
+    <div class="row">
+
+      <div class="event-card Card">
+
+        <div class="event-card__body">
+          <div class="event-name event-card__title">
+            <h3> <%= @event.name %> </h3>
+          </div>
+          <div class="event-description">
+            <strong>Details: </strong><%= @event.description %>
+          </div>
+          <div class="event-time-card">
+            <strong>Date: <%= @event.event_date %>: <%= @event.start_time %> ~ <%= @event.end_time %> </strong>
+          </div>
+          <div class="event-spot">
+            Location: <%= @event.spot.name %>
+          </div>
+          <div class="event-organizer">
+            Organizer: <%= @event.user.last_name %>
+          </div>
+          <br>
+          <div class="button-participant-join">
+            <%= link_to "Take it", spot_event_participants_path(@spot, @event, @participant), method: :post, class: "btn btn-primary"  %>
+          </div>
+
+          <br>
+          <hr>
+        </div>
+
+        <div class="event-card__participants">
+          <p><strong>Paticipants:</strong></p>
+          <% @event.participants.each do |participant| %>
+              <%= cl_image_tag participant.user.photo.url, height: 40, width: 40, crop: :fill, class: "img-circle"%>
+          <% end %>
+        </div>
+
+    </div>
+  </div>
+</div>

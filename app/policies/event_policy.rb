@@ -8,4 +8,9 @@ class EventPolicy < ApplicationPolicy
   def index?
     true
   end
+
+  def new?
+    # record.user = user
+    true
+  end
 end
