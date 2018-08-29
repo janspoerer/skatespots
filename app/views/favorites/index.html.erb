@@ -1,25 +1,22 @@
-<div class="container-fluid container-index-fav">
-  <div class="wrapper-body">
-    <div class="spot-index-title-fav">
-      <h2>My favorite skatespots</h2>
-    </div>
+<div class="background-fav" >
 
-    <div class="Cards">
-      <div class="Cards__grid">
-        <div class="row">
-          <% if @spots.present? %>
-            <% @spots&.each do |spot|  %>
-              <div class="col-xs-12 col-md-2 grid-item">
-                <% if spot.favorites.last.present? %>
-                  <%= render 'shared/card', spot: spot %>
-                <% end %>
-              </div>
+  <div class="container-fluid container-index-fav">
+    <div class="spot-index-title-fav">
+      <h1><strong>My favorite skatespots</h1>
+    </div>
+    <div class="row">
+      <% if @spots.present? %>
+        <% @spots&.each do |spot|  %>
+          <div class="col-xs-12 col-md-3 grid-item">
+            <% if spot.favorites.last.present? %>
+              <%= render 'shared/card', spot: spot %>
             <% end %>
-          <% else %>
-            <h4>You can add your favorite spots here</h4>
-          <% end %>
-        </div>
-      </div>
+          </div>
+        <% end %>
+      <% else %>
+        <h4>You can add your favorite spots here</h4>
+      <% end %>
     </div>
   </div>
+
 </div>
