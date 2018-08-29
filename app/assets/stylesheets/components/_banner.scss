@@ -11,6 +11,7 @@
 }
 
 .Banner {
+  padding: 100px;
   z-index: -1;
   position: relative;
   margin-top: -#{$navbar-height};
@@ -41,12 +42,12 @@
   }
 
   &__body {
-    max-width: 680px;
+    max-width: 762px;
     margin-right: auto;
   }
 
   &__heading {
-    font-size: 42px;
+    font-size: 66px;
     font-weight: bold;
   }
 
@@ -56,6 +57,7 @@
   }
 
   &__form {
+    max-width: 450px;
     border-radius: 6px;
     box-shadow: 0 15px 46px rgba(26, 26, 29, 0.3), 0 15px 90px rgba(0, 0, 0, 0.2);
   }

@@ -11,8 +11,11 @@
   </head>
 
   <body class="Site">
-
-    <%= render 'shared/navbar' %>
+    <% if params[:action] == 'home' %>
+      <%= render 'shared/navbar_home' %>
+    <% else %>
+      <%= render 'shared/navbar' %>
+    <% end %>
 
     <%= render 'shared/flashes' %>
 
@@ -20,7 +23,10 @@
       <%= yield %>
     </main>
 
-    <%= render 'shared/footer' %>
+    <%# if params[:action]!= 'home' %>
+      <%#= render 'shared/footer' %>
+    <%# end %>
+
 
     <%= javascript_include_tag 'application' %>
     <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>

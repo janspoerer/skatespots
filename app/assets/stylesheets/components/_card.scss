@@ -18,9 +18,21 @@
 
   &__inner {
     background: $white;
+    background-size: cover;
     box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.05);
     border-radius: 6px;
     height: 380px;
+    transition: ease 1s;
+  }
+
+   &__inner:hover {
+    background: $white;
+    background-size: cover;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.05);
+    border-radius: 6px;
+    height: 380px;
+    transform: scale(1.1);
+    transition: ease 1s;
   }
 
   &__img {
@@ -49,13 +61,17 @@
   }
 
   &__body {
+    color: white;
     padding: 20px 16px;
-    background-color: $white;
+    /* background-color: #fff; */
     height: 80px;
+    position: absolute;
+    bottom: 32px;
   }
 
   &__title {
     margin: 0;
+    color: white;
     font-size: 21px;
     line-height: 1.5;
     font-weight: bold;
@@ -63,6 +79,7 @@
 
   &__price {
     font-size: 14px;
+    color: white;
     line-height: 1.5;
     color: $success;
   }
@@ -70,6 +87,7 @@
   &__rating-text {
     margin-left: 8px;
     font-size: 12px;
+    color: white;
     color: $gray-text;
   }
 
