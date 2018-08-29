@@ -11,7 +11,7 @@ class SpotsController < ApplicationController
 
   def index
     if params[:query].present?
-      @spots = policy_scope(Spot).search_by_city_and_name(params[:query])
+      @spots = policy_scope(Spot).search_by_city_and_address(params[:query])
     else
       @spots = policy_scope(Spot)
       authorize @spots

@@ -15,9 +15,9 @@ class Spot < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_address?
 
   include PgSearch
-  pg_search_scope :search_by_city_and_name,
+  pg_search_scope :search_by_city_and_address,
     # rubocop:disable Layout/AlignParameters
-    against: %i[city_id name],
+    against: %i[city_id address],
     using: {
       tsearch: { prefix: true }
     }
