@@ -1,17 +1,50 @@
 <div class="favorite-card">
-  <div class="row">
-    <div class="favorite-box">
-      <div class="favorite-image">
-        <img align="left" width="80" height="80" class="img-circle" src="https://images.unsplash.com/photo-1514850884497-a353f6397b30?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=87bd6bdfc6ee74acf7a7f74ccc8383c0" class="img-responsive" alt="Profile image"/>
-      </div>
+  <% if @user.favorites.present? %>
+    <% @user.favorites.each do |favorite| %>
+      <div class="favorite-box">
 
-      <div class="favorite-body" style="border-bottom: solid 1px rgb(190, 189, 186); padding-top: 5px">
-        <p><strong><%= @spot&.name %></strong></p>
-        <p><%= @spot&.description %></p>
+        <div class="favorite-photo">
+          <% if favorite.spot.photos&.present? %>
+            <!-- TODO: To update the path to individual spot -->
+            <%= link_to spots_path(@spot) do %>
+              <%= cl_image_tag favorite.spot.photos.last.url, crop: :fill, class: "img-responsive img-circle favorite-image"%>
+            <% end %>
+          <% else %>
+            <i class="fas fa-user-circle Navbar__user-icon"></i>
+          <% end %>
+        </div>
 
-        <!-- TODO: add @spot.likes -->
-        <p><%= @spot&.reviews&.average_rating %> <i class="fas fa-star" style="color: #ffb400;"></i>  |  2000 <i class="fas fa-heart color-grey-text" style="color: rgb(203, 27, 27);"></i></p>
+        <div class="favorite-body" style="border-bottom: solid 1px rgb(190, 189, 186); padding-top: 10px">
+          <p><strong><%= favorite.spot&.name %></strong></p>
+          <p><%= favorite.spot&.description %></p>
+
+          <div class="d-flex small">
+            <% if favorite.spot.reviews&.blank? %>
+              <p> 0 <i class="fas fa-star" style="color: #ccc"> </i></p>
+            <% else %>
+              <p>
+                <% (1..5).to_a.each do |el| %>
+                  <% if el <= favorite.spot&.reviews&.average(:rating).round(1) %>
+                    <i class="fas fa-star" style="color: #ffb400;"></i>
+                  <% else %>
+                    <i class="fas fa-star" style="color: #ccc"></i>
+                  <% end %>
+                <% end %>
+                (<%= favorite.spot.reviews.count %> reviews)
+              </p>
+            <% end %>
+            <p class="small"> | <%= favorite.spot.number_of_likes %>  <i class='far fa-thumbs-up main-card-image-likes-button'></i></p>
+          </div>
+
+
+        </div>
       </div>
+    <% end %>
+
+  <% else %>
+    <div class="placeholder-message">
+      <h4 class="text-center">Oh, no!!! <%= @user.first_name %> does not have any favorite skatespot yet. Come back later!</h4>
     </div>
-  </div>
+  <% end %>
+
 </div>
