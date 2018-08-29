@@ -21,17 +21,18 @@
     <div class="col-md-8 no-padding">
       <p class="small">
         <% if @spot.reviews&.blank? %>
-          0 <i class="fas fa-star" style="color: #ccc"> </i>
+          0 <i class="fas fa-star" style="color: #ccc"> </i> |
         <% else %>
           <% (1..5).to_a.each do |el| %>
-            <% if el <= @spot.average_rating&.round(1) %>
+            <% if el <= @spot.reviews&.average(:rating).round(1) %>
               <i class="fas fa-star" style="color: #ffb400;"></i>
             <% else %>
               <i class="fas fa-star" style="color: #ccc"></i>
             <% end %>
           <% end %>
+          (<%= @spot.reviews&.average(:rating).round(1) %>) | <%= @spot.number_of_likes %>
         <% end %>
-        (<%= @spot.average_rating.round(1) %>) | <%= @spot.number_of_likes %>
+
         <% if @spot.liked_by(current_user) %>
           <%= link_to "<i class='far fa-thumbs-up main-card-image-likes-button'></i>".html_safe, like_path(@spot.liked_by(current_user)), method: :delete %></p>
         <% else %>

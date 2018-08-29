@@ -26,14 +26,6 @@ class Spot < ApplicationRecord
   # Upload multiple photos
   mount_uploaders :photos, PhotoUploader
 
-  def average_rating
-    if @reviews.blank?
-      return 0
-    else
-      @reviews.average(:rating)
-    end
-  end
-
   def favorite_by(a_user)
     favorites.find_by(user: a_user)
   end
