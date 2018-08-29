@@ -5,8 +5,7 @@
 
         <div class="favorite-photo">
           <% if favorite.spot.photos&.present? %>
-            <!-- TODO: To update the path to individual spotg -->
-            <%= link_to spots_path(@spot) do %>
+            <%= link_to spot_path(favorite.spot) do %>
               <%= cl_image_tag favorite.spot.photos.last.url, crop: :fill, class: "img-responsive img-circle favorite-image"%>
             <% end %>
           <% else %>
