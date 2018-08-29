@@ -17,5 +17,5 @@ Rails.application.routes.draw do
   resources :likes, only: :destroy
   resources :favorites, only: [:index]
   resources :events, only: [:index, :new, :create]
-
+  resources :avatars, only: [:show]
 end
