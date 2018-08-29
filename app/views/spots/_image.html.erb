@@ -11,7 +11,7 @@
       <div class="card carousel-inner no-padding">
         <% @spot.photos.each_with_index do |photo, index| %>
           <div class="item <%= 'active' if index == 0 %>">
-            <%= cl_image_tag photo.url, crop: :fill, class: "img-responsive" %>
+            <%= cl_image_tag photo.url, crop: :fill, class: "img-responsive"%>
           </div>
         <% end %>
       </div>
