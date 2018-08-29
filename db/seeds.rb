@@ -39,7 +39,7 @@ puts 'Creating user seeds'
 user1 = User.create!(
   email: "malcolm@gmail.com",
   first_name: "Malcolm",
-  last_name: "The Rich",
+  last_name: "Torino",
   password: "123456",
   password_confirmation: "123456",
   city: city1,
@@ -49,7 +49,7 @@ user1 = User.create!(
 user2 = User.create!(
   email: "jan@yahoo.com",
   first_name: "Jan",
-  last_name: "chino",
+  last_name: "Czizikow",
   password: "123456",
   password_confirmation: "123456",
   city: city2,
@@ -59,7 +59,7 @@ user2 = User.create!(
 user3 = User.create!(
   email: "flora@egmail.com",
   first_name: "Flora",
-  last_name: "Baby",
+  last_name: "Franke",
   password: "123456",
   password_confirmation: "123456",
   city: city3,
@@ -68,8 +68,8 @@ user3 = User.create!(
 
 user4 = User.create!(
   email: "Hian@gmail.com",
-  first_name: "Hian",
-  last_name: "Sjntjs",
+  first_name: "Hien",
+  last_name: "Nguyen",
   password: "123456",
   password_confirmation: "123456",
   city: city4,
@@ -79,7 +79,7 @@ user4 = User.create!(
 user5 = User.create!(
   email: "otherjan@gmail.com",
   first_name: "Jan",
-  last_name: "Theotherone",
+  last_name: "Sporer",
   password: "123456",
   password_confirmation: "123456",
   city: city5,
@@ -89,10 +89,10 @@ user5 = User.create!(
 puts 'Creating spot seeds'
 
 spot1 = Spot.create!(
-  name: "Buda Strasse",
+  name: "Mauerpark",
   description: "Central skatepark for pro",
-  address: "Ludwigstraße 34B, 70176 Stuttgart",
-  city: city7,
+  address: "Gleimstraße 55, 10437 Berlin",
+  city: city2,
   remote_photos_urls: ["https://res.cloudinary.com/hienn/image/upload/v1535107048/Spots/scott-walsh-656484-unsplash.jpg"]
 )
 
@@ -137,10 +137,10 @@ spot6 = Spot.create!(
 )
 
 spot7 = Spot.create!(
-  name: "Whaaa",
+  name: "State Park",
   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis nobis quod aperiam ipsa cupiditate aut numquam, nostrum fugit eos officiis sapiente voluptates. Corrupti esse nesciunt officiis, sequi, sint aspernatur doloribus?",
-  address: "Dünenstraße 333C, 25996 Wenningstedt-Braderup (Sylt)",
-  city: city8,
+  address: "Platz der Luftbrücke 5, 12101 Berlin",
+  city: city2,
   remote_photos_urls: ["https://res.cloudinary.com/hienn/image/upload/v1535107048/Spots/jennifer-bedoya-599213-unsplash.jpg"]
 )
 
@@ -163,10 +163,10 @@ spot9 = Spot.create!(
 )
 
 spot10 = Spot.create!(
-  name: "Pigs Corner",
+  name: "Der Welt",
   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis nobis quod aperiam ipsa cupiditate aut numquam, nostrum fugit eos officiis sapiente voluptates. Corrupti esse nesciunt officiis, sequi, sint aspernatur doloribus?",
-  address: "Metzgerbach,, 70193 Stuttgart",
-  city: city7,
+  address: "John-Foster-Dulles-Allee 10, 10557 Berlin",
+  city: city2,
   remote_photos_urls: ["https://res.cloudinary.com/hienn/image/upload/v1535107048/Spots/lisa-yang-725071-unsplash.jpg"]\
 )
 
@@ -195,7 +195,7 @@ puts 'Creating review seeds'
 
 review1 = Review.create!(
   rating: 5,
-  content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis nobis quod aperiam ipsa cupiditate aut numquam, nostrum fugit eos officiis sapiente voluptates. Corrupti esse nesciunt officiis, sequi, sint aspernatur doloribus?",
+  content: "This place is fantastic. If you wanna stake alone, you can still have lonely skating space, but the best part of here is to be able to share with other skaters and exchange some tips for crazy tricks and so on. Come and check it out.",
   user: user1,
   spot: spot1
 )
@@ -209,84 +209,84 @@ review2 = Review.create!(
 
 review3 = Review.create!(
   rating: 4,
-  content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis nobis quod aperiam ipsa cupiditate aut numquam, nostrum fugit eos officiis sapiente voluptates. Corrupti esse nesciunt officiis, sequi, sint aspernatur doloribus?",
+  content: "Come on. I'll show you my techniques.",
   user: user3,
   spot: spot1
 )
 
 review4 = Review.create!(
   rating: 5,
-  content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis nobis quod aperiam ipsa cupiditate aut numquam, nostrum fugit eos officiis sapiente voluptates. Corrupti esse nesciunt officiis, sequi, sint aspernatur doloribus?",
+  content: "It will be an awesome experiences for sure.",
   user: user4,
   spot: spot1
 )
 
 review5 = Review.create!(
   rating: 4,
-  content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis nobis quod aperiam ipsa cupiditate aut numquam, nostrum fugit eos officiis sapiente voluptates. Corrupti esse nesciunt officiis, sequi, sint aspernatur doloribus?",
+  content: "I come often here. This place is good enough.",
   user: user5,
   spot: spot1
 )
 
 review6 = Review.create!(
   rating: 3,
-  content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis nobis quod aperiam ipsa cupiditate aut numquam, nostrum fugit eos officiis sapiente voluptates. Corrupti esse nesciunt officiis, sequi, sint aspernatur doloribus?",
+  content: "This place is fantastic. If you wanna stake alone, you can still have lonely skating space, but the best part of here is to be able to share with other skaters and exchange some tips for crazy tricks and so on. Come and check it out.",
   user: user5,
   spot: spot2
 )
 
 review7 = Review.create!(
   rating: 3,
-  content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis nobis quod aperiam ipsa cupiditate aut numquam, nostrum fugit eos officiis sapiente voluptates. Corrupti esse nesciunt officiis, sequi, sint aspernatur doloribus?",
+  content: "This place is fantastic. If you wanna stake alone, you can still have lonely skating space, but the best part of here is to be able to share with other skaters and exchange some tips for crazy tricks and so on. Come and check it out.",
   user: user4,
   spot: spot3
 )
 
 review8 = Review.create!(
   rating: 3,
-  content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis nobis quod aperiam ipsa cupiditate aut numquam, nostrum fugit eos officiis sapiente voluptates. Corrupti esse nesciunt officiis, sequi, sint aspernatur doloribus?",
+  content: "This place is fantastic. If you wanna stake alone, you can still have lonely skating space, but the best part of here is to be able to share with other skaters and exchange some tips for crazy tricks and so on. Come and check it out.",
   user: user3,
   spot: spot4
 )
 
 review9 = Review.create!(
   rating: 3,
-  content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis nobis quod aperiam ipsa cupiditate aut numquam, nostrum fugit eos officiis sapiente voluptates. Corrupti esse nesciunt officiis, sequi, sint aspernatur doloribus?",
+  content: "This place is fantastic. If you wanna stake alone, you can still have lonely skating space, but the best part of here is to be able to share with other skaters and exchange some tips for crazy tricks and so on. Come and check it out.",
   user: user1,
   spot: spot5
 )
 
 review10 = Review.create!(
   rating: 3,
-  content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis nobis quod aperiam ipsa cupiditate aut numquam, nostrum fugit eos officiis sapiente voluptates. Corrupti esse nesciunt officiis, sequi, sint aspernatur doloribus?",
+  content: "This place is fantastic. If you wanna stake alone, you can still have lonely skating space, but the best part of here is to be able to share with other skaters and exchange some tips for crazy tricks and so on. Come and check it out.",
   user: user1,
   spot: spot6
 )
 
 review11 = Review.create!(
   rating: 3,
-  content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis nobis quod aperiam ipsa cupiditate aut numquam, nostrum fugit eos officiis sapiente voluptates. Corrupti esse nesciunt officiis, sequi, sint aspernatur doloribus?",
+  content: "This place is fantastic. If you wanna stake alone, you can still have lonely skating space, but the best part of here is to be able to share with other skaters and exchange some tips for crazy tricks and so on. Come and check it out.",
   user: user2,
   spot: spot7
 )
 
 review12 = Review.create!(
   rating: 3,
-  content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis nobis quod aperiam ipsa cupiditate aut numquam, nostrum fugit eos officiis sapiente voluptates. Corrupti esse nesciunt officiis, sequi, sint aspernatur doloribus?",
+  content: "This place is fantastic. If you wanna stake alone, you can still have lonely skating space, but the best part of here is to be able to share with other skaters and exchange some tips for crazy tricks and so on. Come and check it out.",
   user: user3,
   spot: spot8
 )
 
 review13 = Review.create!(
   rating: 3,
-  content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis nobis quod aperiam ipsa cupiditate aut numquam, nostrum fugit eos officiis sapiente voluptates. Corrupti esse nesciunt officiis, sequi, sint aspernatur doloribus?",
+  content: "This place is fantastic. If you wanna stake alone, you can still have lonely skating space, but the best part of here is to be able to share with other skaters and exchange some tips for crazy tricks and so on. Come and check it out.",
   user: user4,
   spot: spot9
 )
 
 review14 = Review.create!(
   rating: 3,
-  content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis nobis quod aperiam ipsa cupiditate aut numquam, nostrum fugit eos officiis sapiente voluptates. Corrupti esse nesciunt officiis, sequi, sint aspernatur doloribus?",
+  content: "This place is fantastic. If you wanna stake alone, you can still have lonely skating space, but the best part of here is to be able to share with other skaters and exchange some tips for crazy tricks and so on. Come and check it out.",
   user: user5,
   spot: spot10
 )
