@@ -3,14 +3,14 @@
   <div class="spot-flexbox">
     <div class="row">
       <!-- SPOT IMAGE card -->
-      <div class="col-xs-12 col-md-4">
+      <div class="col-sm-12 col-md-4">
         <div class="card bg-skate no-padding">
           <%= render 'spots/image' %>
         </div>
       </div>
 
       <!-- SPOT CARD (likes, faves, etc) + REVIEWS -->
-      <div class="col-xs-12 col-md-4">
+      <div class="col-sm-12 col-md-4">
         <div class="card scrollable">
           <div class="review-box">
             <%= render 'spots/spot-card', spot: @spot %><br>
@@ -22,8 +22,8 @@
       </div>
 
       <!--  SPOT MAP -->
-      <div class="col-xs-12 col-md-4">
-        <div class="card bg-map no-padding">
+      <div class="col-sm-12 col-md-4">
+        <div class="card no-padding">
           <div id="map" data-markers="<%= @markers.to_json %>"></div>
         </div>
       </div>

@@ -12,7 +12,6 @@
         <% else %>
           <%=  link_to(content_tag(:i, '', class: 'far fa-heart btn main-card-image-likes-button', style: "font-size: 20px"), spot_favorites_path(@spot), :method => :post)  %> <!-- blank heart  -->
         <% end %>
-        <!-- <p class="small btn main-card-image-likes-button"><%#= link_to "<i class='fas fa-thumbs-down'></i>".html_safe, downvote_like_path(@like) %></p> -->
       </div>
     <% end %>
   </div>
@@ -40,7 +39,6 @@
         <% end %>
     </div>
 
-    <!-- TODO: Add photo button here  -->
     <div class="col-md-4 no-padding text-right">
       <%= render 'spots/edit' %>
     </div>

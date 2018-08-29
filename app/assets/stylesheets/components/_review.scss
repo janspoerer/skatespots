@@ -21,10 +21,9 @@
 }
 
 #map {
-  height : 720px;
-  width : 100%;
-  z-index : 200;
-  // padding-left: 30px
+  height: calc(100vh - 76px - 105px);
+  width: 100%;
+  // z-index: 200;
 }
 
 .main-card-image-uploadedby-text {

@@ -8,7 +8,7 @@
       <% if @spots.present? %>
         <% @spots&.each do |spot|  %>
           <div class="col-xs-12 col-md-3 grid-item">
-            <% if spot.favorites.last.present? %>
+            <% if spot.favorites.present? %>
               <%= render 'shared/card', spot: spot %>
             <% end %>
           </div>

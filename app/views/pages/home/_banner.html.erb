@@ -10,7 +10,11 @@
         <p class="Banner__leading">Find the perfect spot to skate.</p>
         <%= form_tag('/spots', method: "get", class: "Banner__form") do %>
           <div class="Banner__input-group input-group input-group-lg">
-            <%= text_field_tag(:query, nil, id: 'query_banner', placeholder: "Where do you want to skate?", class: "Input Banner__input form-control js-banner-search") %>
+            <%= text_field_tag(:query,
+              params[:query],
+              id: 'query_banner',
+              placeholder: "Where do you want to skate?",
+              class: "Input Banner__input form-control js-banner-search") %>
             <%= button_tag :submit, class: "Banner__btn btn btn-primary btn-lg" do %>
               <i class="fa fa-search" aria-hidden="true"></i>
             <% end %>

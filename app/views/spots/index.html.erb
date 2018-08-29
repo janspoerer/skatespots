@@ -1,11 +1,14 @@
 <div class="container-fluid container-index">
+
   <div class="spot-index-title">
     <h2><strong>Explore and find your favorite skatespots (<%= @spots&.count %>)</strong></h2>
   </div>
-  <div class="wrapper-body">
 
+  <div class="wrapper-body">
     <div class="Map Cards__map">
-      <div class="Map__inner card bg-map no-padding">
+
+      <!-- Map__inner card bg-map  -->
+      <div class="no-padding">
         <div id="map"
           style="width: 580px;"
           data-markers="<%= @markers.to_json %>">
@@ -13,14 +16,16 @@
       </div>
     </div>
 
-    <div class="container-index">
+    <div class="cards-body">
       <div class="row">
         <% @spots&.each do |spot|  %>
-          <div class="col-md-4 grid-item">
+          <div class="col-sm-12 col-md-4 grid-item">
             <%= render 'shared/card', spot: spot %>
           </div>
         <% end %>
       </div>
     </div>
+
   </div>
+
 </div>
