@@ -33,21 +33,9 @@
           <h6><%= link_to "Profile", profile_path(current_user), :class => current_class?(profile_path(current_user)) %></h6>
         </div>
 
-        <!-- TODO: add message system later -->
-        <%#= link_to "Messages", conversations_path, class: "Navbar__link-item" %>
-
         <div class="Navbar__link-item">
           <h6><%= link_to t(".add_new_spot", default: "Add new spot"), new_spot_path, :class => current_class?(new_spot_path) %></h6>
         </div>
-
-        <!-- <div class="dropdown Navbar__link-item">
-          <a href="#" class="Navbar__dropdown dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="false"><h6>Add</h6></a>
-            <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-              <li><%= link_to t(".add_a_new_spot", default: "Add a new spot"), new_spot_path, :class => current_class?(new_spot_path) %></li>
-
-              <li><%#= link_to t(".add_a_new_event", default: "Add a new challenge"), new_event_path, :class => current_class?(new_event_path) %></li>
-            </ul>
-        </div> -->
 
         <!-- Avatar with dropdown menu -->
         <div class="dropdown Navbar__link-item">
@@ -75,13 +63,6 @@
       <% else %>
 
         <!-- Login link (when logged out) -->
-        <div class="dropdown Navbar__link-item">
-          <a href="#" class="Navbar__dropdown dropdown-toggle Navbar__help" role="button" data-toggle="dropdown" aria-expanded="false">Help</a>
-            <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-              <li><a href="#">FAQ</a></li>
-              <li><a href="#">Customer support</a></li>
-            </ul>
-        </div>
         <%= link_to t(".sign_in", default: "Log in"), new_user_session_path, class: "btn btn-primary" %>
       <% end %>
     </div>
