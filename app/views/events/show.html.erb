@@ -3,7 +3,7 @@
   <div class="spot-flexbox">
     <div class="row">
 
-      <div class="event-card Card">
+      <div class="event-card Card event-card-show">
 
         <div class="event-card__body">
           <div class="event-name event-card__title">
@@ -13,13 +13,17 @@
             <strong>Details: </strong><%= @event.description %>
           </div>
           <div class="event-time-card">
-            <strong>Date: <%= @event.event_date %>: <%= @event.start_time %> ~ <%= @event.end_time %> </strong>
+            <strong>Date: <%= @event.event_date %> </strong>
           </div>
           <div class="event-spot">
-            Location: <%= @event.spot.name %>
+            Location: <%= link_to @event.spot.name, spot_path(@event.spot) %>
+
           </div>
           <div class="event-organizer">
             Organizer: <%= @event.user.last_name %>
+            <%= link_to profile_path(@event.user) do %>
+              <%= cl_image_tag @event.user.photo.url, height: 40, width: 40, crop: :fill, class: "img-circle" %>
+            <% end %>
           </div>
           <br>
           <div class="button-participant-join">
