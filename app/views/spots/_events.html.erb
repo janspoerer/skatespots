@@ -46,9 +46,9 @@
                     <%= f.input :event_date, as: :string, required: false, input_html: {class: "datepicker input-field"} %>
                 </div>
 
-                <div class="form-group">
+<!--                 <div class="form-group">
                   <%= f.input :status, :collection => [['Coming soon', '1'], ['Ongoing', '2']], class: 'form-control' %>
-                </div>
+                </div> -->
 
                 <div class="form-group">
                   <%= f.hidden_field :spot_id, :value => @spot.id %>
