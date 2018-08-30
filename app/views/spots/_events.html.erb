@@ -73,11 +73,11 @@
 
     <br>
     <div class="small">
-      <ul>
+      <ul class="check">
         <% counter = 0 %>
 
         <% @spot.events.each do |event| %>
-        <li class="check">
+        <li>
           <% if event.spot == @spot %>
           <% datatoggle = "modal" + counter.to_s %>
           <% datatarget = "#exampleModalCenter" + counter.to_s %>
