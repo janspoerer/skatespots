@@ -90,7 +90,7 @@ puts 'Creating spot seeds'
 
 spot1 = Spot.create!(
   name: "Mauerpark",
-  description: "Central skatepark for pro",
+  description: "Central Pro Skatepark",
   address: "Gleimstraße 55, 10437 Berlin",
   city: city2,
   remote_photos_urls: ["https://res.cloudinary.com/hienn/image/upload/q_auto:eco/v1535107048/Spots/scott-walsh-656484-unsplash.jpg"]
@@ -105,7 +105,7 @@ spot2 = Spot.create!(
 )
 
 spot3 = Spot.create!(
-  name: "Breezy hole",
+  name: "Breezy Hole",
   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis nobis quod aperiam ipsa cupiditate aut numquam, nostrum fugit eos officiis sapiente voluptates. Corrupti esse nesciunt officiis, sequi, sint aspernatur doloribus?",
   address: "Strandstraße 26, 25996 Wenningstedt-Braderup (Sylt)",
   city: city8,
@@ -115,16 +115,16 @@ spot3 = Spot.create!(
 spot4 = Spot.create!(
   name: "The Nest",
   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis nobis quod aperiam ipsa cupiditate aut numquam, nostrum fugit eos officiis sapiente voluptates. Corrupti esse nesciunt officiis, sequi, sint aspernatur doloribus?",
-  address: "Baseler Pl. 2, 60329 Frankfurt am Main",
-  city: city1,
+  address: "Tiergartenstraße 14, 10785 Berlin",
+  city: city2,
   remote_photos_urls: ["https://res.cloudinary.com/hienn/image/upload/q_auto:eco/v1535107048/Spots/tyler-nix-569195-unsplash.jpg"]
 )
 
 spot5 = Spot.create!(
-  name: "Citying",
+  name: "Fly Corner",
   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis nobis quod aperiam ipsa cupiditate aut numquam, nostrum fugit eos officiis sapiente voluptates. Corrupti esse nesciunt officiis, sequi, sint aspernatur doloribus?",
-  address: "Holstenstraße 30, 22767 Hamburg",
-  city: city3,
+  address: "Hornstraße 1, 10963 Berlin",
+  city: city2,
   remote_photos_urls: ["https://res.cloudinary.com/hienn/image/upload/q_auto:eco/v1535107048/Spots/karol-kaczorek-753191-unsplash.jpg"]
 )
 
@@ -148,8 +148,8 @@ spot7 = Spot.create!(
 spot8 = Spot.create!(
   name: "My Backyard",
   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis nobis quod aperiam ipsa cupiditate aut numquam, nostrum fugit eos officiis sapiente voluptates. Corrupti esse nesciunt officiis, sequi, sint aspernatur doloribus?",
-  address: "Subbelrather Str. 488, 50825 Köln",
-  city: city5,
+  address: "Schönstedtstraße 6, 12043 Berlin",
+  city: city2,
   remote_photos_urls: ["https://res.cloudinary.com/hienn/image/upload/q_auto:eco/v1535107048/Spots/emily-reider-513130-unsplash.jpg"]
 )
 
@@ -296,7 +296,7 @@ puts 'Creating event seeds'
 
 event1 = Event.create!(
  name:"party",
- description:"The best event ever",
+ description:"Sharp Rail",
  event_date:"2018-8-31",
  start_time:"6pm",
  end_time:"10pm",
@@ -306,7 +306,7 @@ event1 = Event.create!(
 )
 
 event2 = Event.create!(
- name:"Sunday night skaters",
+ name:"20mt Concrete Jump",
  description:"Just come",
  event_date:"2018-8-31",
  start_time:"6pm",
@@ -317,7 +317,7 @@ event2 = Event.create!(
 )
 
 event3 = Event.create!(
- name:"Malcolm night",
+ name:"Kickflip Over Bench",
  description:"The hottest night in 21st century",
  event_date:"2018-8-31",
  start_time:"6pm",
@@ -328,7 +328,7 @@ event3 = Event.create!(
 )
 
 event4 = Event.create!(
- name:"Skater Ladies",
+ name:"The Longest Grind",
  description:"Skates for Ladies",
  event_date:"2018-8-31",
  start_time:"2pm",
