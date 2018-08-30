@@ -1,5 +1,5 @@
 .spot-flexbox {
-  margin: 10px 10px
+  margin: 16px 10px
 }
 
 .user-review-avatar .user-review-name {
@@ -24,10 +24,15 @@
 }
 .carousel-inner{
   width:100%;
+  height: calc(100vh - 96px);
 }
 
 .img-responsive.img-center {
   margin: 0 auto;
+}
+
+.img-responsive {
+  height: 100% !important;
 }
 
 .carousel-indicators .active {
