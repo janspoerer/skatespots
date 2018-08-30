@@ -33,6 +33,7 @@ class SpotsController < ApplicationController
       lat: @spot.latitude,
       lng: @spot.longitude
     }]
+    @event = Event.new
   end
 
   def new
