@@ -338,7 +338,7 @@ event4 = Event.create!(
  spot: spot10
 )
 event5 = Event.create!(
- name:"The Longest Grind",
+ name:"Sigma Flip",
  description:"Skates for Ladies",
  event_date:"2018-9-3",
  start_time:"2pm",
@@ -348,7 +348,7 @@ event5 = Event.create!(
  spot: spot5
 )
 event6 = Event.create!(
- name:"The Longest Grind",
+ name:"540 Yo Mamma",
  description:"Skates for Ladies",
  event_date:"2018-9-4",
  start_time:"2pm",
