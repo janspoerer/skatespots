@@ -6,12 +6,71 @@
     </div>
 
     <div class="col-md-5">
-      <%= link_to "Create challenge", new_event_path, class: "fas fa-plus-square btn-sm btn-custom btn-success" %>
+
+
+
+
+      <!-- Button trigger modal -->
+      <button type="button" class="fas fa-plus-square btn-sm btn-custom btn-success" data-toggle="modal" data-target="#exampleModal">
+        Create a new challenge
+      </button>
+
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-center" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Create a new challenge</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <%= simple_form_for @event do |f| %>
+                <div class="form-group">
+                  <%= f.label :name %>
+                  <%= f.text_field :name, class: 'form-control' %>
+                </div>
+
+                <div class="form-group">
+                  <%= f.label :description %>
+                  <%= f.text_field :description, class: 'form-control' %>
+                </div>
+
+                <div class="form-group">
+                  <%= f.label :event_date %>
+                  <%= f.text_field :event_date, class: 'form-control' %>
+                </div>
+
+                <div class="form-group">
+                  <%= f.input :status, :collection => [['Coming soon', '1'], ['Ongoing', '2']], class: 'form-control' %>
+                </div>
+
+                <div class="form-group">
+                  <%= f.hidden_field :spot_id, :value => @spot.id %>
+
+                </div>
+                <br><br>
+                <%= f.submit class: 'btn btn-primary' %>
+                <br><br>
+              <% end %>
+
+            </div>
+<!--             <div class="modal-footer">
+              <%= link_to "Create challenge", new_event_path, class: "fas fa-plus-square btn-sm btn-custom btn-success" %>
+              <button type="button" class="btn btn-primary">It should be a new page</button>
+            </div> -->
+          </div>
+        </div>
+      </div>
+
     </div>
+
+
   </h5>
 
   <br>
-  <div class="d-flex small">
+  <div class="small">
     <ul>
 
       <% @spot.events.each do |event| %>
@@ -25,3 +84,5 @@
     </ul>
   </div>
 </div>
+
+
