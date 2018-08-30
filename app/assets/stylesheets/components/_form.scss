@@ -1,17 +1,24 @@
-.form-container {
-  margin-bottom: 100px;
-}
+
 
 .card__form {
   // margin-top: 80px;
-  margin-top: 40px;
+  margin-top: 100px;
   padding: 20px;
   color: inherit;
   border-radius: 6px;
   overflow: hidden;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  // color: white;
+  background-color: white;
 }
 
 .flatpickr-calendar {
   z-index: 1060;
 }
+
+.newspot-background {
+  height: calc(100vh - 70px);
+  width: 100%;
+  background-size: cover;
+}
+
