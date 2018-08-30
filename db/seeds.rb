@@ -295,9 +295,9 @@ review14 = Review.create!(
 puts 'Creating event seeds'
 
 event1 = Event.create!(
- name:"party",
+ name:"Berlin Trick",
  description:"Sharp Rail",
- event_date:"2018-8-31",
+ event_date:"2018-9-1",
  start_time:"6pm",
  end_time:"10pm",
  status:"coming soon",
@@ -308,18 +308,18 @@ event1 = Event.create!(
 event2 = Event.create!(
  name:"20mt Concrete Jump",
  description:"Just come",
- event_date:"2018-8-31",
+ event_date:"2018-9-1",
  start_time:"6pm",
  end_time:"10pm",
  status:"coming soon",
- user: user1,
+ user: user3,
  spot: spot10
 )
 
 event3 = Event.create!(
  name:"Kickflip Over Bench",
  description:"The hottest night in 21st century",
- event_date:"2018-8-31",
+ event_date:"2018-9-2",
  start_time:"6pm",
  end_time:"11pm",
  status:"coming soon",
@@ -330,12 +330,102 @@ event3 = Event.create!(
 event4 = Event.create!(
  name:"The Longest Grind",
  description:"Skates for Ladies",
- event_date:"2018-8-31",
+ event_date:"2018-9-31",
+ start_time:"2pm",
+ end_time:"3pm",
+ status:"coming soon",
+ user: user4,
+ spot: spot10
+)
+event5 = Event.create!(
+ name:"The Longest Grind",
+ description:"Skates for Ladies",
+ event_date:"2018-9-3",
+ start_time:"2pm",
+ end_time:"3pm",
+ status:"coming soon",
+ user: user2,
+ spot: spot5
+)
+event6 = Event.create!(
+ name:"The Longest Grind",
+ description:"Skates for Ladies",
+ event_date:"2018-9-4",
  start_time:"2pm",
  end_time:"3pm",
  status:"coming soon",
  user: user1,
- spot: spot10
+ spot: spot5
+)
+event7 = Event.create!(
+ name:"The Longest Grind",
+ description:"Skates for Ladies",
+ event_date:"2018-9-5",
+ start_time:"2pm",
+ end_time:"3pm",
+ status:"coming soon",
+ user: user3,
+ spot: spot7
+)
+event8 = Event.create!(
+ name:"The Casper Flip",
+ description:"Skates for Ladies",
+ event_date:"2018-9-6",
+ start_time:"2pm",
+ end_time:"3pm",
+ status:"coming soon",
+ user: user2,
+ spot: spot7
+)
+event9 = Event.create!(
+ name:"Alpha Flip",
+ description:"Skates for Ladies",
+ event_date:"2018-9-5",
+ start_time:"2pm",
+ end_time:"3pm",
+ status:"coming soon",
+ user: user1,
+ spot: spot8
+)
+event10 = Event.create!(
+ name:"Crazy Inward Heelflip",
+ description:"Skates for Ladies",
+ event_date:"2018-9-7",
+ start_time:"2pm",
+ end_time:"3pm",
+ status:"coming soon",
+ user: user4,
+ spot: spot4
+)
+event11 = Event.create!(
+ name:"360 Ollie",
+ description:"Skates for Ladies",
+ event_date:"2018-9-4",
+ start_time:"2pm",
+ end_time:"3pm",
+ status:"coming soon",
+ user: user1,
+ spot: spot4
+)
+event12 = Event.create!(
+ name:"360 Shuvit",
+ description:"Skates for Ladies",
+ event_date:"2018-9-2",
+ start_time:"2pm",
+ end_time:"3pm",
+ status:"coming soon",
+ user: user2,
+ spot: spot4
+)
+event13 = Event.create!(
+ name:"Grape Flip",
+ description:"Skates for Ladies",
+ event_date:"2018-9-10",
+ start_time:"2pm",
+ end_time:"3pm",
+ status:"coming soon",
+ user: user3,
+ spot: spot5
 )
 
 puts 'Creating participant seeds'
