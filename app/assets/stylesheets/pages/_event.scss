@@ -44,8 +44,22 @@
 
 
 .event-card-show {
-  width: 50%;
+  width: 30%;
   margin: auto;
   margin-top: 50px;
   height: 600px;
+}
+
+.accepted {
+  position: absolute;
+  top: 0px;
+  left: 15px;
+  height: 261px;
+  width: 400px;
+  background-color: white;
+}
+
+.accepted-message {
+  padding-left: 20px;
+  padding-top: 100px;
 }

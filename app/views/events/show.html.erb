@@ -4,7 +4,6 @@
     <div class="row">
 
       <div class="event-card Card event-card-show">
-
         <div class="event-card__body">
           <div class="event-name event-card__title">
             <h3> <%= @event.name %> </h3>
@@ -26,6 +25,7 @@
             <% end %>
           </div>
           <br>
+
           <div class="button-participant-join">
             <%= link_to "Take it", spot_event_participants_path(@spot, @event, @participant), method: :post, class: "btn btn-primary" %>
           </div>
@@ -37,9 +37,15 @@
         <div class="event-card__participants">
           <p><strong>Paticipants:</strong></p>
           <% @event.participants.each do |participant| %>
-            <%= link_to avatar_path(participant.user) do %>
+            <% if participant.user == current_user %>
+              <div class="accepted">
+                <h1 class="accepted-message"> Challenge Accepted </h1></div>
+            <% else %>
+              <%= link_to avatar_path(participant.user) do %>
 
-              <%= cl_image_tag participant.user.photo.url, height: 40, width: 40, crop: :fill, class: "img-circle" %>
+                <%= cl_image_tag participant.user.photo.url, height: 40, width: 40, crop: :fill, class: "img-circle" %>
+              <% end %>
+
             <% end %>
           <% end %>
 
