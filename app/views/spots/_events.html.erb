@@ -1,71 +1,169 @@
-<div class="spot-events" style="border-bottom: solid 1px rgb(190, 189, 186); padding-bottom: 10px; padding-top: 10px">
-  <div class="challenge-title">
-    <div class="col-md-7 no-padding">
-      <h5><strong>Upcoming Challenges</strong></h5>
-    </div>
+<div class="spot-events" style="border-bottom: solid 1px rgb(190, 189, 186); padding-bottom: 10px">
+  <div class="margin-10">
 
-    <div class="col-md-5 no-padding">
-      <!-- Button trigger modal -->
-      <button type="button" class="btn-sm btn-custom btn-success small pull-right" data-toggle="modal" data-target="#exampleModal">
-        <span class="fas fa-plus-square"></span> <span> Add challenge</span>
-      </button>
+  </div>
+  <div class="col-md-7 no-padding">
+    <h5>
+      <strong>Upcoming Challenges</strong>
+    </h5>
+  </div>
 
-      <!-- Modal -->
-      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-center" role="document">
-          <div class="modal-content">
+  <div class="col-md-5">
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
+      <span class="fas fa-plus-square"></span> <span>Add challenge</span>
+    </button>
 
-            <div class="modal-header">
-              <h2 class="modal-title text-center" id="exampleModalLabel">New Challenge</h2>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-center" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title text-center" id="exampleModalLabel">New Challenge</h2>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <%= simple_form_for @event do |f| %>
+            <div class="form-group">
+              <%= f.label :name %>
+              <%= f.text_field :name, class: 'form-control' %>
             </div>
 
-            <div class="modal-body">
-              <%= simple_form_for @event do |f| %>
-                <div class="form-group">
-                  <%= f.label :name %>
-                  <%= f.text_field :name, class: 'form-control' %>
-                </div>
+            <div class="form-group">
+              <%= f.label :description %>
+              <%= f.text_field :description, class: 'form-control' %>
+            </div>
 
-                <div class="form-group">
-                  <%= f.label :description %>
-                  <%= f.text_field :description, class: 'form-control' %>
-                </div>
+<!--                 <div class="form-group">
+                  <%= f.label :event_date %>
+                  <%= f.text_field :event_date, class: 'form-control' %>
+                </div> -->
 
                 <div class="form-group input-field">
                   <%= f.input :event_date, as: :string, required: false, input_html: {class: "datepicker input-field"} %>
                 </div>
 
+<!--                 <div class="form-group">
+                  <%= f.input :status, :collection => [['Coming soon', '1'], ['Ongoing', '2']], class: 'form-control' %>
+                </div> -->
+
                 <div class="form-group">
                   <%= f.hidden_field :spot_id, :value => @spot.id %>
-                </div><br><br>
 
-                <%= f.submit class: 'btn btn-primary' %><br><br>
-              <% end %>
-            </div>
+                </div>
+                <br><br>
+                <%= f.submit class: 'btn btn-primary' %>
+                <br><br>
+                <% end %>
 
+              </div>
+<!--             <div class="modal-footer">
+              <%= link_to "Create challenge", new_event_path, class: "fas fa-plus-square btn-sm btn-custom btn-success" %>
+              <button type="button" class="btn btn-primary">It should be a new page</button>
+            </div> -->
           </div>
         </div>
-      </div> <!-- end of Modal -->
+      </div>
 
-    </div><br>
+    </div>
 
-  </div>
 
-  <div class="challenge-listing no-padding small">
+
     <br>
-    <ul>
-      <% @spot.events&.each do |event| %>
-        <% if event.spot = @spot %>
-          <li>
-            <strong><%= link_to event.name, spot_event_path(@spot, event) %></strong> | Date:<%= event.event_date %>
-            <p> <%= event.description %></p>
-          </li>
-        <% end %>
-      <% end %>
-    </ul>
-  </div> <!-- end of event-body-listing -->
+    <div class="small">
+      <ul>
+        <% counter = 0 %>
 
-</div>
+        <% @spot.events.each do |event| %>
+        <li>
+          <% if event.spot == @spot %>
+          <% datatoggle = "modal" + counter.to_s %>
+          <% datatarget = "#exampleModalCenter" + counter.to_s %>
+          <% datatarget2 = "exampleModalCenter" + counter.to_s %>
+
+
+
+          <!-- Button trigger modal -->
+          <button class="button-event" data-toggle="modal" data-target="<%= datatarget %>">
+            <strong><%= event.name %> </strong> | Date:<%= event.event_date %>
+            <br> <%= event.description %>
+          </button>
+          <% end %>
+
+          <!-- Modal -->
+          <div class="modal fade modal-dialog-center" id="<%= datatarget2 %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <div class="modal-title" id="exampleModalLongTitle">
+                    <div class="event-name event-card__title">
+                      <h3> <%= event.name %> </h3>
+                    </div>
+                  </div>
+                    <div class="event-description">
+                      <strong></strong><%= event.description %>
+                    </div>
+   <!--                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button> -->
+                </div>
+                <div class="modal-body">
+
+                  <!-- Review content -->
+              <% counter += 1 %>
+                  <div class="event-card__body">
+
+
+                    <div class="event-time-card">
+                      <strong>Date: <%= event.event_date %> </strong>
+                    </div>
+                    <div class="event-spot">
+                      Location: <%= link_to event.spot.name, spot_path(event.spot) %>
+
+                    </div>
+                    <div class="event-organizer">
+                      Organizer: <%= event.user.last_name %>
+                      <%= link_to avatar_path(event.user) do %>
+                      <%= cl_image_tag event.user.photo.url, height: 40, width: 40, crop: :fill, class: "img-circle" %>
+                      <% end %>
+                    </div>
+                    <br>
+
+
+
+                      <div class="button-participant-join">
+                        <%= link_to "Take it", spot_event_participants_path(@spot, event, @participant), method: :post, class: "btn btn-primary" %>
+                      </div>
+
+
+                    <br>
+                    <hr>
+                  </div>
+
+                  <div class="event-card__participants">
+                    <p><strong>Paticipants:</strong></p>
+
+                      <% event.participants.each do |participant| %>
+                      <% if participant.event == event %>
+                      <%= link_to avatar_path(participant.user) do %>
+
+                      <%= cl_image_tag participant.user.photo.url, height: 40, width: 40, crop: :fill, class: "img-circle" %>
+                      <% end %>
+                      <% end %>
+                    <% end %>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+
+          </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+
+
