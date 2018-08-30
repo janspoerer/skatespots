@@ -5,6 +5,8 @@ import "lazysizes/plugins/blur-up/ls.blur-up";
 import { cityAutocomplete } from '../components/nav_search';
 import showHideNavbar from '../components/navbar';
 import changeTabs from '../components/navbar';
+import "../plugins/flatpickr"
+
 
 document.addEventListener('DOMContentLoaded', (event) => {
   showHideNavbar();

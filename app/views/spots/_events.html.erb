@@ -20,7 +20,7 @@
         <div class="modal-dialog modal-dialog-center" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Create a new challenge</h5>
+              <h2 class="modal-title text-center" id="exampleModalLabel">New Challenge</h2>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -37,9 +37,13 @@
                   <%= f.text_field :description, class: 'form-control' %>
                 </div>
 
-                <div class="form-group">
+<!--                 <div class="form-group">
                   <%= f.label :event_date %>
                   <%= f.text_field :event_date, class: 'form-control' %>
+                </div> -->
+
+                <div class="form-group input-field">
+                    <%= f.input :event_date, as: :string, required: false, input_html: {class: "datepicker input-field"} %>
                 </div>
 
                 <div class="form-group">
