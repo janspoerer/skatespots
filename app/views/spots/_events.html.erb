@@ -2,7 +2,7 @@
   <div class="margin-10">
 
   </div>
-  <div class="col-md-7 no-padding">
+  <div class="col-md-7 no-padding space">
     <h5>
       <strong>Upcoming Challenges</strong>
     </h5>
@@ -10,7 +10,7 @@
 
   <div class="col-md-5">
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
+    <button type="button" class="btn btn-success space" data-toggle="modal" data-target="#exampleModal">
       <span class="fas fa-plus-square"></span> <span>Add challenge</span>
     </button>
 
@@ -31,10 +31,10 @@
               <%= f.text_field :name, class: 'form-control' %>
             </div>
 
-            <div class="form-group">
+<!--             <div class="form-group">
               <%= f.label :description %>
               <%= f.text_field :description, class: 'form-control' %>
-            </div>
+            </div> -->
 
 <!--                 <div class="form-group">
                   <%= f.label :event_date %>
@@ -88,7 +88,6 @@
           <!-- Button trigger modal -->
           <button class="button-event" data-toggle="modal" data-target="<%= datatarget %>">
             <strong><%= event.name %> </strong> | Date:<%= event.event_date %>
-            <br> <%= event.description %>
           </button>
           <% end %>
 
