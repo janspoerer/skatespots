@@ -27,7 +27,7 @@
           <br>
 
           <div class="button-participant-join">
-            <%= link_to "Take it", spot_event_participants_path(@spot, @event, @participant), method: :post, class: "btn btn-primary" %>
+            <%= link_to "Take it", spot_event_participants_path(@spot, @event, @participant), method: :post, remote: true, class: "btn btn-primary" %>
           </div>
 
           <br>

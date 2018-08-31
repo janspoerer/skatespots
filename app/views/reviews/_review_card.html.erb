@@ -7,8 +7,8 @@
 
     <!-- Review content -->
     <% @spot.reviews.each do |review| %>
-      <div class="d-flex" style="border-bottom: solid 1px rgb(190, 189, 186); padding-top: 5px; padding-bottom: 5px">
-        <div class="container">
+      <div style="border-bottom: solid 1px rgb(190, 189, 186); padding-top: 5px; padding-bottom: 5px">
+        <div class="container-fluid">
           <div class="row">
             <div class="col-md-3 text-center">
 <!--               <%= image_tag(review.user.avatar_url, width: 40, height: 40, crop: :fill, class: "img-circle") %>

@@ -8,7 +8,12 @@ class ParticipantsController < ApplicationController
     @participant.event = @event
     @participant.user = current_user
     @participant.save!
-    redirect_to spot_event_path(@spot, @event)
+    respond_to do |format|
+      format.html do
+        redirect_to spot_event_path(@spot, @event)
+      end
+      format.js
+    end
   end
 
   def destroy

@@ -1,5 +1,5 @@
 .spot-flexbox {
-  margin: 16px 10px
+  // margin: 16px 10px
 }
 
 .user-review-avatar .user-review-name {
@@ -24,7 +24,7 @@
 }
 .carousel-inner{
   width:100%;
-  height: calc(100vh - 96px);
+  height: calc(100vh - 90px);
 }
 
 .img-responsive.img-center {
@@ -85,32 +85,11 @@
   padding-bottom: 40px
 }
 
-.wrapper-body {
-  padding-bottom: 40px;
-  display: flex;
-}
 
 
 .Cards {
   padding-left: 40px
 }
-
-.Cards__map {
-  height: 100%;
-  margin-left: -30px;
-  padding-right: 20px;
-  position: -webkit-sticky;
-  position: fixed;
-  top: 90px;
-}
-
-.cards-body {
-  width: 100%;
-  padding: 0px 30px;
-  /* margin: 0 50px; */
-  align-content: center;
-}
-
 
 // Specific CSS for your home-page
 .Perks {
