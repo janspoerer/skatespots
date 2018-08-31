@@ -1,7 +1,7 @@
 meta_product_name: "Skaespots"
 meta_title: "Skatespots: Skateboard and take challenges nearby"
 meta_description: "Relevant description"
-meta_image: "skating_california.jpg"                       # should exist in `app/assets/images/`
+meta_image: "metaimage.jpg"                       # should exist in `app/assets/images/`
 twitter_account: "@product_twitter_account"   # required for Twitter Cards
 
 # meta_product_name: "Skaespots"
