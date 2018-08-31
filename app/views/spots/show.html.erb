@@ -1,33 +1,22 @@
 <!-- Review content -->
-<div class="container-main-cards">
-  <div class="spot-flexbox">
-    <div class="row">
-      <!-- SPOT IMAGE card -->
-      <div class="col-sm-12 col-md-4">
-        <div class="card bg-skate no-padding">
-          <%= render 'spots/image' %>
-        </div>
-      </div>
+<div style="display: flex">
+  <!-- SPOT IMAGE card -->
+  <div style="flex-basis: 30vw; flex-shrink: 0; position: sticky; top: 90px; height: calc(100vh - 90px)">
+    <%= render 'spots/image' %>
+  </div>
 
-      <!-- SPOT CARD (likes, faves, etc) + REVIEWS -->
-      <div class="col-sm-12 col-md-4 no-padding">
-        <div class="card scrollable">
-          <div class="review-box">
-            <%= render 'spots/spot-card', spot: @spot %>
-            <%= render 'spots/events', spot: @spot %>
-            <%= render 'reviews/review_card', spot: @spot, review: @review %>
-            <%= render 'reviews/form', spot: @spot, review: @review %>
-          </div>
-        </div>
-      </div>
-
-      <!--  SPOT MAP -->
-      <div class="col-sm-12 col-md-4">
-        <div class="card card-map no-padding">
-          <div id="map" data-markers="<%= @markers.to_json %>"></div>
-        </div>
-      </div>
-
+  <!-- SPOT CARD (likes, faves, etc) + REVIEWS -->
+  <div style="flex-grow: 1; padding: 16px">
+    <div class="review-box">
+      <%= render 'spots/spot-card', spot: @spot %>
+      <%= render 'spots/events', spot: @spot %>
+      <%= render 'reviews/review_card', spot: @spot, review: @review %>
+      <%= render 'reviews/form', spot: @spot, review: @review %>
     </div>
+  </div>
+
+  <!--  SPOT MAP -->
+  <div style="flex-basis: 30vw; flex-shrink: 0; position: sticky; top: 90px; height: calc(100vh - 90px)">
+    <div id="map" data-markers="<%= @markers.to_json %>"></div>
   </div>
 </div>

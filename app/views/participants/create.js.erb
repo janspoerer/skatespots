@@ -1,0 +1,5 @@
+document.getElementById("event-card-participants-container")
+  .innerHTML = '<%= j render "spots/event_participants", event: @event %>';
+
+document.querySelector(".button-participant-join").
+  innerHTML = "<%= j image_tag 'challenge_accepted.gif' %>";

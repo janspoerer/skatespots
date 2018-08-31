@@ -133,7 +133,7 @@
 
 
                       <div class="button-participant-join">
-                        <%= link_to "Take it", spot_event_participants_path(@spot, event, @participant), method: :post, class: "btn btn-primary" %>
+                        <%= link_to "Take it", spot_event_participants_path(@spot, event, @participant), method: :post, remote: true, class: "btn btn-primary" %>
                       </div>
 
 
@@ -141,17 +141,8 @@
                     <hr>
                   </div>
 
-                  <div class="event-card__participants">
-                    <p><strong>Paticipants:</strong></p>
-
-                      <% event.participants.each do |participant| %>
-                      <% if participant.event == event %>
-                      <%= link_to avatar_path(participant.user) do %>
-
-                      <%= cl_image_tag participant.user.photo.url, height: 40, width: 40, crop: :fill, class: "img-circle" %>
-                      <% end %>
-                      <% end %>
-                    <% end %>
+                  <div id="event-card-participants-container">
+                    <%= render "event_participants", event: event %>
                   </div>
 
                 </div>
