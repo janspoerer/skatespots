@@ -1,12 +1,10 @@
 <div class="event-card__participants">
   <p><strong>Paticipants:</strong></p>
-
   <% event.participants.each do |participant| %>
     <% if participant.event == event %>
-    <%= link_to avatar_path(participant.user) do %>
-
-    <%= cl_image_tag participant.user.photo.url, height: 40, width: 40, crop: :fill, class: "img-circle" %>
-    <% end %>
+      <%= link_to avatar_path(participant.user) do %>
+        <%= cl_image_tag participant.user.photo.url, height: 40, width: 40, crop: :fill, class: "img-circle" %>
+      <% end %>
     <% end %>
   <% end %>
 </div>
