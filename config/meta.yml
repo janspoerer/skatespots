@@ -1,8 +1,8 @@
-meta_product_name: "Skaespots"
+meta_product_name: "Skatespots"
 meta_title: "Skatespots: Skateboard and take challenges nearby"
 meta_description: "Relevant description"
 meta_image: "metaimage.jpg"                       # should exist in `app/assets/images/`
-twitter_account: "@product_twitter_account"   # required for Twitter Cards
+twitter_account: ""   # required for Twitter Cards
 
 # meta_product_name: "Skaespots"
 # meta_title: "Skatespots - Skateboard and dare beat a challenge nearby"
